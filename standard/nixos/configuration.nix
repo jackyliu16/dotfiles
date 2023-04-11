@@ -79,22 +79,66 @@
   # Set your time zone.
   time.timeZone = "Asia/Shanghai";
 
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "zh_CN.UTF-8";
-    LC_IDENTIFICATION = "zh_CN.UTF-8";
-    LC_MEASUREMENT = "zh_CN.UTF-8";
-    LC_MONETARY = "zh_CN.UTF-8";
-    LC_NAME = "zh_CN.UTF-8";
-    LC_NUMERIC = "zh_CN.UTF-8";
-    LC_PAPER = "zh_CN.UTF-8";
-    LC_TELEPHONE = "zh_CN.UTF-8";
-    LC_TIME = "zh_CN.UTF-8";
+  i18n = {
+    # defaultLocale = "C.UTF-8";
+    defaultLocale = "zh_CN.UTF-8";
+    inputMethod = {
+      enabled = "fcitx5";
+      fcitx5.enableRimeData = true;
+      fcitx5.addons = with pkgs; [
+	fcitx5-rime 
+        fcitx5-chinese-addons 
+        fcitx5-table-extra 
+	# fcitx5-pinyin-moegirl 
+        # fcitx5-pinyin-zhwiki
+      ];
+    };
+    # extraLocaleSettings = {
+    #   # LC_ADDRESS = "zh_CN.UTF-8";
+    #   # LC_IDENTIFICATION = "zh_CN.UTF-8";
+    #   LC_MEASUREMENT = "zh_CN.UTF-8";
+    #   LC_MONETARY = "zh_CN.UTF-8";
+    #   # LC_NAME = "zh_CN.UTF-8";
+    #   # LC_NUMERIC = "zh_CN.UTF-8";
+    #   # LC_PAPER = "zh_CN.UTF-8";
+    #   # LC_TELEPHONE = "zh_CN.UTF-8";
+    #   # LC_TIME = "zh_CN.UTF-8";
+    # };
   };
 
-
+  fonts = {
+    fontDir.enable = true;
+    fonts = with pkgs; [
+      noto-fonts
+      source-han-sans
+      source-han-serif
+      source-code-pro
+      hack-font
+      jetbrains-mono
+    ];
+	  # fontconfig = {
+	  #   defaultFonts = [
+	  #     emoji = [ "Noto Color Emoji" ];
+	  #     monospace = [
+	  #       "Noto Sans Mono CJK SC"
+	  #       "Sarasa Mono SC"
+	  #       "DejaVu Sans Mono"
+	  #     ];
+	  #     sansSerif = [
+	  #       "Noto sans CJK SC"
+	  #       "Source Han Sans SC"
+	  #       "DejaVu Sans"
+	  #     ];
+	  #     serif = [
+	  #       "Noto Sans Mono CJK SC"
+	  #       "Sarasa Mono SC"
+	  #       "DejaVu Sans Mono"
+	  #     ];
+	  #   };
+	  # };
+  };
+  
+         
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
     # FIXME: Replace with your username
@@ -111,6 +155,7 @@
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
       extraGroups = [ "wheel" ];
       packages = with pkgs; [
+	      patchelfStable
       ];
     };
   };
@@ -154,8 +199,6 @@
   sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
-
-  
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "22.11";
