@@ -61,7 +61,7 @@
       substituters = [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
     };
   };
-
+  
   # TODO: Set your hostname
   networking = {
     hostName = "nixos";
@@ -71,7 +71,15 @@
 
   # TODO: This is just an example, be sure to use whatever bootloader you prefer
   boot.loader = {
-    systemd-boot.enable = true;
+    systemd-boot = {
+      enable = true;
+      extraEntries = {
+        "UkyinUbuntu.conf" = ''
+          title UkyinUbuntu
+          efi /efi/ubuntu/shimx64.efi
+        '';
+      };
+    };
     efi.canTouchEfiVariables = true;
     efi.efiSysMountPoint = "/boot/efi";
   };
@@ -89,21 +97,8 @@
 	fcitx5-rime 
         fcitx5-chinese-addons 
         fcitx5-table-extra 
-	# fcitx5-pinyin-moegirl 
-        # fcitx5-pinyin-zhwiki
       ];
     };
-    # extraLocaleSettings = {
-    #   # LC_ADDRESS = "zh_CN.UTF-8";
-    #   # LC_IDENTIFICATION = "zh_CN.UTF-8";
-    #   LC_MEASUREMENT = "zh_CN.UTF-8";
-    #   LC_MONETARY = "zh_CN.UTF-8";
-    #   # LC_NAME = "zh_CN.UTF-8";
-    #   # LC_NUMERIC = "zh_CN.UTF-8";
-    #   # LC_PAPER = "zh_CN.UTF-8";
-    #   # LC_TELEPHONE = "zh_CN.UTF-8";
-    #   # LC_TIME = "zh_CN.UTF-8";
-    # };
   };
 
   fonts = {
@@ -116,30 +111,11 @@
       hack-font
       jetbrains-mono
     ];
-	  # fontconfig = {
-	  #   defaultFonts = [
-	  #     emoji = [ "Noto Color Emoji" ];
-	  #     monospace = [
-	  #       "Noto Sans Mono CJK SC"
-	  #       "Sarasa Mono SC"
-	  #       "DejaVu Sans Mono"
-	  #     ];
-	  #     sansSerif = [
-	  #       "Noto sans CJK SC"
-	  #       "Source Han Sans SC"
-	  #       "DejaVu Sans"
-	  #     ];
-	  #     serif = [
-	  #       "Noto Sans Mono CJK SC"
-	  #       "Sarasa Mono SC"
-	  #       "DejaVu Sans Mono"
-	  #     ];
-	  #   };
-	  # };
   };
   
          
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
+  users.defaultUserShell = pkgs.zsh;
   users.users = {
     # FIXME: Replace with your username
     jacky = {
