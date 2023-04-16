@@ -1,5 +1,10 @@
 { pkgs 
+, clash 
 , ... }: {
+
+  ###################
+  # PUBLIC SERVICES #
+  ###################
 
   # This setups a SSH server. Very important if you're setting up a headless system.
   # Feel free to remove if you don't need it.
@@ -36,4 +41,17 @@
     # TODO unfinish
   };
 
+  ###################
+  # CUSTOM SERVICES #
+  ###################
+
+  imports = [
+    ./clash.nix # custom clash configuration
+  ];
+
+  services = {
+    clash = {
+      enable = true;
+    };
+  };
 }
