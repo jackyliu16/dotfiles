@@ -16,6 +16,7 @@
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
+    ./services.nix
   ];
 
   nixpkgs = {
@@ -44,6 +45,7 @@
   };
 
   nix = {
+
     # This will add each flake input as a registry
     # To make nix3 commands consistent with your flake
     registry = lib.mapAttrs (_: value: { flake = value; }) inputs;
@@ -59,6 +61,11 @@
       # Deduplicate and optimize nix store
       auto-optimise-store = true;
       substituters = [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
+    };
+    gc = {
+      automatic = true;
+      options = "--delete-older-than-14d";
+      dates = "weekly";
     };
   };
   
@@ -136,40 +143,6 @@
     };
   };
 
-  # This setups a SSH server. Very important if you're setting up a headless system.
-  # Feel free to remove if you don't need it.
-  services = {
-    openssh = {
-      enable = true;
-      # Forbid root login through SSH.
-      permitRootLogin = "no";
-      # Use keys only. Remove if you want to SSH using password (not recommended)
-      passwordAuthentication = false;
-    };
-    xserver = { 
-      enable = true;
-      displayManager.sddm.enable = true;
-      desktopManager.plasma5.enable = true;
-      layout = "us";
-      xkbVariant = "";
-    };
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-      # If you want to use JACK applications, uncomment this
-      # jack.enable = true;
-
-      # use the example session manager (no others are packaged yet so this is enabled by default,
-      # no need to redefine it in your config for now)
-      # media-session.enable = true;
-    };  
-    # Enable CUPS to print documents
-    printing.enable = true;
-    # sound.enable = true;
-    # TODO unfinish
-  };
 
   # Enable sound with pipewire.
   sound.enable = true;
