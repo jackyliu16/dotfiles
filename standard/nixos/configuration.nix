@@ -76,7 +76,6 @@
     networkmanager.enable = true;
   };
 
-  # TODO: This is just an example, be sure to use whatever bootloader you prefer
   boot.loader = {
     systemd-boot = {
       enable = true;
@@ -99,9 +98,8 @@
     defaultLocale = "zh_CN.UTF-8";
     inputMethod = {
       enabled = "fcitx5";
-      fcitx5.enableRimeData = true;
       fcitx5.addons = with pkgs; [
-	fcitx5-rime 
+        fcitx5-rime 
         fcitx5-chinese-addons 
         fcitx5-table-extra 
       ];
@@ -123,6 +121,7 @@
          
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.defaultUserShell = pkgs.zsh;
+  programs.zsh.enable = true;
   users.users = {
     # FIXME: Replace with your username
     jacky = {
@@ -139,6 +138,8 @@
       extraGroups = [ "wheel" ];
       packages = with pkgs; [
 	      patchelfStable
+	      realvnc-vnc-viewer
+	      libsForQt5.ark
       ];
     };
   };
