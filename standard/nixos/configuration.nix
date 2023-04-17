@@ -60,7 +60,7 @@
       experimental-features = "nix-command flakes";
       # Deduplicate and optimize nix store
       auto-optimise-store = true;
-      substituters = [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
+      substituters = [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store?priority=1" ];
     };
     gc = {
       automatic = true;
