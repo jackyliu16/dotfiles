@@ -136,11 +136,12 @@
       ];
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
       extraGroups = [ "wheel" ];
-      packages = with pkgs; [
+      packages = (with pkgs; [
 	      patchelfStable
-	      realvnc-vnc-viewer
 	      libsForQt5.ark
-      ];
+      ]) ++ (with pkgs.unstable; [
+        realvnc-vnc-viewer
+      ]);
     };
   };
 
