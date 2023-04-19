@@ -78,6 +78,14 @@
     networkmanager.enable = true;
   };
 
+  # Enable sound with pipewire.
+  sound.enable = true;
+  hardware.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+
+  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
+  system.stateVersion = "22.11";
+
   boot.loader = {
     systemd-boot = {
       enable = true;
@@ -121,22 +129,20 @@
   };
   
          
-  # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
   users.users = {
-    # FIXME: Replace with your username
     jacky = {
-      # TODO: You can set an initial password for your user.
+      # NOTE: You can set an initial password for your user.
       # If you do, you can skip setting a root password by passing '--no-root-passwd' to nixos-install.
       # Be sure to change it (using passwd) after rebooting!
       # initialPassword = "correcthorsebatterystaple";
       isNormalUser = true;
       openssh.authorizedKeys.keys = [
-        # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
+        # NOTE: Add your SSH public key(s) here, if you plan on using SSH to connect
 	      "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDD5Rf2rSlpYwc+euAnZG6RB2mBNkrfApMIf+yGVT9GFotnvVHyejn+X/7Lw1VTy9IcajXd2MbGvxrwHcVqPfe0wt7GrEcEkhPyeooUXfq+i7WY03ClOHai7uNwbotfqra9wtTRJ8gzmXTq5Q3CaMyHwY7SymK6DdWnpCeVvszzasaqcF3nYdhFVfjLm7gbCB2P+6VNE6dXEkNtihrK3NTcPbZ/yCF16QJg7ePKDbu4/GEMUtFuF0fJL6kUgDYI7NlhQvGnAREfa7tHPrJZR1sqnpg7BVunUC79IwxxZHEEWokU0bOHozOm/6n4rg9b8JPw8AFsU7ZtC4bihg2XcjlF0/nxpPOmgbRrPHYvLWdWxtbMiuCYVKrNUNG2IBrq3T8m/acmDyFOCzN3TOW60XMKzBcPxe5vCssbRG8sKihKeh/1byP8HCvwqFkTbPZMwpq3ploHbCsVw/KDOk7dwvYyM1JS09kBJjnaV2r6owrNKVS8Su4sLC8lXOnEh5VgWm0= 18922251299@163.com"
       ];
-      # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
+      # Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
       extraGroups = [ "wheel" ];
       packages = (with pkgs; [
 	      patchelfStable
@@ -156,12 +162,4 @@
     };
   };
 
-
-  # Enable sound with pipewire.
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-
-  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  system.stateVersion = "22.11";
 }
