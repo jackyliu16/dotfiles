@@ -19,6 +19,8 @@
     ./services
   ];
 
+  system.autoUpgrade.enable = true;
+
   nixpkgs = {
     # You can add overlays here
     overlays = [
@@ -64,7 +66,7 @@
     };
     gc = {
       automatic = true;
-      options = "--delete-older-than-14d";
+      options = "--delete-older-than-7d";
       dates = "weekly";
     };
   };
@@ -139,6 +141,15 @@
       packages = (with pkgs; [
 	      patchelfStable
 	      libsForQt5.ark
+	      # jekyll
+	      # (ruby.withPackages (pkgs: with rubyPackages; [
+        #   openssl
+	      # ]))
+	      # # ruby_3_1
+	      # gemstash
+	      # bundler
+	      # bundix
+	      # nodejs
       ]) ++ (with pkgs.unstable; [
         realvnc-vnc-viewer
       ]);
