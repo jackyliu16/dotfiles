@@ -156,6 +156,7 @@
 	      # bundler
 	      # bundix
 	      # nodejs
+	      zola
       ]) ++ (with pkgs.unstable; [
         realvnc-vnc-viewer
       ]);
