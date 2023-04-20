@@ -11,6 +11,9 @@
     # example = prev.example.overrideAttrs (oldAttrs: rec {
     # ...
     # });
+    zoal = prev.zoal.overrideAttrs (oldAttrs: rec {
+      cargoBuildFlags = [ "indexing-zh" ];
+    });
   };
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will
