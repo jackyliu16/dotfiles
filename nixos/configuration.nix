@@ -161,7 +161,12 @@
 	      # bundler
 	      # bundix
 	      # nodejs
-	      zola
+	      zotero
+	      # GC check
+	      # nix-du
+	      # zgrviewer
+        zola
+        thunderbird
       ]) ++ (with pkgs.unstable; [
         realvnc-vnc-viewer
       ]);
