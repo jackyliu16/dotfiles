@@ -10,6 +10,7 @@
     # nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-unstable.url = "github:jackyliu16/nixpkgs";
     # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
+    nur.url = "github:nix-community/NUR";
 
     # Home manager
     home-manager.url = "github:nix-community/home-manager";
@@ -23,7 +24,7 @@
     # nix-colors.url = "github:misterio77/nix-colors";
   };
 
-  outputs = { self, nixpkgs, home-manager, rust-overlay, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, rust-overlay, nur, ... }@inputs:
     let
       inherit (self) outputs;
       forAllSystems = nixpkgs.lib.genAttrs [
@@ -67,10 +68,16 @@
           specialArgs = { inherit inputs outputs; };
           modules = [
             # > Our main nixos configuration file <
+            nur.nixosModules.nur
             ./nixos/configuration.nix
-            ({ pkgs, ... }: {
+            ({ pkgs, config, ... }: {
               nixpkgs.overlays = [ rust-overlay.overlays.default ];
-              environment.systemPackages = [ pkgs.rust-bin.nightly.latest.default ];
+              environment.systemPackages = [ 
+                pkgs.rust-bin.nightly.latest.default 
+                # config.nur.repos.linyinfeng.matrix-wechat
+                config.nur.repos.xddxdd.wine-wechat
+                config.nur.repos.linyinfeng.icalingua-plus-plus
+              ];
             })
           ];
         };
