@@ -182,6 +182,7 @@ in
 	      # zgrviewer
         zola
         thunderbird
+        sshfs
       ]) ++ (with pkgs.unstable; [
         realvnc-vnc-viewer
       ]);

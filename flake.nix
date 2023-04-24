@@ -75,7 +75,7 @@
               environment.systemPackages = [ 
                 pkgs.rust-bin.nightly.latest.default 
                 # config.nur.repos.linyinfeng.matrix-wechat
-                config.nur.repos.xddxdd.wine-wechat
+                # config.nur.repos.xddxdd.wine-wechat
                 config.nur.repos.linyinfeng.icalingua-plus-plus
               ];
             })
