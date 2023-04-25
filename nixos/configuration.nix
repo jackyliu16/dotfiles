@@ -165,23 +165,15 @@ in
       # Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
       extraGroups = [ "wheel" ];
       packages = (with pkgs; [
-	      patchelfStable
+	      # GUI Programs
 	      libsForQt5.ark
-	      # jekyll
-	      # (ruby.withPackages (pkgs: with rubyPackages; [
-        #   openssl
-	      # ]))
-	      # # ruby_3_1
-	      # gemstash
-	      # bundler
-	      # bundix
-	      # nodejs
 	      zotero
-	      # GC check
-	      # nix-du
-	      # zgrviewer
-        zola
         thunderbird
+
+        # Shell Programs
+	      coreutils-prefixed
+	      clash
+        zola
         sshfs
       ]) ++ (with pkgs.unstable; [
         realvnc-vnc-viewer
