@@ -24,7 +24,13 @@
     # nix-colors.url = "github:misterio77/nix-colors";
   };
 
-  outputs = { self, nixpkgs, home-manager, rust-overlay, nur, ... }@inputs:
+  outputs = { self
+    , nixpkgs
+    # , nixpkgs-unstable
+    , home-manager
+    , rust-overlay
+    , nur
+    , ... }@inputs:
     let
       inherit (self) outputs;
       forAllSystems = nixpkgs.lib.genAttrs [
@@ -89,6 +95,7 @@
         # FIXME replace with your username@hostname
         "${username}@${hostname}" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+          # pkgs = nixpkgs-unstable.legacyPackages.x86_64-linux;
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             # > Our main home-manager configuration file <
