@@ -83,10 +83,12 @@ in
       # Deduplicate and optimize nix store
       auto-optimise-store = true;
       substituters = [ 
-        "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store?priority=1" 
+        "https://mirrors.ustc.edu.cn/nix-channels/store?priority=10"
+        "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store?priority=20"
+        "https://mirror.sjtu.edu.cn/nix-channels/store?priority=10"
         # "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" 
-        "https://nix-community.cachix.org"
-        "https://cache.nixos.org/"
+        # "https://nix-community.cachix.org?priority=50"
+        # "https://cache.nixos.org/?priority=40"
       ];
       # trusted-public-keys = [
       #   "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
