@@ -16,7 +16,7 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    rust-overlay.url = "github:oxalica/rust-overlay";
+    # rust-overlay.url = "github:oxalica/rust-overlay";
     # hardware.url = "github:nixos/nixos-hardware";
 
     # Shameless plug: looking for a way to nixify your themes and make
@@ -77,9 +77,9 @@
             nur.nixosModules.nur
             ./nixos/configuration.nix
             ({ pkgs, config, ... }: {
-              nixpkgs.overlays = [ rust-overlay.overlays.default ];
+              # nixpkgs.overlays = [ rust-overlay.overlays.default ];
               environment.systemPackages = [ 
-                pkgs.rust-bin.nightly.latest.default 
+                # pkgs.rust-bin.nightly.latest.default 
                 # config.nur.repos.linyinfeng.matrix-wechat
                 # config.nur.repos.xddxdd.wine-wechat
                 config.nur.repos.linyinfeng.icalingua-plus-plus

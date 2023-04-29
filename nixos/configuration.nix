@@ -82,7 +82,17 @@ in
       experimental-features = "nix-command flakes";
       # Deduplicate and optimize nix store
       auto-optimise-store = true;
-      substituters = [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store?priority=1" ];
+      substituters = [ 
+        "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store?priority=1" 
+        # "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" 
+        "https://nix-community.cachix.org"
+        "https://cache.nixos.org/"
+      ];
+      # trusted-public-keys = [
+      #   "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      #   "cache.nixos.org:EEOzc3df4TjmU6aIsF7dIf2UWCHe+BcLywnFXYegnXr/mLGqr8oEWff51zqnSKhyldQ2RFWFPutJOQtn0hsbrA==%"
+      #   "mirrors.tuna.tsinghua.edu.cn:HwH/zNjloL2N2xbsBIAh0hwZ3Mf8ZXzsWsk8A8cNjOwsQqMo4Q7kRWMeZ3IjmNmGD69ag49Xy46mP/liAONL+w==%"
+      # ];
     };
     gc = {
       automatic = true;
