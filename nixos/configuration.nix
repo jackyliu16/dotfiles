@@ -33,6 +33,7 @@ in
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
     ./services
+    ./pkgs
   ];
 
   system.autoUpgrade.enable = true;
