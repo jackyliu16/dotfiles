@@ -12,7 +12,8 @@ let
   };
 in
 {
-
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "jacky" ];
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
