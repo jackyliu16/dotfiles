@@ -183,6 +183,7 @@ in
 	      libsForQt5.ark
 	      zotero
         thunderbird
+        gparted
 
         # Shell Programs
 	      coreutils-prefixed
