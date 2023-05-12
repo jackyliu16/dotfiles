@@ -190,6 +190,7 @@ in
 	      clash
         zola
         sshfs
+        rustdesk
       ]) ++ (with pkgs.unstable; [
         realvnc-vnc-viewer
       ]);
