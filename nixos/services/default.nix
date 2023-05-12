@@ -48,6 +48,12 @@
     printing.enable = true;
     # sound.enable = true;
     # TODO unfinish
+    zerotierone = {
+      enable = true;
+      joinNetworks = [
+        "8056c2e21c6bf9c3"
+      ];
+    };
   };
 
   ###################
@@ -63,4 +69,5 @@
       enable = true;
     };
   };
+
 }
