@@ -13,6 +13,9 @@ in {
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  # NOTE: enable fonts catch
+  fonts.fontconfig.enable = true;
+
   # NOTE: this repo should be located in $HOME/.config
   # I have no ideas but it just not working.
   home.shellAliases = {
