@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, enableNixDev ? false, ... }: {
   imports = [
     ./apps/vim.nix
   ];
@@ -15,5 +15,7 @@
 
     # Coding
     gnumake
-  ];
+  ] ++ (if enableNixDev then [
+    nix-init
+  ] else [] );
 }
