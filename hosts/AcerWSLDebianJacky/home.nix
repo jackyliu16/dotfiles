@@ -23,7 +23,7 @@ in
 
   imports = [
     (import ../../profile/comm.nix { inherit user domain; })
-    ../../profile/base-devel.nix
+    (import ../../profile/base-devel.nix { inherit pkgs true; })
   ];
 
   # TODO not sure if working
