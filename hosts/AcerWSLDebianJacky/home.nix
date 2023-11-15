@@ -54,30 +54,18 @@ in
     };
   };
 
-  home.packages = (with pkgs; [
-    tldr
-    ripgrep   # search the content of the file in a directory
-    tmux      # terminal split screen
-    tree      # show the directory structure as a tree
+  home.packages = with pkgs; [
     # jq        # ?
-    fzf       # everything
     # rnix-lsp  # lsp support of nix
-    htop      # colorful top
-    ranger    # file management
     # xclip     # using for neovim clipboard
     # zola      # blog
 
     # Coding 
-    gnumake
-    # clang
     wsl-open
 
     # personal packages
     ls-colors
-  ]) ++ ( with pkgs.unstable; [
-    # nix development
-    nix-init
-  ]);
+  ];
 
 
   # terminal 

@@ -6,6 +6,7 @@
   home.packages = with pkgs; [
     # Command Line Tools 
     tldr        # Command Helper 
+    tree        # File Struct
     fzf         # File Name Searcher
     ripgrep     # File Content Searcher         ~ grep
     tmux        # Multiterminal Window Manager  
