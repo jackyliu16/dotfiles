@@ -49,6 +49,7 @@
         let pkgs = nixpkgs.legacyPackages.${system};
         in import ./pkgs { inherit pkgs; }
       );
+
       # Devshell for bootstrapping
       # Acessible through 'nix develop' or 'nix-shell' (legacy)
       devShells = forAllSystems (system:
@@ -97,6 +98,14 @@
           modules = [
             # > Our main home-manager configuration file <
             ./home-manager/home.nix
+          ];
+        };
+        "jacky@AWDebian" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules = [
+            # > Our main home-manager configuration file <
+            ./hosts/AcerWSLDebianJacky/home.nix
           ];
         };
       };
