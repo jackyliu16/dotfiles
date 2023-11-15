@@ -15,13 +15,14 @@ let
     cp ${LS_COLORS}/LS_COLORS               $out/share/LS_COLORS
   '';
   user = "jacky";
+  domain = "AWDebian";
 in
 {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
 
   imports = [
-    (import ../../profile/comm.nix { inherit user; })
+    (import ../../profile/comm.nix { inherit user domain; })
   ];
 
   # TODO not sure if working
@@ -122,7 +123,6 @@ in
       # extraConfig = builtins.readFile ./vimAndNeovim/vimExtraConfig;
     };
   };
-
 
   # terminal 
   programs = {
