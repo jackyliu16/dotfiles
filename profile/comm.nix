@@ -16,7 +16,7 @@ in {
   imports = [
     ./apps/zsh.nix
   ];
-  
+
   # NOTE: enable fonts catch
   fonts.fontconfig.enable = true;
 
@@ -24,7 +24,7 @@ in {
   # I have no ideas but it just not working.
   home.shellAliases = {
     ccfg="cd $HOME/.config/NixOS-Config";
-    hms="nix build ${repo_path}#homeManagerConfigurations.'${user}@${domain}'.activationPackage && ${repo_path}/result/activate";
+    hms="nix build ${repo_path}#homeConfigurations.'${user}@${domain}'.activationPackage && ${repo_path}/result/activate";
     # TODO: haven't check yet
     oss="sudo nixos-rebuild switch --flake ${repo_path}/.";
   };
