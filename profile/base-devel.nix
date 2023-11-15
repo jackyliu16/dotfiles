@@ -1,6 +1,7 @@
 { pkgs, enableNixDev ? false, ... }: {
   imports = [
     ./apps/vim.nix
+    ./apps/zsh.nix
   ];
 
   home.packages = with pkgs; [
