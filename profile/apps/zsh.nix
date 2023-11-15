@@ -32,20 +32,13 @@
       EDITOR = "vim";
       LC_ALL = "zh_CN.UTF-8";
       LC_CTYPE = "zh_CN.UTF-8";
-      RUSTFLAGS = "-L ${pkgs.libiconv}/lib -L ${pkgs.libcxxabi}/lib -L ${pkgs.libcxx}/lib";
-      RUST_BACKTRACE = "full";
-      http_proxy = "127.0.0.1:7890";
-      https_proxy = "127.0.0.1:7890";
+      # RUSTFLAGS = "-L ${pkgs.libiconv}/lib -L ${pkgs.libcxxabi}/lib -L ${pkgs.libcxx}/lib";
+      # RUST_BACKTRACE = "full";
     };
     shellAliases = {
-      view = "vim -R";
-      nix-upgrade = "sudo -i sh -c 'nix-channel --update && nix-env -iA nixpkgs.nix && launchctl remove org.nixos.nix-daemon && launchctl load /Library/LaunchDaemons/org.nixos.nix-daemon.plist'";
-      hns="home-manager switch";
+      # nix-upgrade = "sudo -i sh -c 'nix-channel --update && nix-env -iA nixpkgs.nix && launchctl remove org.nixos.nix-daemon && launchctl load /Library/LaunchDaemons/org.nixos.nix-daemon.plist'";
       send="curl -F 'c=@-' 'https://fars.ee'";
-      chw="cd ~/.config/home-manager/";
-      cos="cd ~/.config/NixOS-Config/";
       blog="cd ~/Documents/blog/";
-      connect="ssh pi@192.168.149.1";
     };
     localVariables = {
       TERM="xterm-256color";
