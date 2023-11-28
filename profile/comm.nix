@@ -1,5 +1,5 @@
 { user, domain }: { config, pkgs, ... }: let
-  repo_path = "$HOME/.config/NixOS-Config";
+  repo_path = "$HOME/.config/dotfiles";
 in {
   home.username = "${user}";
   home.homeDirectory = "/home/${user}";
