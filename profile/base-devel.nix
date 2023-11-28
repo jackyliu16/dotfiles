@@ -4,7 +4,7 @@
     ./apps/zsh.nix
   ];
 
-  home.packages = with pkgs; [
+  home.packages = (with pkgs; [
     # Command Line Tools 
     tldr        # Command Helper 
     tree        # File Struct
@@ -17,10 +17,10 @@
 
     # Coding
     gnumake
-  ] ++ (if enableNixDev then [
-    nix-init
+  ]) ++ (if enableNixDev then with pkgs; [ 
+    # nix-init
     nixpkgs-fmt
-    (pkgs.writeShellScriptBin "nrepl" ''
+    (writeShellScriptBin "nrepl" ''
       export PATH=${pkgs.coreutils}/bin:${pkgs.nixUnstable}/bin:$PATH
       if [ -z "$1" ]; then
          nix repl --argstr host "$HOST" --argstr flakePath "$PRJ_ROOT" ${./apps/nrepl.nix}
