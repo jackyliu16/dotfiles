@@ -19,5 +19,14 @@
     gnumake
   ] ++ (if enableNixDev then [
     nix-init
+    nixpkgs-fmt
+    (pkgs.writeShellScriptBin "nrepl" ''
+      export PATH=${pkgs.coreutils}/bin:${pkgs.nixUnstable}/bin:$PATH
+      if [ -z "$1" ]; then
+         nix repl --argstr host "$HOST" --argstr flakePath "$PRJ_ROOT" ${./apps/nrepl.nix}
+       else
+         nix repl --argstr host "$HOST" --argstr flakePath $(readlink -f $1 | sed 's|/flake.nix||') ${./apps/nrepl.nix}
+       fi
+    '')
   ] else [] );
 }
