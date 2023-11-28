@@ -23,7 +23,7 @@ in {
   # NOTE: this repo should be located in $HOME/.config
   # I have no ideas but it just not working.
   home.shellAliases = {
-    ccfg="cd $HOME/.config/NixOS-Config";
+    ccfg="cd ${repo_path}";
     hms="nix build ${repo_path}#homeConfigurations.'${user}@${domain}'.activationPackage && ${repo_path}/result/activate";
     # TODO: haven't check yet
     oss="sudo nixos-rebuild switch --flake ${repo_path}/.";
