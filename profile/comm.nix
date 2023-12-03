@@ -28,4 +28,14 @@ in {
     # TODO: haven't check yet
     oss="sudo nixos-rebuild switch --flake ${repo_path}/.";
   };
+  programs.git = {
+    enable = true;
+    delta.enable = true;
+    ignores = [
+      "*~"
+      "*.swp"
+    ];
+    userEmail = "18922251299@163.com";
+    userName = "jackyliu16";
+  };
 }
