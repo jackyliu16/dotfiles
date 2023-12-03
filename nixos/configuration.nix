@@ -61,9 +61,9 @@ in
       # Disable if you don't want unfree packages
       allowUnfree = true;
       packageOverrides = pkgs: {
-        nur = import (binutils.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
-          inherit pkgs;
-        };
+        # nur = import (binutils.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
+        #   inherit pkgs;
+        # };
       };
     };
   };
@@ -85,9 +85,9 @@ in
       # Deduplicate and optimize nix store
       auto-optimise-store = true;
       substituters = [ 
-        "https://mirrors.ustc.edu.cn/nix-channels/store?priority=10"
-        "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store?priority=20"
-        # "https://mirror.sjtu.edu.cn/nix-channels/store?priority=10"
+        # "https://mirrors.ustc.edu.cn/nix-channels/store?priority=10"
+        # "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store?priority=20"
+        "https://mirror.sjtu.edu.cn/nix-channels/store?priority=10"
         # "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" 
         # "https://nix-community.cachix.org?priority=50"
         # "https://cache.nixos.org/?priority=40"
@@ -113,22 +113,22 @@ in
   };
 
   # Enable sound with pipewire.
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
+  # sound.enable = true;
+  # hardware.pulseaudio.enable = false;
+  # security.rtkit.enable = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  system.stateVersion = "22.11";
+  system.stateVersion = "23.11";
 
   boot.loader = {
     systemd-boot = {
       enable = true;
-      extraEntries = {
-        "UkyinUbuntu.conf" = ''
-          title UkyinUbuntu
-          efi /efi/ubuntu/shimx64.efi
-        '';
-      };
+      # extraEntries = {
+      #   "UkyinUbuntu.conf" = ''
+      #     title UkyinUbuntu
+      #     efi /efi/ubuntu/shimx64.efi
+      #   '';
+      # };
     };
     efi.canTouchEfiVariables = true;
     efi.efiSysMountPoint = "/boot/efi";
@@ -150,17 +150,17 @@ in
     };
   };
 
-  fonts = {
-    fontDir.enable = true;
-    fonts = with pkgs; [
-      noto-fonts
-      source-han-sans
-      source-han-serif
-      source-code-pro
-      hack-font
-      jetbrains-mono
-    ];
-  };
+  # fonts = {
+  #   fontDir.enable = true;
+  #   fonts = with pkgs; [
+  #     noto-fonts
+  #     source-han-sans
+  #     source-han-serif
+  #     source-code-pro
+  #     hack-font
+  #     jetbrains-mono
+  #   ];
+  # };
   
          
   users.defaultUserShell = pkgs.zsh;
@@ -179,20 +179,20 @@ in
       # Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
       extraGroups = [ "wheel" ];
       packages = (with pkgs; [
-	      # GUI Programs
-	      libsForQt5.ark
-	      zotero
-        thunderbird
-        gparted
+	#       # GUI Programs
+        # libsForQt5.ark
+        # zotero
+        # thunderbird
+        # gparted
 
-        # Shell Programs
-	      coreutils-prefixed
-	      clash
-        zola
-        sshfs
-        rustdesk
+        # # Shell Programs
+        # coreutils-prefixed
+        # clash
+        # zola
+        # sshfs
+        # rustdesk
       ]) ++ (with pkgs.unstable; [
-        realvnc-vnc-viewer
+        # realvnc-vnc-viewer
       ]);
     };
   };
