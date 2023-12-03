@@ -74,7 +74,7 @@
           modules = [
             # > Our main nixos configuration file <
             nur.nixosModules.nur
-            ./nixos/configuration.nix
+            ./nixos/Dell/configuration.nix
             ({ pkgs, config, ... }: {
               # nixpkgs.overlays = [ rust-overlay.overlays.default ];
               environment.systemPackages = [ 
@@ -97,7 +97,7 @@
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             # > Our main home-manager configuration file <
-            ./home-manager/home.nix
+            ./hosts/DellNixOS/home.nix		
           ];
         };
         "jacky@AWDebian" = home-manager.lib.homeManagerConfiguration {
