@@ -69,13 +69,17 @@
     experimental-features = "nix-command flakes";
     # Deduplicate and optimize nix store
     auto-optimise-store = true;
+    substituters = pkgs.lib.mkForce [ "https://mirror.sjtu.edu.cn/nix-channel/store" ];
   };
 
   # FIXME: Add the rest of your current configuration
 
   networking.hostName = "Dell";
 
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot = {
+    enable = true;
+    # efi.canTouchEfiVariables = true;
+  };
 
   users.users = {
     jacky = {
@@ -87,7 +91,7 @@
       # openssh.authorizedKeys.keys = [
       #   # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
       # ];
-      extraGroups = ["wheel"];
+      extraGroups = [ "wheel" "networkmanager" ];
     };
   };
 
@@ -101,6 +105,46 @@
   #     # Use keys only. Remove if you want to SSH using password (not recommended)
   #     PasswordAuthentication = false;
   #   };
+  # };
+  
+  networking.networkmanager.enable = true;
+    
+  time.timeZone = "Asia/Shanghai";
+
+  i18n = {
+    defaultLocale = "zh_CN.UTF-8";
+    extraLocaleSettings = {
+      LD_ADDRESS="zh_CN.UTF-8";
+      LD_IDENTIFICATION="zh_CN.UTF-8";
+      LD_MEASUREMENT="zh_CN.UTF-8";
+      LD_MONETARY="zh_CN.UTF-8";
+      LD_NAME="zh_CN.UTF-8";
+      LD_NUMERIC="zh_CN.UTF-8";
+      LD_PAPER="zh_CN.UTF-8";
+      LD_TELEPHONE="zh_CN.UTF-8";
+      LD_TIME="zh_CN.UTF-8";
+    };
+  };
+  
+  services.xserver = { # X11 windowing services
+    enable = true;
+    # Key-mapping
+    layout = "cn";
+    xkbVariant = "";
+    # Enable KDE Plasma Desktop Environment 
+    displayManager.sddm.enable = true;
+    desktopManager.plasma5.enable = true;
+  };
+
+  # enable CUPS to print documents 
+  services.printing.enable = true;
+
+  sound.enable = true;
+  hardware.pulseaudio.enable = true;
+  security.rtkit.enable = true;
+
+  # services.pipewire = {
+  #   media-session.enable = true;
   # };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
