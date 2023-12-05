@@ -69,8 +69,8 @@
     experimental-features = "nix-command flakes";
     # Deduplicate and optimize nix store
     auto-optimise-store = true;
-    substituters = [ "https://mirror.sjtu.edu.cn/nix-channel/store" ];
-    trusted-substituters = [ "https://mirror.sjtu.edu.cn/nix-channel/store" ];
+    substituters = [ "https://mirror.sjtu.edu.cn/nix-channels/store" ];
+    trusted-substituters = [ "https://mirror.sjtu.edu.cn/nix-channels/store" ];
     trusted-users = [ "jacky"  ];
   };
 
