@@ -69,7 +69,9 @@
     experimental-features = "nix-command flakes";
     # Deduplicate and optimize nix store
     auto-optimise-store = true;
-    substituters = pkgs.lib.mkForce [ "https://mirror.sjtu.edu.cn/nix-channel/store" ];
+    substituters = [ "https://mirror.sjtu.edu.cn/nix-channel/store" ];
+    trusted-substituters = [ "https://mirror.sjtu.edu.cn/nix-channel/store" ];
+    trusted-users = [ "jacky"  ];
   };
 
   # FIXME: Add the rest of your current configuration

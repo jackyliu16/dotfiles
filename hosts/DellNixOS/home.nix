@@ -15,8 +15,8 @@ let
     cp ${LS_COLORS}/LS_COLORS               $out/share/LS_COLORS
   '';
   user = "jacky";
-  domain = "AWNixOS"; 
-  enableNixDev = false;
+  domain = "DNixOS"; 
+  enableNixDev = true;
 in
 {
   # Home Manager needs a bit of information about you and the
@@ -63,6 +63,8 @@ in
 
     # personal packages
     ls-colors
+
+    firefox
   ];
 
 
