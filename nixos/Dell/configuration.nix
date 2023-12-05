@@ -22,6 +22,7 @@
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
+    ./fonts.nix
   ];
 
   nixpkgs = {
@@ -111,21 +112,6 @@
     
   time.timeZone = "Asia/Shanghai";
 
-  i18n = {
-    defaultLocale = "zh_CN.UTF-8";
-    extraLocaleSettings = {
-      LD_ADDRESS="zh_CN.UTF-8";
-      LD_IDENTIFICATION="zh_CN.UTF-8";
-      LD_MEASUREMENT="zh_CN.UTF-8";
-      LD_MONETARY="zh_CN.UTF-8";
-      LD_NAME="zh_CN.UTF-8";
-      LD_NUMERIC="zh_CN.UTF-8";
-      LD_PAPER="zh_CN.UTF-8";
-      LD_TELEPHONE="zh_CN.UTF-8";
-      LD_TIME="zh_CN.UTF-8";
-    };
-  };
-  
   services.xserver = { # X11 windowing services
     enable = true;
     # Key-mapping
