@@ -76,7 +76,7 @@
 
   # FIXME: Add the rest of your current configuration
 
-  networking.hostName = "Dell";
+  networking.hostName = "DNixOS";
 
   boot.loader.systemd-boot = {
     enable = true;
