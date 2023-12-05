@@ -60,10 +60,13 @@ in
     # rnix-lsp  # lsp support of nix
     # xclip     # using for neovim clipboard
     # zola      # blog
+    firefox
+    google-chrome
 
     # personal packages
     ls-colors
 
+    # Clash
     clash
     clash-verge
   ];
