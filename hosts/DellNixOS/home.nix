@@ -64,9 +64,9 @@ in
     # personal packages
     ls-colors
 
-    firefox
+    clash
+    clash-verge
   ];
-
 
   # terminal 
   programs = {
