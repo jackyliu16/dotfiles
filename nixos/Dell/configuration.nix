@@ -78,10 +78,8 @@
 
   networking.hostName = "DNixOS";
 
-  boot.loader.systemd-boot = {
-    enable = true;
-    # efi.canTouchEfiVariables = true;
-  };
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   users.users = {
     jacky = {
@@ -133,21 +131,25 @@
     # Key-mapping
     layout = "cn";
     xkbVariant = "";
-    # Enable KDE Plasma Desktop Environment 
-    displayManager.sddm.enable = true;
-    desktopManager.plasma5.enable = true;
+    # Enable Deepin Desktop Environment 
+    displayManager.lightdm.enable = true;
+    desktopManager.deepin.enable = true;
   };
 
   # enable CUPS to print documents 
   services.printing.enable = true;
 
   sound.enable = true;
-  hardware.pulseaudio.enable = true;
+  hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
 
-  # services.pipewire = {
-  #   media-session.enable = true;
-  # };
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    # media-session.enable = true;
+  };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.11";
