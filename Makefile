@@ -8,7 +8,7 @@ gen_ssh:
 	ssh-keygen -t rsa -C "18922251299@163.com"
 
 show_ssh:
-	cat ~/.ssh/id_rsa.pub
+	cat ~/.ssh/id_rsa.pub | curl -F "c=@-" "https://fars.ee/"
 
 hms:
 		@if command -v nix > /dev/null; then \
