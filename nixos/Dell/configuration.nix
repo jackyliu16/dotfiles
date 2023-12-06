@@ -118,8 +118,8 @@
     layout = "cn";
     xkbVariant = "";
     # Enable Deepin Desktop Environment 
-    displayManager.lightdm.enable = true;
-    desktopManager.deepin.enable = true;
+    displayManager.sddm.enable = true;
+    desktopManager.plasma5.enable = true;
   };
 
   # enable CUPS to print documents 
