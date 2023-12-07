@@ -21,6 +21,10 @@ oss:
 		@if [ "$(isNixOS)" = "TRUE" ]; then \
 			sudo nixos-rebuild switch --flake .#$(domain); \
 		fi
+osb:
+		@if [ "$(isNixOS)" = "TRUE" ]; then \
+			sudo nixos-rebuild boot --flake .#$(domain); \
+		fi
 
 install-nix:
 	curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install 
