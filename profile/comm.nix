@@ -38,4 +38,7 @@ in {
     userEmail = "18922251299@163.com";
     userName = "jackyliu16";
   };
+  home.packages = with pkgs; [
+    wget curl
+  ];
 }

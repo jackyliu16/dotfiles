@@ -62,6 +62,7 @@ in
     # zola      # blog
     firefox
     google-chrome
+    rustdesk
 
     # personal packages
     ls-colors
