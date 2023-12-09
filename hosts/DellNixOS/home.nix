@@ -69,6 +69,12 @@ in
     # Clash
     clash
     clash-verge
+    (dwarf-fortress-packages.dwarf-fortress-full.override {
+      dfVersion = "0.47.04";
+      theme = dwarf-fortress-packages.themes.obsidian;
+      enableIntro = false;
+      enableFPS = true;
+    })
   ];
 
   # terminal 

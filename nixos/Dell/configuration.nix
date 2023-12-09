@@ -12,7 +12,6 @@
   imports = [
     # If you want to use modules your own flake exports (from modules/nixos):
     # outputs.nixosModules.example
-
     # Or modules from other flakes (such as nixos-hardware):
     # inputs.hardware.nixosModules.common-cpu-amd
     # inputs.hardware.nixosModules.common-ssd
@@ -75,9 +74,19 @@
     trusted-users = [ "jacky"  ];
   };
 
+  nix.gc = {
+    automatic = true;
+    options = "--delete-older-than-7d";
+    dates = "weekly";
+  };
+
   # FIXME: Add the rest of your current configuration
 
-  networking.hostName = "DNixOS";
+  networking = {
+    hostName = "DNixOS";
+    networkmanager.enable = true;
+    # networking.wireless.enable = true;
+  };
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -95,6 +104,8 @@
       extraGroups = [ "wheel" "networkmanager" ];
     };
   };
+  users.defaultUserShell = pkgs.zsh;
+  programs.zsh.enable = true;
 
   # This setups a SSH server. Very important if you're setting up a headless system.
   # Feel free to remove if you don't need it.
@@ -107,8 +118,6 @@
   #     PasswordAuthentication = false;
   #   };
   # };
-  
-  networking.networkmanager.enable = true;
     
   time.timeZone = "Asia/Shanghai";
 
@@ -117,25 +126,36 @@
     # Key-mapping
     layout = "cn";
     xkbVariant = "";
+  };
+
+  services.xserver = {
     # Enable Deepin Desktop Environment 
     displayManager.sddm.enable = true;
     desktopManager.plasma5.enable = true;
+    # displayManager.lightdm.enable = true;
+    # desktopManager.deepin.enable = true;
   };
 
   # enable CUPS to print documents 
   services.printing.enable = true;
 
   sound.enable = true;
-  hardware.pulseaudio.enable = false;
+  hardware = {
+    pulseaudio.enable = false;
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    };
+  };
   security.rtkit.enable = true;
 
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # media-session.enable = true;
-  };
+  # services.pipewire = {
+  #   enable = true;
+  #   alsa.enable = true;
+  #   alsa.support32Bit = true;
+  #   pulse.enable = true;
+  #   # media-session.enable = true;
+  # };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.11";
