@@ -86,6 +86,7 @@
     hostName = "DNixOS";
     networkmanager.enable = true;
     # networking.wireless.enable = true;
+    extraHosts = pkgs.lib.readFile ./hosts;
   };
 
   boot.loader.systemd-boot.enable = true;
