@@ -86,7 +86,10 @@
     hostName = "DNixOS";
     networkmanager.enable = true;
     # networking.wireless.enable = true;
-    extraHosts = pkgs.lib.readFile ./hosts;
+    extraHosts = builtins.readFile (builtins.toString (pkgs.fetchurl {
+      url = "https://raw.hellogithub.com/hosts";
+      sha256 = "sha256-qWNasLlfUvT3UYMbNcVQcHLV9inYH3vJJc3OBboPy8g=";
+    }));
   };
 
   boot.loader.systemd-boot.enable = true;
