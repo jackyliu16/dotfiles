@@ -1,6 +1,7 @@
 { pkgs, enableNixDev ? false, ... }: {
   imports = [
     ./apps/vim.nix
+    ./apps/helix.nix
     ./apps/zsh.nix
   ];
 
@@ -14,7 +15,15 @@
     zellij      # Multiterminal Window Manager  
     htop        # Resource Monitor              ~ top
     ranger      # File Explorer
-    helix       # Editor just like vim
+
+    # Helix Request
+    libclang
+    rust-analyzer
+    nil
+    gopls
+    taplo
+    pyright
+    # pylsp
 
     # Coding
     gnumake
