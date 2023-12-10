@@ -68,7 +68,7 @@ in
 
     # personal packages
     ls-colors
-    my_vscodium
+    vscode 
 
     # Clash
     clash
