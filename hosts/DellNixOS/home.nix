@@ -18,13 +18,14 @@ let
   user = "jacky";
   domain = "DNixOS"; 
   enableNixDev = true;
+  enableClash = true;
 in
 {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
 
   imports = [
-    (import ../../profile/comm.nix { inherit user domain; })
+    (import ../../profile/comm.nix { inherit user domain enableClash; })
     (import ../../profile/base-devel.nix { inherit pkgs enableNixDev; })
   ];
 

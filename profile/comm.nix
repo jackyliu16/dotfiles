@@ -1,4 +1,4 @@
-{ user, domain }: { config, pkgs, ... }: let
+{ user, domain, enableClash ? false }: { config, pkgs, ... }: let
   repo_path = "$HOME/.config/dotfiles";
 in {
   home.username = "${user}";
@@ -37,6 +37,10 @@ in {
     ];
     userEmail = "18922251299@163.com";
     userName = "jackyliu16";
+    extraConfig = if enableClash then {
+      http.proxy = "https://127.0.0.1:7890";
+      https.proxy = "https://127.0.0.1:7890";
+    } else { };
   };
   home.packages = with pkgs; [
     wget curl
