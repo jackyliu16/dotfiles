@@ -14,6 +14,7 @@ let
     ln -s ${pkgs.coreutils}/bin/dircolors   $out/bin/dircolors
     cp ${LS_COLORS}/LS_COLORS               $out/share/LS_COLORS
   '';
+  my_vscodium = pkgs.callPackage ../../profile/apps/vscodium.nix {};
   user = "jacky";
   domain = "DNixOS"; 
   enableNixDev = true;
@@ -66,10 +67,13 @@ in
 
     # personal packages
     ls-colors
+    my_vscodium
 
     # Clash
     clash
     clash-verge
+
+    # Game
     (dwarf-fortress-packages.dwarf-fortress-full.override {
       dfVersion = "0.47.04";
       theme = dwarf-fortress-packages.themes.tergel;
