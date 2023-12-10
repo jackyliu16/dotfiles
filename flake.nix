@@ -76,6 +76,8 @@
             # nur.nixosModules.nur
             ./nixos/Dell/configuration.nix
             ({ pkgs, config, ... }: {
+              nixpkgs.overlays = [ rust-overlay.overlays.default ];
+              environment.systemPackages = [ pkgs.rust-bin.nightly.latest.default ];
               # nixpkgs.overlays = [ rust-overlay.overlays.default ];
               # environment.systemPackages = [ 
               #   # pkgs.rust-bin.nightly.latest.default 
