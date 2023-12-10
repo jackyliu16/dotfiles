@@ -17,6 +17,7 @@
     ranger      # File Explorer
 
     # Helix Request
+    clang
     libclang
     rust-analyzer
     nil
