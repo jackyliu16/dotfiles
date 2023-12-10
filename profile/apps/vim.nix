@@ -8,9 +8,11 @@
         vim-lsp
         # asyncomplete-vim
         # jedi-vim
-        vim-nix
-        rust-vim
-        vim-toml
+        vim-nix           # Nix
+        rust-vim          # Rust
+        coc-rust-analyzer # Rust
+        coc-pyright       # Pyright
+        vim-toml          # Toml
         # YouCompleteMe   # 自动补全
 
         # UI
