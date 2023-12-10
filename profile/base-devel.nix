@@ -14,6 +14,7 @@
     zellij      # Multiterminal Window Manager  
     htop        # Resource Monitor              ~ top
     ranger      # File Explorer
+    helix       # Editor just like vim
 
     # Coding
     gnumake
