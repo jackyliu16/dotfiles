@@ -17,6 +17,9 @@
     htop        # Resource Monitor              ~ top
     ranger      # File Explorer
 
+    # Proxy
+    cachix
+
     # Helix Request
     clang
     libclang
