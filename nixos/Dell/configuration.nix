@@ -142,6 +142,7 @@
 
   # enable CUPS to print documents 
   services.printing.enable = true;
+  services.tailscale.enable = true;
 
   sound.enable = true;
   hardware = {
