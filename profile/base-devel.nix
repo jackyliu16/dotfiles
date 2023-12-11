@@ -3,6 +3,7 @@
     ./apps/vim.nix
     ./apps/helix.nix
     ./apps/zsh.nix
+    ./direnv.nix
   ];
 
   home.packages = (with pkgs; [
