@@ -77,14 +77,12 @@
             ./nixos/Dell/configuration.nix
             ({ pkgs, config, ... }: {
               nixpkgs.overlays = [ rust-overlay.overlays.default ];
-              environment.systemPackages = [ pkgs.rust-bin.nightly.latest.default ];
-              # nixpkgs.overlays = [ rust-overlay.overlays.default ];
-              # environment.systemPackages = [ 
-              #   # pkgs.rust-bin.nightly.latest.default 
-              #   # config.nur.repos.linyinfeng.matrix-wechat
-              #   # config.nur.repos.xddxdd.wine-wechat
-              #   # config.nur.repos.linyinfeng.icalingua-plus-plus
-              # ];
+              environment.systemPackages = [ 
+                pkgs.rust-bin.nightly.latest.default
+                # config.nur.repos.linyinfeng.matrix-wechat
+                # config.nur.repos.xddxdd.wine-wechat
+                # config.nur.repos.linyinfeng.icalingua-plus-plus
+              ];
             })
           ];
         };
