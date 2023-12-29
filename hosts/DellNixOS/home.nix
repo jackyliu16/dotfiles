@@ -73,6 +73,8 @@ in
     # Clash
     clash
     clash-verge
+    glances
+    zola
 
     # Game
     (dwarf-fortress-packages.dwarf-fortress-full.override {
