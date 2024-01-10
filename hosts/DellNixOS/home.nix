@@ -57,13 +57,13 @@ in
     };
   };
 
-  home.packages = with pkgs; [
+  home.packages = (with pkgs; [
     # jq        # ?
     # rnix-lsp  # lsp support of nix
     # xclip     # using for neovim clipboard
-    # zola      # blog
-    firefox
-    google-chrome
+
+    # Web
+    firefox google-chrome
     rustdesk
 
     # personal packages
@@ -73,7 +73,11 @@ in
     # Clash
     clash
     clash-verge
+
+    # Monitor
     glances
+
+    # Blog
     zola
 
     # Game
@@ -83,7 +87,9 @@ in
       enableIntro = true;
       enableFPS = true;
     })
-  ];
+  ]) ++ (with pkgs.unstable; [
+    listen1
+  ]);
 
   # terminal 
   programs = {
