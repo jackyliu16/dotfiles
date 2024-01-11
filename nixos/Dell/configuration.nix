@@ -142,11 +142,12 @@
     # displayManager.defaultSession = "xfce";
 
     # GNOME
-    desktopManager.gnome.enable = true;
-    displayManager.gdm.enable = true;
+    # desktopManager.gnome.enable = true;
+    # displayManager.gdm.enable = true;
 
-    # displayManager.lightdm.enable = true;
-    # desktopManager.deepin.enable = true;
+    # Deepin
+    displayManager.lightdm.enable = true;
+    desktopManager.deepin.enable = true;
   };
 
   # enable CUPS to print documents 
