@@ -133,8 +133,14 @@
 
   services.xserver = {
     # Enable Deepin Desktop Environment 
-    displayManager.sddm.enable = true;
-    desktopManager.plasma5.enable = true;
+    # displayManager.sddm.enable = true;
+    # desktopManager.plasma5.enable = true;
+
+    # XFCE 
+    desktopManager.xfce.enable = true;
+    desktopManager.xterm.enable = false;
+    displayManager.defaultSession = "xfce";
+
     # displayManager.lightdm.enable = true;
     # desktopManager.deepin.enable = true;
   };
