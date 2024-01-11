@@ -137,9 +137,13 @@
     # desktopManager.plasma5.enable = true;
 
     # XFCE 
-    desktopManager.xfce.enable = true;
-    desktopManager.xterm.enable = false;
-    displayManager.defaultSession = "xfce";
+    # desktopManager.xfce.enable = true;
+    # desktopManager.xterm.enable = false;
+    # displayManager.defaultSession = "xfce";
+
+    # GNOME
+    desktopManager.gnome.enable = true;
+    displayManager.gdm.enable = true;
 
     # displayManager.lightdm.enable = true;
     # desktopManager.deepin.enable = true;
