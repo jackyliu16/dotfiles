@@ -66,7 +66,6 @@ in
     firefox google-chrome
     rustdesk
     qq
-    synology-drive-client
 
     # personal packages
     ls-colors

@@ -132,9 +132,9 @@
   };
 
   services.xserver = {
-    # Enable Deepin Desktop Environment 
-    # displayManager.sddm.enable = true;
-    # desktopManager.plasma5.enable = true;
+    # Enable plasma5 Desktop Environment 
+    displayManager.sddm.enable = true;
+    desktopManager.plasma5.enable = true;
 
     # XFCE 
     # desktopManager.xfce.enable = true;
@@ -146,8 +146,8 @@
     # displayManager.gdm.enable = true;
 
     # Deepin
-    displayManager.lightdm.enable = true;
-    desktopManager.deepin.enable = true;
+    # displayManager.lightdm.enable = true;
+    # desktopManager.deepin.enable = true;
   };
 
   # enable CUPS to print documents 
@@ -180,4 +180,8 @@
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.11";
+
+  environment.systemPackages = with pkgs; [
+    synology-drive-client
+  ];
 }
