@@ -35,6 +35,9 @@ in {
       "*~"
       "*.swp"
     ];
+    aliases = {
+      gpa = "push --all";
+    };
     userEmail = "18922251299@163.com";
     userName = "jackyliu16";
     extraConfig = if enableClash then {
