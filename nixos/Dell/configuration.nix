@@ -183,5 +183,7 @@
 
   environment.systemPackages = with pkgs; [
     synology-drive-client
+    kermit
+    vim
   ];
 }
