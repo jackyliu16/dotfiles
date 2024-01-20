@@ -18,7 +18,7 @@ let
   user = "jacky";
   domain = "DNixOS"; 
   enableNixDev = true;
-  enableClash = true;
+  enableClash = false;  # leading to strange errors. 
 in
 {
   # Home Manager needs a bit of information about you and the
