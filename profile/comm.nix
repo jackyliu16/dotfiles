@@ -41,8 +41,8 @@ in {
     userEmail = "18922251299@163.com";
     userName = "jackyliu16";
     extraConfig = if enableClash then {
-      "http"."https://github.com".proxy = "https://127.0.0.1:7890";
-      "https"."https://github.com".proxy = "https://127.0.0.1:7890";
+      "http"."https://github.com".proxy = "http://127.0.0.1:7890";
+      "https"."https://github.com".proxy = "http://127.0.0.1:7890";
     } else { };
   };
   home.packages = with pkgs; [
