@@ -1,8 +1,7 @@
 # Ref on ryan4yin/nix-config
-{
-  pkgs,
-  astronvim,
-  ...
+{ pkgs
+, inputs
+, ...
 }:
 ###############################################################################
 #
@@ -18,14 +17,14 @@ in {
   xdg.configFile = {
     # astronvim's config
     "nvim" = {
-      source = astronvim;
+      source = inputs.astronvim;
       force = true;
     };
 
     # my custom astronvim config, astronvim will load it after base config
     # https://github.com/AstroNvim/AstroNvim/blob/v3.32.0/lua/astronvim/bootstrap.lua#L15-L16
     "astronvim/lua/user" = {
-      source = ./astronvim_user;
+      source = ./astronvim_ryan4yin;
       force = true;
     };
   };
@@ -54,4 +53,7 @@ in {
       ];
     };
   };
+
+  # allow fontconfig to discover fonts and configurations installed through `home.packages`
+  fonts.fontconfig.enable = true;
 }

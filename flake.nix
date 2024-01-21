@@ -20,6 +20,12 @@
     # Shameless plug: looking for a way to nixify your themes and make
     # everything match nicely? Try nix-colors!
     # nix-colors.url = "github:misterio77/nix-colors";
+
+    # AstroNvim is an aesthetic and feature-rich neovim config.
+    astronvim = {
+      url = "github:AstroNvim/AstroNvim/v3.40.3";
+      flake = false;
+    };
   };
 
   outputs = { self
@@ -28,6 +34,7 @@
     , home-manager
     , rust-overlay
     , nur
+    , astronvim
     , ... }@inputs:
     let
       inherit (self) outputs;

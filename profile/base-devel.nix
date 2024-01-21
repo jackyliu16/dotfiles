@@ -1,6 +1,10 @@
-{ pkgs, enableNixDev ? false, ... }: {
+{ pkgs
+, inputs
+, enableNixDev ? false
+, ... }: {
   imports = [
-    ./apps/vim.nix
+    # ./apps/vim.nix
+    (import ./apps/neovim/default.nix { inherit inputs pkgs ; })
     ./apps/helix.nix
     ./apps/zsh.nix
     ./direnv.nix

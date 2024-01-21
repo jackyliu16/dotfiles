@@ -26,7 +26,7 @@ in
 
   imports = [
     (import ../../profile/comm.nix { inherit user domain enableClash; })
-    (import ../../profile/base-devel.nix { inherit pkgs enableNixDev; })
+    (import ../../profile/base-devel.nix { inherit pkgs inputs enableNixDev; })
   ];
 
   # TODO not sure if working
