@@ -38,6 +38,20 @@
       })
       julia-mono
       dejavu_fonts
+
+############################
+# Copy From Original fonts #
+############################
+
+      noto-fonts
+      # noto-fonts-cjk-sans
+      # noto-fonts-cjk-serif
+      source-han-sans
+      source-han-serif
+      # sarasa-gothic
+      source-code-pro
+      hack-font
+      jetbrains-mono
     ];
 
     # user defined fonts
@@ -51,23 +65,47 @@
     };
   };
 
+  # TODO: test if kmscon is usefull
   # https://wiki.archlinux.org/title/KMSCON
-  services.kmscon = {
-    # Use kmscon as the virtual console instead of gettys.
-    # kmscon is a kms/dri-based userspace virtual terminal implementation.
-    # It supports a richer feature set than the standard linux console VT,
-    # including full unicode support, and when the video card supports drm should be much faster.
-    enable = true;
-    fonts = [
-      {
-        name = "Source Code Pro";
-        package = pkgs.source-code-pro;
-      }
+  # services.kmscon = {
+  #   # Use kmscon as the virtual console instead of gettys.
+  #   # kmscon is a kms/dri-based userspace virtual terminal implementation.
+  #   # It supports a richer feature set than the standard linux console VT,
+  #   # including full unicode support, and when the video card supports drm should be much faster.
+  #   enable = true;
+  #   fonts = [
+  #     {
+  #       name = "Source Code Pro";
+  #       package = pkgs.source-code-pro;
+  #     }
+  #   ];
+  #   extraOptions = "--term xterm-256color";
+  #   extraConfig = "font-size=12";
+  #   # Whether to use 3D hardware acceleration to render the console.
+  #   hwRender = true;
+  # };
+
+  i18n = {
+    defaultLocale = "zh_CN.UTF-8";
+    extraLocaleSettings = {
+      LD_ADDRESS="zh_CN.UTF-8";
+      LD_IDENTIFICATION="zh_CN.UTF-8";
+      LD_MEASUREMENT="zh_CN.UTF-8";
+      LD_MONETARY="zh_CN.UTF-8";
+      LD_NAME="zh_CN.UTF-8";
+      LD_NUMERIC="zh_CN.UTF-8";
+      LD_PAPER="zh_CN.UTF-8";
+      LD_TELEPHONE="zh_CN.UTF-8";
+      LD_TIME="zh_CN.UTF-8";
+    };
+  };
+
+  i18n.inputMethod = {
+    enabled = "fcitx5";
+    fcitx5.addons = with pkgs; [
+      fcitx5-rime
+      fcitx5-gtk
     ];
-    extraOptions = "--term xterm-256color";
-    extraConfig = "font-size=12";
-    # Whether to use 3D hardware acceleration to render the console.
-    hwRender = true;
   };
 }
 
