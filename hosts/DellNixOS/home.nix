@@ -82,12 +82,12 @@ in
     zola
 
     # Game
-    (dwarf-fortress-packages.dwarf-fortress-full.override {
-      dfVersion = "0.47.04";
-      theme = dwarf-fortress-packages.themes.tergel;
-      enableIntro = true;
-      enableFPS = true;
-    })
+    # (dwarf-fortress-packages.dwarf-fortress-full.override {
+    #   dfVersion = "0.47.04";
+    #   theme = dwarf-fortress-packages.themes.tergel;
+    #   enableIntro = true;
+    #   enableFPS = true;
+    # })
   ]) ++ (with pkgs.unstable; [
     listen1
   ]);
