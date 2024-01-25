@@ -1,6 +1,6 @@
-{ inputs, outputs, config, pkgs ? import <nixpkgs> {} , lib, ... }:
+{ inputs, outputs, config, pkgs ? import <nixpkgs> { }, lib, ... }:
 
-let 
+let
   # shell color: diff typr of file will have diff color
   # b = pkgs.callPackage ./src/b {};
   LS_COLORS = pkgs.fetchgit {
@@ -14,9 +14,9 @@ let
     ln -s ${pkgs.coreutils}/bin/dircolors   $out/bin/dircolors
     cp ${LS_COLORS}/LS_COLORS               $out/share/LS_COLORS
   '';
-  my_vscodium = pkgs.callPackage ../../profile/apps/vscodium.nix {};
+  my_vscodium = pkgs.callPackage ../../profile/apps/vscodium.nix { };
   user = "jacky";
-  domain = "DNixOS"; 
+  domain = "DNixOS";
   enableNixDev = true;
   enableClash = true;  # leading to strange errors. 
 in
@@ -63,16 +63,16 @@ in
     # xclip     # using for neovim clipboard
 
     # Web
-    firefox google-chrome
+    firefox
+    google-chrome
     rustdesk
     qq
 
     # personal packages
     ls-colors
-    vscode 
+    vscode
 
     # Clash
-    clash
     clash-verge
 
     # Monitor
