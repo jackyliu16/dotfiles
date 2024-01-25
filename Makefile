@@ -29,8 +29,25 @@ osb:
 		fi
 
 install-nix:
-	curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install 
-	# ref: https://github.com/DeterminateSystems/nix-installer
+	@if [ "$(isNixOS)" = "TRUE" ]; then \ 
+		@echo "Why did you trying to use script ?\n It's unnecessary !" \ 
+		@exit 1 \ 
+	else \ 
+		curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install \ 
+		# ref: https://github.com/DeterminateSystems/nix-installer
+	fi
 
 uninstall-nix:
-	/nix/nix-installer uninstall
+	@if [ "$(isNixOS)" = "TRUE" ]; then \ 
+		@echo "Why did you trying to use script ?\n It's unnecessary !" \ 
+		@exit 1 \ 
+	else \ 
+		ifeq ($(wildcard $(/nix/nix-installer)),)
+			@echo "Your nix wasn't install my DeterminateSystems/nix-installer" \ 
+			@echo "Maybe you could check https://github.com/jackyliu16/devenv-flask/commit/7fbf044a58bb55a299771d0c947268bed7c84303"
+			@echo "to get some sort of inspiration. (If you are not using macOS)"
+	 	else \ 
+			/nix/nix-installer uninstall \
+	fi
+
+
