@@ -1,7 +1,7 @@
 .PHONY: 
 
 uname := jacky
-domain:= DNixOS
+domain:= DDebian
 isNixOS:= $(shell cat /etc/os-release | grep -w 'NAME' | grep -q 'NixOS' && echo "TRUE" || echo "FALSE")
 substituter ?= --option substituters "https://mirror.sjtu.edu.cn/nix-channels/store"
 extra_command ?= --extra-experimental-features flakes --extra-experimental-features nix-command 
