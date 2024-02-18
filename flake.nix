@@ -11,7 +11,7 @@
     nur.url = "github:nix-community/NUR";
 
     # Home manager
-    home-manager.url = "github:nix-community/home-manager/release-23.05";
+    home-manager.url = "github:nix-community/home-manager/release-23.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     rust-overlay.url = "github:oxalica/rust-overlay";
