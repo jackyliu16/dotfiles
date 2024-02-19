@@ -23,8 +23,8 @@ in {
 
     # my custom astronvim config, astronvim will load it after base config
     # https://github.com/AstroNvim/AstroNvim/blob/v3.32.0/lua/astronvim/bootstrap.lua#L15-L16
-    "astronvim/lua/user" = {
-      source = ./astronvim_ryan4yin;
+    "astronvim/lua" = {
+      source = ./user;
       force = true;
     };
   };
