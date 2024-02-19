@@ -47,5 +47,7 @@ in {
   };
   home.packages = with pkgs; [
     wget curl
-  ];
+  ] ++ (if enableClash then with pkgs; [
+    clash-verge
+  ] else {} );
 }
