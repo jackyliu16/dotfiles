@@ -1,4 +1,9 @@
-{ user, domain, enableClash ? false }: { config, pkgs, ... }: let
+{ user 
+, domain
+, enableClash ? false
+, inputs
+, outputs
+}: { config, pkgs, ... }: let
   repo_path = "$HOME/.config/dotfiles";
 in {
   home.username = "${user}";
@@ -48,6 +53,52 @@ in {
   home.packages = with pkgs; [
     wget curl
   ] ++ (if enableClash then with pkgs; [
-    clash-verge
-  ] else {} );
+    clash-verge-rev
+  ] else [] );
+
+  # TODO not sure if working
+  nixpkgs = {
+    # You can add overlays here
+    overlays = [
+      # Add overlays your own flake exports (from overlays and pkgs dir):
+      outputs.overlays.additions
+      outputs.overlays.modifications
+      outputs.overlays.unstable-packages
+
+      # You can also add overlays exported from other flakes:
+      # neovim-nightly-overlay.overlays.default
+
+      # Or define it inline, for example:
+      # (final: prev: {
+      #   hi = final.hello.overrideAttrs (oldAttrs: {
+      #     patches = [ ./change-hello-to-hi.patch ];
+      #   });
+      # })
+    ] ++ (if enableClash then [
+      (final: prev: {
+        clash-verge-rev = final.clash-verge.overrideAttrs (oldAttrs: rec {
+          version = "1.5.1";
+          src = builtins.fetchurl {
+            url = "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v${version}/clash-verge_1.5.1_amd64.deb";
+            sha256 = "sha256:0x9iwxzzdmbg14if9km9n0clh0mndxkslxsxjdassag6ainhrmpa";
+          };
+
+          installPhase = ''
+            runHook preInstall
+            mkdir -p $out/bin
+            mv usr/* $out
+            rm $out/bin/clash-meta
+            runHook postInstall
+          '';
+        });
+      })
+    ] else [] );
+    # Configure your nixpkgs instance
+    config = {
+      # Disable if you don't want unfree packages
+      allowUnfree = true;
+      # Workaround for https://github.com/nix-community/home-manager/issues/2942
+      allowUnfreePredicate = (_: true);
+    };
+  };
 }
