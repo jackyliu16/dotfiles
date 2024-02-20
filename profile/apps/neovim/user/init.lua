@@ -17,6 +17,8 @@ return {
 
   plugins = {
     "AstroNvim/astrocommunity",
+    -- just
+    { import = "NoahTheDuke/vim-just" },
     -- Motion
     { import = "astrocommunity.motion.mini-surround" },
     -- https://github.com/echasnovski/mini.ai

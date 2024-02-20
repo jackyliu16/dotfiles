@@ -20,6 +20,7 @@
     zellij      # Multiterminal Window Manager  
     htop        # Resource Monitor              ~ top
     ranger      # File Explorer
+    just        # Justfile
 
     # Proxy
     cachix
