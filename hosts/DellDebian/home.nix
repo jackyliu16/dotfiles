@@ -24,7 +24,15 @@ in
     # zola      # blog
 
     # personal packages
+    zotero
+    adobe-reader
+    mendeley
   ];
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "adobe-reader-9.5.5"
+  ];
+
 
 
   # terminal 
