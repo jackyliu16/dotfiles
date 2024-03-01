@@ -1,5 +1,6 @@
 return {
   colorscheme = "catppuccin",
+  vim.opt.clipboard:append("unnamedplus")
 
   options = {
     opt = {
