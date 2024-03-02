@@ -16,6 +16,8 @@
 
   programs.fish.enable = false;
 
+  programs.nushell.enable = true;
+
   programs.zsh = {
     enable = true;
     autocd = true;
