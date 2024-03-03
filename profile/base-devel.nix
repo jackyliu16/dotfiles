@@ -21,6 +21,9 @@
     htop        # Resource Monitor              ~ top
     ranger      # File Explorer
     just        # Justfile
+    xxd         # Read Hex Files
+    cloc        # A program that counts lines of source code
+    dtc         # Device Tree Compiler
 
     # Proxy
     cachix
