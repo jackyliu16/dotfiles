@@ -1,6 +1,7 @@
 return {
-  colorscheme = "catppuccin",
-  vim.opt.clipboard:append("unnamedplus")
+  colorscheme = "astrolight",
+  -- vim.opt.clipboard:append("unnamedplus")
+  -- vim.cmd('set background=light'),
 
   options = {
     opt = {
