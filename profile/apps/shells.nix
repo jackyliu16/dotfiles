@@ -43,8 +43,15 @@ in {
   programs.oh-my-posh = {
     enable = true;
     enableZshIntegration = false;
-    # useTheme = "atomicBit"; # Offical Themes on: https://ohmyposh.dev/docs//* theme */s
-    useTheme = "atomic";
+    # useTheme = "atomicBit"; # Offical Themes on: https://ohmyposh.dev/docs/themes
+    useTheme = "1_shell";
+    # useTheme = "negligible";
+    # useTheme = "nordtron";
+    # useTheme = "onehalf.minimal";
+    # useTheme = "pararussel";
+    # useTheme = "peru";
+    # useTheme = "space"; // single line
+    # useTheme = "tokyo";
   };
 
   programs.fish.enable = false;
