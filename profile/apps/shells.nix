@@ -9,16 +9,83 @@
 }: 
 
 # ref: https://github.dev/Smaug123/nix-dotfiles
-{
-  #home.packages = with pkgs; [
-  #  pure-prompt
-  #];
+# ref: https://github.com/happysalada/dotfiles/blob/39844591f11d5a98be3deccbb72d1728cc00fb91/homes/programs/nushell.nix#L47
+
+let 
+  shellAliases = {
+    send="curl -F 'c=@-' 'https://fars.ee'";
+    blog="cd ~/Documents/blog/";
+    # nix
+    nixroots = "nix-store --gc --print-roots";
+    # git
+    gp = "git push";
+    gpf = "git push --force";
+    gl = "git log --pretty=oneline --abbrev-commit";
+    gb = "git branch";
+    gbd = "git branch --delete --force";
+    c = "git checkout";
+    gpp = "git pull --prune";
+    gsi = "git stash --include-untracked";
+    gsp = "git stash pop";
+    gsa = "git stage --all";
+    gfu = "git fetch upstream";
+    gmu = "git merge upstream/master master";
+    gu = "git reset --soft HEAD~1";
+    grh = "git reset --hard";
+    grm = "git rebase master";
+    # misc
+    b = "broot -ghi";
+    # nix
+    nci = "nix_copy_inputs";
+  };
+in {
+
+  programs.oh-my-posh = {
+    enable = true;
+    enableZshIntegration = false;
+    useTheme = "atomicBit"; # Offical Themes on: https://ohmyposh.dev/docs//* theme */s
+  };
 
   programs.fish.enable = false;
 
   programs.nushell = {
     enable = true;
+    package = pkgs.nushellFull;
     configFile.source = ./config/config.nu;
+    shellAliases = shellAliases;
+    extraConfig = ''
+      register "${pkgs.nushellPlugins.gstat}/bin/nu_plugin_gstat"
+      register "${pkgs.nushellPlugins.formats}/bin/nu_plugin_formats"
+      register ${pkgs.nushellPlugins.query}/bin/nu_plugin_query
+      register ${pkgs.nushellPlugins.net}/bin/nu_plugin_net
+      register ${pkgs.nushellPlugins.regex}/bin/nu_plugin_regex
+
+      # maybe useful functions
+      # use ${pkgs.nu_scripts}/share/nu_scripts/modules/formats/to-number-format.nu *
+      # use ${pkgs.nu_scripts}/share/nu_scripts/sourced/api_wrappers/wolframalpha.nu *
+      # use ${pkgs.nu_scripts}/share/nu_scripts/modules/background_task/job.nu *
+      # use ${pkgs.nu_scripts}/share/nu_scripts/modules/network/ssh.nu *
+      source "${pkgs.nu_scripts}/share/nu_scripts/aliases/git/git-aliases.nu"
+      source "${pkgs.nu_scripts}/share/nu_scripts/custom-completions/git/git-completions.nu"
+      source "${pkgs.nu_scripts}/share/nu_scripts/modules/nix/nix.nu"
+      
+      # completions
+      use ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/git/git-completions.nu *
+      use ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/btm/btm-completions.nu *
+      use ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/cargo/cargo-completions.nu *
+      use ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/nix/nix-completions.nu *
+      use ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/tealdeer/tldr-completions.nu *
+      use ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/zellij/zellij-completions.nu *
+    '';
+    extraEnv = ''
+      use "${pkgs.nu_scripts}/share/nu_scripts/themes/nu-themes/catppuccin-mocha.nu"
+      $env.config = {
+        color_config: (catppuccin-mocha),
+        hooks: {
+          pre_prompt: [(source ${pkgs.nu_scripts}/share/nu_scripts/nu-hooks/direnv/config.nu)]
+        }
+      }
+    '';
   };
 
   programs.zsh = {
@@ -39,11 +106,6 @@
       LC_CTYPE = "zh_CN.UTF-8";
       # RUSTFLAGS = "-L ${pkgs.libiconv}/lib -L ${pkgs.libcxxabi}/lib -L ${pkgs.libcxx}/lib";
       # RUST_BACKTRACE = "full";
-    };
-    shellAliases = {
-      # nix-upgrade = "sudo -i sh -c 'nix-channel --update && nix-env -iA nixpkgs.nix && launchctl remove org.nixos.nix-daemon && launchctl load /Library/LaunchDaemons/org.nixos.nix-daemon.plist'";
-      send="curl -F 'c=@-' 'https://fars.ee'";
-      blog="cd ~/Documents/blog/";
     };
     localVariables = {
       TERM="xterm-256color";
@@ -124,5 +186,6 @@
     #   bindkey "^[[1;3D" backward-word          # Alt - <-
     # '';
   };
+
 }
 
