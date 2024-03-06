@@ -41,11 +41,11 @@ return {
     { import = "astrocommunity.editing-support.todo-comments-nvim" },
     -- Language Support
     ---- Frontend & NodeJS
-    { import = "astrocommunity.pack.typescript-all-in-one" },
-    { import = "astrocommunity.pack.tailwindcss" },
-    { import = "astrocommunity.pack.html-css" },
-    { import = "astrocommunity.pack.prisma" },
-    { import = "astrocommunity.pack.vue" },
+    -- { import = "astrocommunity.pack.typescript-all-in-one" },
+    -- { import = "astrocommunity.pack.tailwindcss" },
+    -- { import = "astrocommunity.pack.html-css" },
+    -- { import = "astrocommunity.pack.prisma" },
+    -- { import = "astrocommunity.pack.vue" },
     ---- Configuration Language
     { import = "astrocommunity.pack.markdown" },
     { import = "astrocommunity.pack.json" },
@@ -60,13 +60,13 @@ return {
     { import = "astrocommunity.pack.cmake" },
     { import = "astrocommunity.pack.cpp" },
     -- { import = "astrocommunity.pack.nix" },  -- manually add config for nix, comment this one.
-    { import = "astrocommunity.pack.proto" },
+    -- { import = "astrocommunity.pack.proto" },
 
     ---- Operation & Cloud Native
-    { import = "astrocommunity.pack.terraform" },
+    -- { import = "astrocommunity.pack.terraform" },
     { import = "astrocommunity.pack.bash" },
     { import = "astrocommunity.pack.docker" },
-    { import = "astrocommunity.pack.helm" },
+    -- { import = "astrocommunity.pack.helm" },
 
     -- colorscheme
     { import = "astrocommunity.colorscheme.catppuccin" },
@@ -99,10 +99,10 @@ return {
           "lua",
           -- operation & cloud native
           "dockerfile",
-          "hcl",
-          "jsonnet",
+          -- "hcl",
+          -- "jsonnet",
           "regex",
-          "terraform",
+          -- "terraform",
           "nix",
           "csv",
           -- other programming language
@@ -112,11 +112,11 @@ return {
           "latex",
           "sql",
           -- Lisp like
-          "fennel",
-          "clojure",
-          "commonlisp",
+          -- "fennel",
+          -- "clojure",
+          -- "commonlisp",
           -- customized languages:
-          "scheme",
+          -- "scheme",
         })
 
         -- add support for scheme
@@ -132,7 +132,7 @@ return {
           },
         }
         -- use scheme parser for filetypes: scm
-        vim.treesitter.language.register("scheme", "scm")
+        -- vim.treesitter.language.register("scheme", "scm")
       end,
     },
     {
