@@ -1,16 +1,24 @@
+local colorscheme
+local hr = tonumber(os.date('%H', os.time()))
+if hr > 6 and hr < 19 then
+  colorscheme = 'astrolight'
+else -- night
+  colorscheme = 'astrodark'
+end
+
 return {
-  colorscheme = "astrolight",
+  colorscheme = colorscheme,
   -- vim.opt.clipboard:append("unnamedplus")
   -- vim.cmd('set background=light'),
 
   options = {
     opt = {
       relativenumber = true, -- Show relative numberline
-      signcolumn = "auto", -- Show sign column when used only
-      spell = false,      -- Spell checking
-      swapfile = false,   -- Swapfile
-      smartindent = false, -- fix https://github.com/ryan4yin/nix-config/issues/4
-      title = true,       -- Set the title of window to `filename [+=-] (path) - NVIM`
+      signcolumn = "auto",   -- Show sign column when used only
+      spell = false,         -- Spell checking
+      swapfile = false,      -- Swapfile
+      smartindent = false,   -- fix https://github.com/ryan4yin/nix-config/issues/4
+      title = true,          -- Set the title of window to `filename [+=-] (path) - NVIM`
       -- The percentage of 'columns' to use for the title
       -- When the title is longer, only the end of the path name is shown.
       titlelen = 20,
@@ -74,7 +82,7 @@ return {
       "catppuccin/nvim",
       name = "catppuccin",
       opts = function(_, opts)
-        opts.flavour = "mocha"              -- latte, frappe, macchiato, mocha
+        opts.flavour = "mocha"             -- latte, frappe, macchiato, mocha
         opts.transparent_background = true -- setting the background color.
       end,
     },
@@ -86,10 +94,10 @@ return {
         opts.incremental_selection = {
           enable = true,
           keymaps = {
-            init_selection = "<C-space>", -- Ctrl + Space
+            init_selection = "<C-space>",    -- Ctrl + Space
             node_incremental = "<C-space>",
             scope_incremental = "<A-space>", -- Alt + Space
-            node_decremental = "<bs>", -- Backspace
+            node_decremental = "<bs>",       -- Backspace
           },
         }
         opts.ignore_install = { "gotmpl" }
@@ -126,8 +134,8 @@ return {
             url = "https://github.com/6cdh/tree-sitter-scheme", -- local path or git repo
             files = { "src/parser.c" },
             -- optional entries:
-            branch = "main",                  -- default branch in case of git repo if different from master
-            generate_requires_npm = false,    -- if stand-alone parser without npm dependencies
+            branch = "main",                        -- default branch in case of git repo if different from master
+            generate_requires_npm = false,          -- if stand-alone parser without npm dependencies
             requires_generate_from_grammar = false, -- if folder contains pre-generated src/parser.c
           },
         }
@@ -417,36 +425,36 @@ return {
             -- common refactoring actions based off the Refactoring book by Martin Fowler
             code_actions.refactoring,
             code_actions.gomodifytags, -- Go - modify struct field tags
-            code_actions.impl,   -- Go - generate interface method stubs
+            code_actions.impl,         -- Go - generate interface method stubs
             code_actions.shellcheck,
-            code_actions.proselint, -- English prose linter
-            code_actions.statix, -- Lints and suggestions for Nix.
+            code_actions.proselint,    -- English prose linter
+            code_actions.statix,       -- Lints and suggestions for Nix.
 
             -- Diagnostic
             diagnostics.actionlint, -- GitHub Actions workflow syntax checking
-            diagnostics.buf,  -- check text in current buffer
-            diagnostics.checkmake, -- check Makefiles
-            diagnostics.deadnix, -- Scan Nix files for dead code.
+            diagnostics.buf,        -- check text in current buffer
+            diagnostics.checkmake,  -- check Makefiles
+            diagnostics.deadnix,    -- Scan Nix files for dead code.
 
             -- Formatting
-            formatting.prettier,                 -- js/ts/vue/css/html/json/... formatter
-            diagnostics.hadolint,                -- Dockerfile linter
-            formatting.black,                    -- Python formatter
-            formatting.ruff,                     -- extremely fast Python linter
-            formatting.goimports,                -- Go formatter
-            formatting.shfmt,                    -- Shell formatter
-            formatting.rustfmt,                  -- Rust formatter
-            formatting.taplo,                    -- TOML formatteautoindentr
-            formatting.terraform_fmt,            -- Terraform formatter
-            formatting.stylua,                   -- Lua formatter
-            formatting.alejandra,                -- Nix formatter
-            formatting.sqlfluff.with({           -- SQL formatter
+            formatting.prettier,                        -- js/ts/vue/css/html/json/... formatter
+            diagnostics.hadolint,                       -- Dockerfile linter
+            formatting.black,                           -- Python formatter
+            formatting.ruff,                            -- extremely fast Python linter
+            formatting.goimports,                       -- Go formatter
+            formatting.shfmt,                           -- Shell formatter
+            formatting.rustfmt,                         -- Rust formatter
+            formatting.taplo,                           -- TOML formatteautoindentr
+            formatting.terraform_fmt,                   -- Terraform formatter
+            formatting.stylua,                          -- Lua formatter
+            formatting.alejandra,                       -- Nix formatter
+            formatting.sqlfluff.with({                  -- SQL formatter
               extra_args = { "--dialect", "postgres" }, -- change to your dialect
             }),
-            formatting.nginx_beautifier,         -- Nginx formatter
-            formatting.verible_verilog_format,   -- Verilog formatter
-            formatting.emacs_scheme_mode,        -- using emacs in batch mode to format scheme files.
-            formatting.fnlfmt,                   -- Format Fennel code
+            formatting.nginx_beautifier,                -- Nginx formatter
+            formatting.verible_verilog_format,          -- Verilog formatter
+            formatting.emacs_scheme_mode,               -- using emacs in batch mode to format scheme files.
+            formatting.fnlfmt,                          -- Format Fennel code
           })
         end
       end,
@@ -462,7 +470,7 @@ return {
         local previewers = require("telescope.previewers")
 
         local _bad = { ".*%.csv", ".*%.min.js" } -- Put all filetypes that slow you down in this array
-        local filesize_threshold = 300 * 1024 -- 300KB
+        local filesize_threshold = 300 * 1024    -- 300KB
         local bad_files = function(filepath)
           for _, v in ipairs(_bad) do
             if filepath:match(v) then
@@ -533,37 +541,37 @@ return {
     -- enable servers that installed by home-manager instead of mason
     servers = {
       ---- Frontend & NodeJS
-      "tsserver",       -- typescript/javascript language server
-      "tailwindcss",    -- tailwindcss language server
-      "html",           -- html language server
-      "cssls",          -- css language server
-      "prismals",       -- prisma language server
-      "volar",          -- vue language server
+      "tsserver",          -- typescript/javascript language server
+      "tailwindcss",       -- tailwindcss language server
+      "html",              -- html language server
+      "cssls",             -- css language server
+      "prismals",          -- prisma language server
+      "volar",             -- vue language server
       ---- Configuration Language
-      "marksman",       -- markdown ls
-      "jsonls",         -- json language server
-      "yamlls",         -- yaml language server
-      "taplo",          -- toml language server
+      "marksman",          -- markdown ls
+      "jsonls",            -- json language server
+      "yamlls",            -- yaml language server
+      "taplo",             -- toml language server
       ---- Backend
-      "lua_ls",         -- lua
-      "gopls",          -- go
-      "rust_analyzer",  -- rust
-      "pyright",        -- python
-      "ruff_lsp",       -- extremely fast Python linter and code transformation
-      "jdtls",          -- java
-      "nil_ls",         -- nix language server
-      "bufls",          -- protocol buffer language server
-      "zls",            -- zig language server
+      "lua_ls",            -- lua
+      "gopls",             -- go
+      "rust_analyzer",     -- rust
+      "pyright",           -- python
+      "ruff_lsp",          -- extremely fast Python linter and code transformation
+      "jdtls",             -- java
+      "nil_ls",            -- nix language server
+      "bufls",             -- protocol buffer language server
+      "zls",               -- zig language server
       ---- HDL
-      "verible",        -- verilog language server
+      "verible",           -- verilog language server
       ---- Operation & Cloud Nativautoindente
-      "bashls",         -- bash
-      "cmake",          -- cmake language server
-      "clangd",         -- c/c++
-      "dockerls",       -- dockerfile
-      "jsonnet_ls",     -- jsonnet language server
-      "terraformls",    -- terraform hcl
-      "nushell",        -- nushell language server
+      "bashls",            -- bash
+      "cmake",             -- cmake language server
+      "clangd",            -- c/c++
+      "dockerls",          -- dockerfile
+      "jsonnet_ls",        -- jsonnet language server
+      "terraformls",       -- terraform hcl
+      "nushell",           -- nushell language server
       "scheme_langserver", -- scheme language server
     },
     formatting = {
@@ -581,4 +589,3 @@ return {
     },
   },
 }
-
