@@ -7,6 +7,7 @@
     (import ./apps/neovim/default.nix { inherit inputs pkgs ; })
     ./apps/helix.nix
     ./apps/zsh.nix
+    ./apps/zellij.nix
     ./direnv.nix
   ];
 
@@ -17,7 +18,6 @@
     fzf         # File Name Searcher
     ripgrep     # File Content Searcher         ~ grep
     tmux        # Multiterminal Window Manager  
-    zellij      # Multiterminal Window Manager  
     htop        # Resource Monitor              ~ top
     ranger      # File Explorer
     just        # Justfile
