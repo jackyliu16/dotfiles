@@ -39,6 +39,8 @@ in {
       defaultEditor = true;
       viAlias = true;
       vimAlias = true;
+      vimdiffAlias = true;
+      withNodeJs = true;
 
       # currently we use lazy.nvim as neovim's package manager, so comment this one.
       # Install packages that will compile locally or download FHS binaries via Nix!
