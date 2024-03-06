@@ -6,7 +6,7 @@
     # ./apps/vim.nix
     (import ./apps/neovim/default.nix { inherit inputs pkgs ; })
     ./apps/helix.nix
-    ./apps/zsh.nix
+    ./apps/shells.nix
     ./apps/zellij.nix
     ./direnv.nix
   ];

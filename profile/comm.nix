@@ -18,9 +18,7 @@ in {
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  imports = [
-    ./apps/zsh.nix
-  ];
+  imports = [ ];
 
   # NOTE: enable fonts catch
   fonts.fontconfig.enable = true;

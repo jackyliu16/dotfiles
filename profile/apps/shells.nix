@@ -16,7 +16,10 @@
 
   programs.fish.enable = false;
 
-  programs.nushell.enable = true;
+  programs.nushell = {
+    enable = true;
+    configFile.source = ./config/config.nu;
+  };
 
   programs.zsh = {
     enable = true;
