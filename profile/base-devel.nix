@@ -23,6 +23,7 @@
     just        # Justfile
     xxd         # Read Hex Files
     cloc        # A program that counts lines of source code
+    nettools    # net-tools
     dtc         # Device Tree Compiler
 
     # Proxy
