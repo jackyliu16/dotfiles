@@ -1,13 +1,17 @@
 local colorscheme
+local background
 local hr = tonumber(os.date('%H', os.time()))
-if hr > 6 and hr < 19 then
+if hr > 6 and hr < 18 then
   colorscheme = 'astrolight'
+  background = 'light'
 else -- night
   colorscheme = 'astrodark'
+  background = 'dark'
 end
 
 return {
   colorscheme = colorscheme,
+  background = background,
   -- vim.opt.clipboard:append("unnamedplus")
   -- vim.cmd('set background=light'),
 
