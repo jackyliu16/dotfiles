@@ -13,17 +13,22 @@
 
 let 
   shellAliases = {
+    # Personal
     send="curl -F 'c=@-' 'https://fars.ee'";
     blog="cd ~/Documents/blog/";
+    arce="cd ~/Coding/arceos-chenlongos/";
+    cref="cd ~/Coding/reference/";
+
     # nix
     nixroots = "nix-store --gc --print-roots";
+    nci = "nix_copy_inputs";
     # git
     gp = "git push";
     gpf = "git push --force";
     gl = "git log --pretty=oneline --abbrev-commit";
     gb = "git branch";
     gbd = "git branch --delete --force";
-    c = "git checkout";
+    gc = "git checkout";
     gpp = "git pull --prune";
     gsi = "git stash --include-untracked";
     gsp = "git stash pop";
@@ -35,8 +40,6 @@ let
     grm = "git rebase master";
     # misc
     b = "broot -ghi";
-    # nix
-    nci = "nix_copy_inputs";
   };
 in {
 
