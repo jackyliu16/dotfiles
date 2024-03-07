@@ -542,7 +542,7 @@ return {
     servers = {
       ---- Frontend & NodeJS
       "tsserver",          -- typescript/javascript language server
-      "tailwindcss",       -- tailwindcss language server
+      -- "tailwindcss",       -- tailwindcss language server
       "html",              -- html language server
       "cssls",             -- css language server
       "prismals",          -- prisma language server

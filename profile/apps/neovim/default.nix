@@ -29,6 +29,11 @@ in {
     };
   };
 
+  home.packages = with pkgs; [
+    marksman
+    glow
+  ];
+
   home.shellAliases = shellAliases;
   programs.nushell.shellAliases = shellAliases;
 
