@@ -12,12 +12,25 @@
 # ref: https://github.com/happysalada/dotfiles/blob/39844591f11d5a98be3deccbb72d1728cc00fb91/homes/programs/nushell.nix#L47
 
 let 
+  sessionVariables = {
+    EDITOR = "vim";
+    LC_ALL = "zh_CN.UTF-8";
+    LC_CTYPE = "zh_CN.UTF-8";
+    RUSTFLAGS = "-L ${pkgs.libiconv}/lib -L ${pkgs.libcxxabi}/lib -L ${pkgs.libcxx}/lib";
+    RUST_BACKTRACE = "full";
+    http_proxy = "127.0.0.1:7890";
+    https_proxy = "127.0.0.1:7890";
+  };
+
   shellAliases = {
     # Personal
     send="curl -F 'c=@-' 'https://fars.ee'";
     blog="cd ~/Documents/blog/";
     arce="cd ~/Coding/arceos-chenlongos/";
     cref="cd ~/Coding/reference/";
+    view = "vim -R";
+    nix-upgrade = "sudo -i sh -c 'nix-channel --update && nix-env -iA nixpkgs.nix && launchctl remove org.nixos.nix-daemon && launchctl load /Library/LaunchDaemons/org.nixos.nix-daemon.plist'";
+    connect="ssh pi@192.168.149.1";
 
     # nix
     nixroots = "nix-store --gc --print-roots";
@@ -64,6 +77,7 @@ in {
     package = pkgs.nushellFull;
     configFile.source = ./config/config.nu;
     shellAliases = shellAliases;
+    environmentVariables  = sessionVariables;
     extraConfig = ''
       register "${pkgs.nushellPlugins.gstat}/bin/nu_plugin_gstat"
       register "${pkgs.nushellPlugins.formats}/bin/nu_plugin_formats"
@@ -111,13 +125,7 @@ in {
       plugins = [ "git" "macos" "dircycle" "timer" "sudo" "web-search" "dirhistory" "history" "jsontools" ];
       theme = "robbyrussell";
     };
-    sessionVariables = {
-      EDITOR = "vim";
-      LC_ALL = "zh_CN.UTF-8";
-      LC_CTYPE = "zh_CN.UTF-8";
-      # RUSTFLAGS = "-L ${pkgs.libiconv}/lib -L ${pkgs.libcxxabi}/lib -L ${pkgs.libcxx}/lib";
-      # RUST_BACKTRACE = "full";
-    };
+    sessionVariables = sessionVariables;
     localVariables = {
       TERM="xterm-256color";
     };
