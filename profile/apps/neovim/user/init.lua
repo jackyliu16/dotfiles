@@ -39,7 +39,7 @@ return {
     { import = "astrocommunity.motion.mini-ai" },
     { import = "astrocommunity.motion.flash-nvim" },
     -- diable toggleterm.nvim, zellij's terminal is far better than neovim's one
-    { "akinsho/toggleterm.nvim",                                   enabled = false },
+    { "akinsho/toggleterm.nvim",                                   enabled = true },
     { "folke/flash.nvim",                                          vscode = false },
     -- Highly experimental plugin that completely replaces
     -- the UI for messages, cmdline and the popupmenu.
