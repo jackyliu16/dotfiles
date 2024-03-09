@@ -16,7 +16,7 @@ let
     EDITOR = "vim";
     LC_ALL = "zh_CN.UTF-8";
     LC_CTYPE = "zh_CN.UTF-8";
-    RUSTFLAGS = "-L ${pkgs.libiconv}/lib -L ${pkgs.libcxxabi}/lib -L ${pkgs.libcxx}/lib";
+    # RUSTFLAGS = "-L ${pkgs.libiconv}/lib -L ${pkgs.libcxxabi}/lib -L ${pkgs.libcxx}/lib";
     RUST_BACKTRACE = "full";
     http_proxy = "127.0.0.1:7890";
     https_proxy = "127.0.0.1:7890";
@@ -27,6 +27,7 @@ let
     send="curl -F 'c=@-' 'https://fars.ee'";
     blog="cd ~/Documents/blog/";
     arce="cd ~/Coding/arceos-chenlongos/";
+    ccfg="cd ~/.config/dotfiles/";
     cref="cd ~/Coding/reference/";
     view = "vim -R";
     nix-upgrade = "sudo -i sh -c 'nix-channel --update && nix-env -iA nixpkgs.nix && launchctl remove org.nixos.nix-daemon && launchctl load /Library/LaunchDaemons/org.nixos.nix-daemon.plist'";
@@ -41,7 +42,8 @@ let
     gl = "git log --pretty=oneline --abbrev-commit";
     gb = "git branch";
     gbd = "git branch --delete --force";
-    gc = "git checkout";
+    gc = "git commit --verbose";
+    gco = "git checkout";
     gpp = "git pull --prune";
     gsi = "git stash --include-untracked";
     gsp = "git stash pop";
