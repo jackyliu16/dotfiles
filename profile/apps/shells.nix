@@ -29,6 +29,8 @@ let
     arce="cd ~/Coding/arceos-chenlongos/";
     ccfg="cd ~/.config/dotfiles/";
     cref="cd ~/Coding/reference/";
+    run="make A=apps/boards/raspi4-net/ PLATFORM=aarch64-raspi4 chainboot";
+    nrun = "make A=apps/boards/raspi4-net/ PLATFORM=aarch64-raspi4 chainboot NET=y LOG=trace";
     view = "vim -R";
     nix-upgrade = "sudo -i sh -c 'nix-channel --update && nix-env -iA nixpkgs.nix && launchctl remove org.nixos.nix-daemon && launchctl load /Library/LaunchDaemons/org.nixos.nix-daemon.plist'";
     connect="ssh pi@192.168.149.1";
