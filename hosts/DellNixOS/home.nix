@@ -3,18 +3,6 @@
 let
   # shell color: diff typr of file will have diff color
   # b = pkgs.callPackage ./src/b {};
-  LS_COLORS = pkgs.fetchgit {
-    url = "https://github.com/trapd00r/LS_COLORS";
-    rev = "09dab448207002624d17f01ed7cbf820aa048063";
-    sha256 = "sha256-hQTT/yNS9UIDZqHuul0xmknnOh6tOtfotQIm0SY5TTE=";
-  };
-  ls-colors = pkgs.runCommand "ls-colors" { } ''
-    mkdir -p $out/bin $out/share
-    ln -s ${pkgs.coreutils}/bin/ls          $out/bin/ls
-    ln -s ${pkgs.coreutils}/bin/dircolors   $out/bin/dircolors
-    cp ${LS_COLORS}/LS_COLORS               $out/share/LS_COLORS
-  '';
-  my_vscodium = pkgs.callPackage ../../profile/apps/vscodium.nix { };
   user = "jacky";
   domain = "DNixOS";
   enableNixDev = true;
@@ -25,8 +13,8 @@ in
   # paths it should manage.
 
   imports = [
-    (import ../../profile/comm.nix { inherit user domain enableClash; })
-    (import ../../profile/base-devel.nix { inherit pkgs inputs enableNixDev; })
+    (import ../../profile/comm.nix { inherit inputs outputs user domain enableClash; })
+    (import ../../profile/base-devel.nix { inherit inputs outputs pkgs enableNixDev; })
   ];
 
   # TODO not sure if working
@@ -65,15 +53,10 @@ in
     # Web
     firefox
     google-chrome
-    rustdesk
     qq
 
     # personal packages
-    ls-colors
     vscode
-
-    # Clash
-    clash-verge
 
     # Monitor
     glances

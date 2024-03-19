@@ -86,13 +86,13 @@
     # networking.wireless.enable = true;
     extraHosts = builtins.readFile (builtins.toString (pkgs.fetchurl {
       url = "https://raw.hellogithub.com/hosts";
-      sha256 = "sha256-qWNasLlfUvT3UYMbNcVQcHLV9inYH3vJJc3OBboPy8g=";
+      sha256 = "sha256-aqsAsX2DMhznB/WL3CouAb19hkI4uKXxJ+81F2Latuw=";
     }));
   };
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/boot/efi";
+  # boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
   users.users = {
     jacky = {
@@ -128,14 +128,14 @@
     # X11 windowing services
     enable = true;
     # Key-mapping
-    layout = "cn";
-    xkbVariant = "";
+    xkb.layout = "cn";
+    xkb.variant = "";
   };
 
   services.xserver = {
     # Enable plasma5 Desktop Environment 
-    displayManager.sddm.enable = true;
-    desktopManager.plasma5.enable = true;
+    # displayManager.sddm.enable = true;
+    # desktopManager.plasma5.enable = true;
 
     # XFCE 
     # desktopManager.xfce.enable = true;
@@ -143,8 +143,8 @@
     # displayManager.defaultSession = "xfce";
 
     # GNOME
-    # desktopManager.gnome.enable = true;
-    # displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
+    displayManager.gdm.enable = true;
 
     # Deepin
     # displayManager.lightdm.enable = true;
@@ -184,6 +184,7 @@
 
   environment.systemPackages = with pkgs; [
     synology-drive-client
+    blackbox-terminal
     kermit
     vim
   ];
