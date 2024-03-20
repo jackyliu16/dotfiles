@@ -17,7 +17,9 @@
 	  hitori # sudoku game
 	  atomix # puzzle game
 	]);
-        environment.systemPackages = (with pkgs.gnome; [
+  environment.systemPackages = (with pkgs.gnome; [
 	  gnome-terminal
+	]) ++ (with pkgs.libsForQt5; [
+		neochat
 	]);
 }
