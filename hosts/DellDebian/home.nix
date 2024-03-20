@@ -6,14 +6,14 @@ let
   user = "jacky";
   domain = "DDebian"; 
   enableNixDev = true;
-  enableClash = true;
+  enableClashProxy = true;
 in
 {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
 
   imports = [
-    (import ../../profile/comm.nix { inherit user domain inputs outputs enableClash; })
+    (import ../../profile/comm.nix { inherit user domain inputs outputs enableClashProxy; })
     (import ../../profile/base-devel.nix { inherit pkgs inputs enableNixDev; })
   ];
 

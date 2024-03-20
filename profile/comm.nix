@@ -1,6 +1,6 @@
 { user 
 , domain
-, enableClash ? false
+, enableClashProxy ? false
 , inputs
 , outputs
 }: { config, pkgs, ... }: let
@@ -43,16 +43,15 @@ in {
     };
     userEmail = "18922251299@163.com";
     userName = "jackyliu16";
-    extraConfig = if enableClash then {
+    extraConfig = if enableClashProxy then {
       "http"."https://github.com".proxy = "http://127.0.0.1:7890";
       "https"."https://github.com".proxy = "http://127.0.0.1:7890";
     } else { };
   };
   home.packages = with pkgs; [
     wget curl
-  ] ++ (if enableClash then with pkgs; [
     clash-verge-rev
-  ] else [] );
+  ];
 
   # TODO not sure if working
   nixpkgs = {
@@ -72,7 +71,6 @@ in {
       #     patches = [ ./change-hello-to-hi.patch ];
       #   });
       # })
-    ] ++ (if enableClash then [
       (final: prev: {
         clash-verge-rev = final.clash-verge.overrideAttrs (oldAttrs: rec {
           version = "1.5.1";
@@ -90,7 +88,8 @@ in {
           '';
         });
       })
-    ] else [] );
+    ];
+
     # Configure your nixpkgs instance
     config = {
       # Disable if you don't want unfree packages
