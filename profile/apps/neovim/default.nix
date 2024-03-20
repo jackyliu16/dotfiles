@@ -42,7 +42,7 @@ in {
       enable = true;
 
       defaultEditor = true;
-      viAlias = true;
+      viAlias = false;
       vimAlias = true;
       vimdiffAlias = true;
       withNodeJs = true;
