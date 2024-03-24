@@ -186,6 +186,7 @@
   environment.systemPackages = with pkgs; [
     synology-drive-client
     blackbox-terminal
+    zotero
     kermit
     vim
   ];
