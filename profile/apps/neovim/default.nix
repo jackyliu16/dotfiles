@@ -32,6 +32,7 @@ in {
   home.packages = with pkgs; [
     marksman
     glow
+    xclip
   ];
 
   home.shellAliases = shellAliases;
