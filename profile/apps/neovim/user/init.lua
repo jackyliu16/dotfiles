@@ -82,6 +82,9 @@ return {
 
     -- colorscheme
     { import = "astrocommunity.colorscheme.catppuccin" },
+    { import = "astrocommunity.colorscheme.nightfox-nvim", enabled = true },
+    { import = "astrocommunity.colorscheme.kanagawa-nvim", enabled = false },
+    { import = "astrocommunity.colorscheme.rose-pine" },
     {
       "catppuccin/nvim",
       name = "catppuccin",
@@ -89,6 +92,30 @@ return {
         opts.flavour = "mocha"             -- latte, frappe, macchiato, mocha
         opts.transparent_background = true -- setting the background color.
       end,
+    },
+    { import = "astrocommunity.completion.copilot-lua" },
+    { -- further customize the options set by the community
+      "zbirenbaum/copilot.lua",
+      opts = {
+        suggestion = {
+          keymap = {
+            accept = "<C-l>",
+            accept_word = false,
+            accept_line = false,
+            next = "<C-.>",
+            prev = "<C-,>",
+            dismiss = "<C/>",
+          },
+        },
+      },
+    },
+    { import = "astrocommunity.bars-and-lines.smartcolumn-nvim" },
+    {
+      "m4xshen/smartcolumn.nvim",
+      opts = {
+        colorcolumn = 120,
+        disabled_filetypes = { "help" },
+      },
     },
     -- Language Parser for syntax highlighting / indentation / folding / Incremental selection
     {
