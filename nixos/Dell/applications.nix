@@ -16,7 +16,10 @@
 	  iagno # go game
 	  hitori # sudoku game
 	  atomix # puzzle game
+	]) ++ (with pkgs.gnomeExtensions; [
+		kimpanel
 	]);
+
   environment.systemPackages = (with pkgs.gnome; [
 	  gnome-terminal
 	]) ++ (with pkgs.libsForQt5; [
