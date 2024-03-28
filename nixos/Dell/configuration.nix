@@ -79,8 +79,6 @@
     dates = "weekly";
   };
 
-  # FIXME: Add the rest of your current configuration
-
   networking = {
     hostName = "DNixOS";
     networkmanager.enable = true;
@@ -105,7 +103,7 @@
       # openssh.authorizedKeys.keys = [
       #   # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
       # ];
-      extraGroups = [ "wheel" "networkmanager" ];
+      extraGroups = [ "wheel" "networkmanager" "docker"];
     };
   };
   users.defaultUserShell = pkgs.zsh;
@@ -190,4 +188,6 @@
     kermit
     vim
   ];
+
+  virtualisation.docker.enable = true;
 }
