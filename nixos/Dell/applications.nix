@@ -26,5 +26,6 @@
 		neochat
 	]) ++ (with pkgs; [
 	  pot # A cross-platform translation software 
+    listen1
 	]);
 }

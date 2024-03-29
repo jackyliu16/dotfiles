@@ -72,7 +72,6 @@ in
     #   enableFPS = true;
     # })
   ]) ++ (with pkgs.unstable; [
-    listen1
   ]);
 
   # terminal 
