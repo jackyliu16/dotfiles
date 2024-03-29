@@ -24,5 +24,7 @@
 	  gnome-terminal
 	]) ++ (with pkgs.libsForQt5; [
 		neochat
+	]) ++ (with pkgs; [
+	  pot # A cross-platform translation software 
 	]);
 }
