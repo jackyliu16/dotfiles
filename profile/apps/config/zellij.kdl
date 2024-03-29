@@ -186,7 +186,8 @@ plugins {
 // Default: $SHELL
 // Change to nushell
 //
-default_shell "nu"
+// default_shell "nu"
+default_shell "zsh"
 
 themes {
   // https://github.com/zellij-org/zellij/blob/main/zellij-utils/assets/themes/catppuccin.kdl
