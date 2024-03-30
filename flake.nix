@@ -21,6 +21,12 @@
     fenix.inputs.nixpkgs.follows = "nixpkgs";
     # hardware.url = "github:nixos/nixos-hardware";
 
+    grub2-themes.url = "github:vinceliuice/grub2-themes";
+    grub2-themes.inputs.nixpkgs.follows = "nixpkgs";
+
+    # wallpaper.url = "github:h4m6urg1r/wallpapers";
+    # wallpaper.inputs.nixpkgs.follows = "nixpkgs";
+
     # Shameless plug: looking for a way to nixify your themes and make
     # everything match nicely? Try nix-colors!
     # nix-colors.url = "github:misterio77/nix-colors";
@@ -86,6 +92,8 @@
             # > Our main nixos configuration file <
             # nur.nixosModules.nur
             ./nixos/Dell/configuration.nix
+            inputs.grub2-themes.nixosModules.default
+            # inputs.wallpaper.nixosModules.default
             ({ pkgs, config, ... }: {
               nixpkgs.overlays = [ rust-overlay.overlays.default ];
               environment.systemPackages = [ 

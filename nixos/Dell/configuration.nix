@@ -89,9 +89,25 @@
     }));
   };
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  # boot.loader.systemd-boot.enable = true;
+  # boot.loader.efi.canTouchEfiVariables = true;
   # boot.loader.efi.efiSysMountPoint = "/boot/efi";
+  
+  boot = {
+    loader.systemd-boot.enable = false;
+    loader.grub = {
+      enable = true;
+      efiSupport = true;
+      device = "nodev";
+      useOSProber = true;
+    };
+    loader.grub2-theme = {
+      enable = true;
+      theme = "tela";
+      icon = "color";
+      screen = "1080p";
+    };
+  };
 
   users.users = {
     jacky = {
