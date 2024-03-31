@@ -28,6 +28,12 @@
 	  pot # A cross-platform translation software 
     listen1
     rustdesk # RDP
+
+    # Secondary monitor
+		# virtscreen
+		x2vnc
+		# miraclecast
     weylus
+    deskreen
 	]);
 }
