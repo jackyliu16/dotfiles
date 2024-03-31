@@ -23,11 +23,17 @@
     just        # Justfile
     xxd         # Read Hex Files
     cloc        # A program that counts lines of source code
-    nettools    # net-tools
     dtc         # Device Tree Compiler
 
     # Proxy
     cachix
+
+    # Network
+    ethtool
+    wireshark   # It looks like collision with tshark
+    # tshark
+    tcpdump
+    nettools    # net-tools
 
     # Helix Request
     clang
