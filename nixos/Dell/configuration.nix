@@ -203,6 +203,7 @@
     zotero
     kermit
     vim
+    texmaker
   ];
 
   virtualisation.docker.enable = true;
