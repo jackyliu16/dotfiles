@@ -204,6 +204,7 @@
     kermit
     vim
     texmaker
+    docker-compose
   ];
 
   virtualisation.docker.enable = true;
