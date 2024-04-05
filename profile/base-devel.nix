@@ -34,6 +34,7 @@
     # tshark
     tcpdump
     nettools    # net-tools
+    speedtest-cli
 
     # Helix Request
     clang
