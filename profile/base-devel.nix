@@ -24,6 +24,7 @@
     xxd         # Read Hex Files
     cloc        # A program that counts lines of source code
     dtc         # Device Tree Compiler
+    unzip       # 
 
     # Proxy
     cachix
