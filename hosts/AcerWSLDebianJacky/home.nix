@@ -16,14 +16,16 @@ let
   '';
   user = "jacky";
   domain = "AWDebian"; 
+  enableNixEnv = false;
+  enableClashProxy = false;
 in
 {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
 
   imports = [
-    (import ../../profile/comm.nix { inherit user domain; })
-    (import ../../profile/base-devel.nix { inherit pkgs true; })
+    (import ../../profile/comm.nix { inherit user domain enableClashProxy; })
+    (import ../../profile/base-devel.nix { inherit pkgs enableNixEnv; })
   ];
 
   # TODO not sure if working
