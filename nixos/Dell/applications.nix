@@ -3,6 +3,7 @@
 	  gnome-photos
 	  gnome-tour
 	]) ++ (with pkgs.gnome; [
+		gnome-calculator
 	  cheese # webcam tool
 	  gnome-music
 	  # gnome-terminal
