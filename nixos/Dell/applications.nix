@@ -30,6 +30,8 @@
     listen1
     rustdesk # RDP
 
+    qq # Messaging app
+
     # Secondary monitor
 		# virtscreen
 		x2vnc
