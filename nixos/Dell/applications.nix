@@ -38,5 +38,7 @@
 		# miraclecast
     weylus
     deskreen
+
+    wpsoffice
 	]);
 }
