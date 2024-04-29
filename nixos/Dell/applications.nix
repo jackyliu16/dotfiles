@@ -38,6 +38,7 @@
 		# miraclecast
     weylus
     deskreen
+    rustdesk
 
     wpsoffice
 	]);
