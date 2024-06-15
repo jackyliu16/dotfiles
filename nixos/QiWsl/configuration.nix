@@ -127,4 +127,7 @@
   environment.systemPackages = with pkgs; [ 
     vim wget curl
   ];
+
+    programs.nix-ld.enable = true;
+    programs.nix-ld.package = pkgs.unstable.nix-ld-rs;
 }
