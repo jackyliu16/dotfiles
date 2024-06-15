@@ -6,7 +6,7 @@ let
   user = "nixos";
   domain = "QWNixOS"; 
   enableNixDev = true;
-  enableClashProxy = true;
+  enableClashProxy =false; 
 in
 {
   # Home Manager needs a bit of information about you and the
