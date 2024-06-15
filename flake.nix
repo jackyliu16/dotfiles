@@ -92,11 +92,8 @@
           system = "x86_64-linux";
           specialArgs = { inherit inputs outputs; };
           modules = [
+            ./nixos/QiWsl/configuration.nix
             nixos-wsl.nixosModules.default
-            {
-              system.stateVersion = "24.05";
-              wsl.enable = true;
-            }
           ];
         };
         DNixOS = nixpkgs.lib.nixosSystem {
