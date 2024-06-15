@@ -34,7 +34,7 @@ return {
     -- just
     -- { import = "NoahTheDuke/vim-just" },
     -- Motion
-    { import = "astrocommunity.motion.mini-surround" },
+    -- { import = "astrocommunity.motion.mini-surround" },
     -- https://github.com/echasnovski/mini.ai
     { import = "astrocommunity.motion.mini-ai" },
     { import = "astrocommunity.motion.flash-nvim" },
@@ -61,7 +61,7 @@ return {
     ---- Configuration Language
     { import = "astrocommunity.pack.markdown" },
     { import = "astrocommunity.pack.json" },
-    { import = "astrocommunity.pack.yaml" },
+    -- { import = "astrocommunity.pack.yaml" },
     { import = "astrocommunity.pack.toml" },
     ---- Backend / System
     { import = "astrocommunity.pack.lua" },
@@ -243,15 +243,15 @@ return {
     -- AI Assistant
     { import = "astrocommunity.completion.copilot-lua-cmp" },
     -- Custom copilot-lua to enable filtypes: markdown
-    {
-      "zbirenbaum/copilot.lua",
-      opts = function(_, opts)
-        opts.filetypes = {
-          yaml = true,
-          markdown = true,
-        }
-      end,
-    },
+    -- {
+    --   "zbirenbaum/copilot.lua",
+    --   opts = function(_, opts)
+    --     opts.filetypes = {
+    --       yaml = true,
+    --       markdown = true,
+    --     }
+    --   end,
+    -- },
 
     {
       "0x00-ketsu/autosave.nvim",
@@ -581,7 +581,7 @@ return {
       ---- Configuration Language
       "marksman",          -- markdown ls
       "jsonls",            -- json language server
-      "yamlls",            -- yaml language server
+      -- "yamlls",            -- yaml language server
       "taplo",             -- toml language server
       ---- Backend
       "lua_ls",            -- lua
