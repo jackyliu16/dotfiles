@@ -12,10 +12,10 @@ return {
   { import = "astrocommunity.motion.flash-nvim" },
   -- Highly experimental plugin that completely replaces
   -- the UI for messages, cmdline and the popupmenu.
-  -- { import = "astrocommunity.utility.noice-nvim" },
+  { import = "astrocommunity.utility.noice-nvim" },
   -- Fully featured & enhanced replacement for copilot.vim
   -- <Tab> work with both auto completion in cmp and copilot
-  -- { import = "astrocommunity.media.vim-wakatime" },
+  { import = "astrocommunity.media.vim-wakatime" },
   { import = "astrocommunity.motion.leap-nvim" },
   { import = "astrocommunity.motion.flit-nvim" },
   { import = "astrocommunity.scrolling.nvim-scrollbar" },
@@ -40,7 +40,7 @@ return {
   { import = "astrocommunity.pack.java" },
   { import = "astrocommunity.pack.cmake" },
   { import = "astrocommunity.pack.cpp" },
-  -- { import = "astrocommunity.pack.nix" },  -- manually add config for nix, comment this one.
+  { import = "astrocommunity.pack.nix" },  -- manually add config for nix, comment this one.
   { import = "astrocommunity.pack.proto" },
 
   ---- Operation & Cloud Native
