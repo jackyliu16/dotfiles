@@ -50,6 +50,7 @@ in {
   };
   home.packages = with pkgs; [
     wget curl
+    cron # Run Script in Scheduled
     clash-verge-rev
   ];
 
