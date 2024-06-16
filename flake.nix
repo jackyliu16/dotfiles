@@ -33,8 +33,8 @@
     # nix-colors.url = "github:misterio77/nix-colors";
 
     # AstroNvim is an aesthetic and feature-rich neovim config.
-    astronvim = {
-      url = "github:AstroNvim/AstroNvim/v3.45.3";
+    astronvim-template = { # https://docs.astronvim.com/configuration/v4_migration/
+      url = "github:AstroNvim/template/main";
       flake = false;
     };
   };
@@ -46,7 +46,7 @@
     , home-manager
     , rust-overlay
     , nur
-    , astronvim
+    , astronvim-template
     , ... }@inputs:
     let
       inherit (self) outputs;

@@ -5,6 +5,7 @@
   imports = [
     # ./apps/vim.nix
     (import ./apps/neovim/default.nix { inherit inputs pkgs ; })
+    (import ./apps/neovim/packages.nix { inherit inputs pkgs ; })
     ./apps/helix.nix
     ./apps/shells.nix
     ./apps/zellij.nix
@@ -38,8 +39,8 @@
     speedtest-cli
 
     # Helix Request
-    clang
-    libclang
+    # clang
+    # libclang
     rust-analyzer
     nil
     gopls

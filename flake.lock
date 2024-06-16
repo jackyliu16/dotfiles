@@ -1,19 +1,19 @@
 {
   "nodes": {
-    "astronvim": {
+    "astronvim-template": {
       "flake": false,
       "locked": {
-        "lastModified": 1710957235,
-        "narHash": "sha256-69DBcOpjDZBMOQGz8obMBFpEBeoSWuXZ4CNAK2GqI+M=",
+        "lastModified": 1717766771,
+        "narHash": "sha256-bwabCS0oeH7yi+GWIj/0vHgr/6fLDFFgZhtM1GhKlok=",
         "owner": "AstroNvim",
-        "repo": "AstroNvim",
-        "rev": "0da3fa834137597f13e53196c8c6f7e1425601ea",
+        "repo": "template",
+        "rev": "7af067e0ffef9975e8e8054d8455e7662dfb1fa0",
         "type": "github"
       },
       "original": {
         "owner": "AstroNvim",
-        "ref": "v3.45.3",
-        "repo": "AstroNvim",
+        "ref": "main",
+        "repo": "template",
         "type": "github"
       }
     },
@@ -233,7 +233,7 @@
     },
     "root": {
       "inputs": {
-        "astronvim": "astronvim",
+        "astronvim-template": "astronvim-template",
         "fenix": "fenix",
         "grub2-themes": "grub2-themes",
         "home-manager": "home-manager",

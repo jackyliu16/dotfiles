@@ -13,21 +13,12 @@ let
     v = "nvim";
     vdiff = "nvim -d";
   };
+  inherit (inputs.home-manager) lib;
 in {
-  xdg.configFile = {
-    # astronvim's config
-    "nvim" = {
-      source = inputs.astronvim;
-      force = true;
-    };
-
-    # my custom astronvim config, astronvim will load it after base config
-    # https://github.com/AstroNvim/AstroNvim/blob/v3.32.0/lua/astronvim/bootstrap.lua#L15-L16
-    "astronvim/lua/user/" = {
-      source = ./user;
-      force = true;
-    };
-  };
+  home.activation.installAstroNvim = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    ${pkgs.rsync}/bin/rsync -avz --chmod=D2755,F744 ${./nvim}/ ~/.config/nvim/
+  '';
+  # ${pkgs.rsync}/bin/rsync -avz --chmod=D2755,F744 ${./nvim}/ ${config.xdg.configHome}/nvim/
 
   home.packages = with pkgs; [
     marksman
