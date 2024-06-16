@@ -23,10 +23,10 @@ return {
   -- Language Support
   ---- Frontend & NodeJS
   { import = "astrocommunity.pack.typescript-all-in-one" },
-  { import = "astrocommunity.pack.tailwindcss" },
+  -- { import = "astrocommunity.pack.tailwindcss" },
   { import = "astrocommunity.pack.html-css" },
-  { import = "astrocommunity.pack.prisma" },
-  { import = "astrocommunity.pack.vue" },
+  -- { import = "astrocommunity.pack.prisma" },
+  -- { import = "astrocommunity.pack.vue" },
   ---- Configuration Language
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.pack.json" },
@@ -37,17 +37,17 @@ return {
   { import = "astrocommunity.pack.go" },
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.python" },
-  { import = "astrocommunity.pack.java" },
+  -- { import = "astrocommunity.pack.java" },
   { import = "astrocommunity.pack.cmake" },
   { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.nix" },  -- manually add config for nix, comment this one.
-  { import = "astrocommunity.pack.proto" },
+  -- { import = "astrocommunity.pack.proto" },
 
   ---- Operation & Cloud Native
-  { import = "astrocommunity.pack.terraform" },
+  -- { import = "astrocommunity.pack.terraform" },
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.docker" },
-  { import = "astrocommunity.pack.helm" },
+  -- { import = "astrocommunity.pack.helm" },
 
   -- colorscheme
   { import = "astrocommunity.colorscheme.catppuccin" },
