@@ -79,6 +79,9 @@ return {
         -- undo history
         ["<Leader>uh"] = { "<cmd>Telescope undo<cr>", desc = "Telescope undo" },
 
+        -- close notify
+        ["<Leader>cn"] = { "<cmd>lua require('notify').dismiss()<CR>" },
+
         -- implementation/definition preview
         ["gpd"] = { "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", desc = "goto_preview_definition" },
         ["gpt"] = {
