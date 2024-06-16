@@ -62,19 +62,19 @@
     alejandra # Nix Code Formatter
 
     #-- golang
-    go
-    gomodifytags
-    iferr # generate error handling code for go
-    impl # generate function implementation for go
-    gotools # contains tools like: godoc, goimports, etc.
-    gopls # go language server
-    delve # go debugger
+    # go
+    # gomodifytags
+    # iferr # generate error handling code for go
+    # impl # generate function implementation for go
+    # gotools # contains tools like: godoc, goimports, etc.
+    # gopls # go language server
+    # delve # go debugger
 
     # -- java
-    jdk17
-    gradle
-    maven
-    spring-boot-cli
+    # jdk17
+    # gradle
+    # maven
+    # spring-boot-cli
 
     #-- lua
     stylua
@@ -86,18 +86,18 @@
     shfmt
 
     #-- javascript/typescript --#
-    nodePackages.nodejs
-    nodePackages.typescript
-    nodePackages.typescript-language-server
-    # HTML/CSS/JSON/ESLint language servers extracted from vscode
-    nodePackages.vscode-langservers-extracted
-    nodePackages."@tailwindcss/language-server"
-    emmet-ls
+    # nodePackages.nodejs
+    # nodePackages.typescript
+    # nodePackages.typescript-language-server
+    # -- HTML/CSS/JSON/ESLint language servers extracted from vscode
+    # nodePackages.vscode-langservers-extracted
+    # nodePackages."@tailwindcss/language-server"
+    # emmet-ls
 
     # -- Lisp like Languages
-    guile
-    racket-minimal
-    fnlfmt # fennel
+    # guile
+    # racket-minimal
+    # fnlfmt # fennel
 
     #-- Others
     taplo # TOML language server / formatter / validator
@@ -129,7 +129,7 @@
     hadolint # Dockerfile linter
 
     #-- zig
-    zls
+    # zls
     #-- verilog / systemverilog
     verible
     gdb

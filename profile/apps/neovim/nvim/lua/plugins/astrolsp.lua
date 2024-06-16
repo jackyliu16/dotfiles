@@ -45,11 +45,11 @@ return {
     servers = {
       ---- Frontend & NodeJS
       "tsserver", -- typescript/javascript language server
-      "tailwindcss", -- tailwindcss language server
+      -- "tailwindcss", -- tailwindcss language server
       "html", -- html language server
       "cssls", -- css language server
-      "prismals", -- prisma language server
-      "volar", -- vue language server
+      -- "prismals", -- prisma language server
+      -- "volar", -- vue language server
       ---- Configuration Language
       "marksman", -- markdown ls
       "jsonls", -- json language server
@@ -57,14 +57,14 @@ return {
       "taplo", -- toml language server
       ---- Backend
       "lua_ls", -- lua
-      "gopls", -- go
+      -- "gopls", -- go
       "rust_analyzer", -- rust
       "pyright", -- python
       "ruff_lsp", -- extremely fast Python linter and code transformation
-      "jdtls", -- java
+      -- "jdtls", -- java
       "nil_ls", -- nix language server
       "bufls", -- protocol buffer language server
-      "zls", -- zig language server
+      -- "zls", -- zig language server
       ---- HDL
       "verible", -- verilog language server
       ---- Operation & Cloud Nativautoindente
@@ -72,8 +72,8 @@ return {
       "cmake", -- cmake language server
       "clangd", -- c/c++
       "dockerls", -- dockerfile
-      "jsonnet_ls", -- jsonnet language server
-      "terraformls", -- terraform hcl
+      -- "jsonnet_ls", -- jsonnet language server
+      -- "terraformls", -- terraform hcl
       "nushell", -- nushell language server
       "scheme_langserver", -- scheme language server
     },
