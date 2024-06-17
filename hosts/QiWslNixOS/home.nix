@@ -22,6 +22,7 @@ in
     # rnix-lsp  # lsp support of nix
     # xclip     # using for neovim clipboard
     # zola      # blog
+    wsl-open
 
     # nerdfonts
     # https://github.com/NixOS/nixpkgs/blob/nixos-23.11/pkgs/data/fonts/nerdfonts/shas.nix
