@@ -51,8 +51,9 @@ in {
   home.packages = with pkgs; [
     wget curl
     cron # Run Script in Scheduled
+  ] ++ (with pkgs.unstable; [
     clash-verge-rev
-  ];
+  ]);
 
   # TODO not sure if working
   nixpkgs = {
@@ -72,23 +73,23 @@ in {
       #     patches = [ ./change-hello-to-hi.patch ];
       #   });
       # })
-      (final: prev: {
-        clash-verge-rev = final.clash-verge.overrideAttrs (oldAttrs: rec {
-          version = "1.5.11";
-          src = builtins.fetchurl {
-            url = "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v${version}/clash-verge_${version}_amd64.deb";
-            sha256 = "sha256:1rf9c2bq2vq81l420l6j04bshxaf4baw3k405bkv04qjgq45d0qn";
-          };
+      # (final: prev: {
+      #   clash-verge-rev = final.clash-verge.overrideAttrs (oldAttrs: rec {
+      #     version = "1.5.11";
+      #     src = builtins.fetchurl {
+      #       url = "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v${version}/clash-verge_${version}_amd64.deb";
+      #       sha256 = "sha256:1rf9c2bq2vq81l420l6j04bshxaf4baw3k405bkv04qjgq45d0qn";
+      #     };
 
-          installPhase = ''
-            runHook preInstall
-            mkdir -p $out/bin
-            mv usr/* $out
-            rm $out/bin/clash-meta
-            runHook postInstall
-          '';
-        });
-      })
+      #     installPhase = ''
+      #       runHook preInstall
+      #       mkdir -p $out/bin
+      #       mv usr/* $out
+      #       rm $out/bin/clash-meta
+      #       runHook postInstall
+      #     '';
+      #   });
+      # })
     ];
 
     # Configure your nixpkgs instance
