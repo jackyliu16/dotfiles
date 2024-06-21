@@ -18,8 +18,8 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     rust-overlay.url = "github:oxalica/rust-overlay";
-    fenix.url = "github:nix-community/fenix";
-    fenix.inputs.nixpkgs.follows = "nixpkgs";
+    # fenix.url = "github:nix-community/fenix";
+    # fenix.inputs.nixpkgs.follows = "nixpkgs";
     # hardware.url = "github:nixos/nixos-hardware";
 
     grub2-themes.url = "github:vinceliuice/grub2-themes";
@@ -115,6 +115,12 @@
             })
           ];
         };
+        ANixOS = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [
+            ./nixos/Acer/configuration.nix
+          ];
+        };
       };
 
       # Standalone home-manager configuration entrypoint
@@ -159,6 +165,14 @@
           modules = [
             # > Our main home-manager configuration file <
             ./hosts/AcerWSLNixOS/home.nix
+          ];
+        };
+        "jacky@ANixOS" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules = [
+            # > Our main home-manager configuration file <
+            ./hosts/AcerNixOS/home.nix		
           ];
         };
       };
