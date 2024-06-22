@@ -149,10 +149,13 @@
     xkb.variant = "";
   };
 
-  services.xserver = {
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
+
+  # services.xserver = {
     # Enable plasma5 Desktop Environment 
-    displayManager.sddm.enable = true;
-    desktopManager.plasma5.enable = true;
+    # displayManager.sddm.enable = true;
+    # desktopManager.plasma5.enable = true;
 
     # XFCE 
     # desktopManager.xfce.enable = true;
@@ -166,7 +169,7 @@
     # Deepin
     # displayManager.lightdm.enable = true;
     # desktopManager.deepin.enable = true;
-  };
+  # };
 
   # enable CUPS to print documents 
   services.printing.enable = true;
