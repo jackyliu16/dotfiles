@@ -69,6 +69,8 @@ in {
       zola
       logseq
 
+      qbittorrent
+
       # Game
       # (dwarf-fortress-packages.dwarf-fortress-full.override {
       #   dfVersion = "0.47.04";
