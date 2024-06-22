@@ -70,6 +70,7 @@ in {
       logseq
 
       qbittorrent
+      wechat-uos
 
       # Game
       # (dwarf-fortress-packages.dwarf-fortress-full.override {
@@ -80,7 +81,7 @@ in {
       # })
     ])
     ++ (with pkgs.unstable; [
-      ]);
+    ]);
 
   # terminal
   programs = {
@@ -93,4 +94,9 @@ in {
     };
     command-not-found.enable = true;
   };
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "openssl-1.1.1w"
+  ];
+
 }
