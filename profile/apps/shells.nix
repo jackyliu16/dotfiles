@@ -78,16 +78,16 @@ in {
 
   programs.nushell = {
     enable = true;
-    package = pkgs.nushellFull;
+    package = pkgs.nushell;
     configFile.source = ./config/config.nu;
     shellAliases = shellAliases;
     environmentVariables  = sessionVariables;
+      # register ${pkgs.nushellPlugins.regex}/bin/nu_plugin_regex
     extraConfig = ''
       register "${pkgs.nushellPlugins.gstat}/bin/nu_plugin_gstat"
       register "${pkgs.nushellPlugins.formats}/bin/nu_plugin_formats"
       register ${pkgs.nushellPlugins.query}/bin/nu_plugin_query
       register ${pkgs.nushellPlugins.net}/bin/nu_plugin_net
-      register ${pkgs.nushellPlugins.regex}/bin/nu_plugin_regex
 
       # maybe useful functions
       # use ${pkgs.nu_scripts}/share/nu_scripts/modules/formats/to-number-format.nu *

@@ -20,7 +20,7 @@
     lldb
 
     #-- python
-    nodePackages.pyright # python language server
+    # nodePackages.pyright # python language server
     (python311.withPackages (
       ps:
         with ps; [
