@@ -16,3 +16,8 @@
   [hits](https://wiki.debian.org/zh_CN/I18n/Fcitx5)
 
 # NixOS
+
+## CHINESE INPUT
+
+  1. If using plasma6, open settings >> keyboard >> virtual keyboard, select Fcitx5.
+
