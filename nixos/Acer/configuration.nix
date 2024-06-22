@@ -208,6 +208,7 @@
   programs.clash-verge = {
     enable = true;
     tunMode = true;
+    autoStart = true;
     package = pkgs.unstable.clash-verge-rev;
   };
 
