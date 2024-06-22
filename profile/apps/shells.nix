@@ -18,8 +18,8 @@ let
     LC_CTYPE = "zh_CN.UTF-8";
     # RUSTFLAGS = "-L ${pkgs.libiconv}/lib -L ${pkgs.libcxxabi}/lib -L ${pkgs.libcxx}/lib";
     RUST_BACKTRACE = "full";
-    http_proxy = "127.0.0.1:7890";
-    https_proxy = "127.0.0.1:7890";
+    http_proxy = "127.0.0.1:7897";
+    https_proxy = "127.0.0.1:7897";
   };
 
   shellAliases = {
