@@ -205,6 +205,11 @@
     # docker-compose
   ];
 
+  programs.clash-verge = {
+    enable = true;
+    tunMode = true;
+    package = pkgs.unstable.clash-verge-rev;
+  };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "24.05";

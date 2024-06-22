@@ -52,7 +52,7 @@ in {
     wget curl
     cron # Run Script in Scheduled
   ] ++ (with pkgs.unstable; [
-    clash-verge-rev
+    # clash-verge-rev
   ]);
 
   # TODO not sure if working
