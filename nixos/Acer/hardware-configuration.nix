@@ -11,6 +11,7 @@
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
+  boot.supportedFilesystems = [ "ntfs" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
@@ -22,6 +23,12 @@
     { device = "/dev/disk/by-uuid/38AE-B23F";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
+    };
+
+  fileSystems."/data" = 
+    { device = "/dev/disk/by-uuid/C5FF277EF1F1DB4C";
+      fsType = "ntfs-3g"; 
+      options = [ "rw" "uid=1000"];
     };
 
   swapDevices = [ ];
