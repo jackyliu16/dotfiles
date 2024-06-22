@@ -41,8 +41,7 @@ in {
       # })
     ];
     # Configure your nixpkgs instance
-    config = {
-      # Disable if you don't want unfree packages
+    config = { # Disable if you don't want unfree packages
       allowUnfree = true;
       # Workaround for https://github.com/nix-community/home-manager/issues/2942
       allowUnfreePredicate = _: true;
@@ -63,11 +62,12 @@ in {
       # # personal packages
       # vscode
 
-      # # Monitor
-      # glances
+      # Monitor
+      glances
 
-      # # Blog
-      # zola
+      # Blog
+      zola
+      logseq
 
       # Game
       # (dwarf-fortress-packages.dwarf-fortress-full.override {
