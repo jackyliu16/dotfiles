@@ -72,6 +72,8 @@ in {
       qbittorrent
       wechat-uos
 
+      translate-shell
+
       # Game
       # (dwarf-fortress-packages.dwarf-fortress-full.override {
       #   dfVersion = "0.47.04";
