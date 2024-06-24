@@ -19,6 +19,7 @@
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
+    ./virtualisation.nix
     # ./applications.nix
     ../fonts.nix
   ];
@@ -209,13 +210,6 @@
     autoStart = true;
     package = pkgs.unstable.clash-verge-rev;
   };
-
-  virtualisation.docker = {
-    enable = true;
-  };
-
-  virtualisation.virtualbox.guest = { enable = true; };
-  virtualisation.virtualbox.host = { enable = true; };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "24.05";
