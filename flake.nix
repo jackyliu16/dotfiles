@@ -119,6 +119,7 @@
           specialArgs = { inherit inputs outputs; };
           modules = [
             ./nixos/Acer/configuration.nix
+            nixosModules.kvmfr
           ];
         };
       };
