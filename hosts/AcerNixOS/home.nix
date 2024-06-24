@@ -74,6 +74,8 @@ in {
 
       translate-shell
 
+      gparted # Linux system disk partitioning tool
+
       # Game
       # (dwarf-fortress-packages.dwarf-fortress-full.override {
       #   dfVersion = "0.47.04";
