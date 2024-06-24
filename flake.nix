@@ -9,6 +9,11 @@
     # You can access packages and modules from different nixpkgs revs
     # at the same time. Here's an working example:
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+
+    # Provide search
+    nix-index-database.url = "github:nix-community/nix-index-database";
+    nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
+
         # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
     nur.url = "github:nix-community/NUR";
 
@@ -43,6 +48,7 @@
     , nixpkgs
     , nixos-wsl 
     # , nixpkgs-unstable
+    , nix-index-database
     , home-manager
     , rust-overlay
     , nur
@@ -174,6 +180,7 @@
           modules = [
             # > Our main home-manager configuration file <
             ./hosts/AcerNixOS/home.nix		
+            nix-index-database.hmModules.nix-index
           ];
         };
       };

@@ -96,7 +96,8 @@ in {
         theme = "base16-256";
       };
     };
-    command-not-found.enable = true;
+    command-not-found.enable = false;
+    nix-index.enable = true;
   };
 
   nixpkgs.config.permittedInsecurePackages = [
