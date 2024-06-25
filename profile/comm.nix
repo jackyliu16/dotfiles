@@ -30,6 +30,7 @@ in {
     hms="nix build ${repo_path}#homeConfigurations.'${user}@${domain}'.activationPackage && ${repo_path}/result/activate";
     # TODO: haven't check yet
     oss="sudo nixos-rebuild switch --flake ${repo_path}#${domain}";
+    osb="sudo nixos-rebuild boot --flake ${repo_path}#${domain}";
   };
   programs.git = {
     enable = true;

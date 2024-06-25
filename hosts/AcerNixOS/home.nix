@@ -102,6 +102,9 @@ in {
     bash.initExtra = ''
       source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
     '';
+    bash.bashrcExtra = ''
+      export XDG_DATA_HOME="$HOME/.local/share"
+    '';
     nix-index.enable = true;
   };
 
