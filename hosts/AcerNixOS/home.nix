@@ -77,7 +77,7 @@ in {
       gparted # Linux system disk partitioning tool
 
       pciutils # lspci
-
+      flameshot
       # Game
       # (dwarf-fortress-packages.dwarf-fortress-full.override {
       #   dfVersion = "0.47.04";
