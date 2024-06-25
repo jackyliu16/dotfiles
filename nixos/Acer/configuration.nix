@@ -68,11 +68,14 @@
     # Enable flakes and new 'nix' command
     experimental-features = "nix-command flakes";
     # Deduplicate and optimize nix store
-    auto-optimise-store = true;
+    # auto-optimise-store = true;
     substituters = [ "https://mirror.sjtu.edu.cn/nix-channels/store" ];
     trusted-substituters = [ "https://mirror.sjtu.edu.cn/nix-channels/store" ];
     trusted-users = [ "jacky" ];
   };
+
+  nix.optimise.automatic = true;
+  nix.optimise.dates = [ "05:45" ]; # Optional; allows customizing optimisation schedule
 
   nix.gc = {
     automatic = true;
