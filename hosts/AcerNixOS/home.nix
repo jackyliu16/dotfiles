@@ -97,6 +97,9 @@ in {
       };
     };
     command-not-found.enable = false;
+    bash.initExtra = ''
+      source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
+    '';
     nix-index.enable = true;
   };
 
