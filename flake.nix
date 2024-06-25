@@ -10,9 +10,13 @@
     # at the same time. Here's an working example:
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
-    # Provide search
+    # Provide nix-locate search
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Run unpatched dynamic binaries on NixOS
+    nix-ld.url = "github:Mic92/nix-ld";
+    nix-ld.inputs.nixpkgs.follows = "nixpkgs";
 
         # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
     nur.url = "github:nix-community/NUR";
@@ -49,6 +53,7 @@
     , nixos-wsl 
     # , nixpkgs-unstable
     , nix-index-database
+    , nix-ld
     , home-manager
     , rust-overlay
     , nur
@@ -126,6 +131,7 @@
           modules = [
             ./nixos/Acer/configuration.nix
             nixosModules.kvmfr
+            nix-ld.nixosModules.nix-ld
           ];
         };
       };
