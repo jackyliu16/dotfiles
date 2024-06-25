@@ -23,6 +23,18 @@
       source-serif # 衬线字体，不含汉字。字族名叫 Source Code Pro，以及带字重的变体
       source-han-sans # 思源黑体
       source-han-serif # 思源宋体
+      source-code-pro
+
+      open-sans
+      liberation_ttf
+      wqy_zenhei
+      wqy_microhei
+
+      hack-font
+      jetbrains-mono
+      sarasa-gothic
+      julia-mono
+      dejavu_fonts
 
       # nerdfonts
       # https://github.com/NixOS/nixpkgs/blob/nixos-23.11/pkgs/data/fonts/nerdfonts/shas.nix
@@ -36,30 +48,28 @@
           "Iosevka"
         ];
       })
-      julia-mono
-      dejavu_fonts
-
-############################
-# Copy From Original fonts #
-############################
-
-      noto-fonts
-      # noto-fonts-cjk-sans
-      # noto-fonts-cjk-serif
-      source-han-sans
-      source-han-serif
-      # sarasa-gothic
-      source-code-pro
-      hack-font
-      jetbrains-mono
     ];
 
     # user defined fonts
     # the reason there's Noto Color Emoji everywhere is to override DejaVu's
     # B&W emojis that would sometimes show instead of some Color emojis
     fontconfig.defaultFonts = {
-      serif = ["Noto Serif CJK SC" "Noto Serif CJK TC" "Noto Serif CJK JP" "Noto Color Emoji"];
-      sansSerif = ["Noto Sans CJK SC" "Noto Sans CJK TC" "Noto Sans CJK JP" "Noto Color Emoji"];
+      # serif = ["Noto Serif CJK SC" "Noto Serif CJK TC" "Noto Serif CJK JP" "Noto Color Emoji" "S"];
+      # sansSerif = ["Noto Sans CJK SC" "Noto Sans CJK TC" "Noto Sans CJK JP" "Noto Color Emoji"];
+      sansSerif = [
+        "Source Sans 3"
+        "Source Han Sans SC"
+        "Source Han Sans TC"
+        "Source Han Sans HW"
+        "Source Han Sans K"
+      ];
+      serif = [
+        "Source Serif 4"
+        "Source Han Serif SC"
+        "Source Han Serif TC"
+        "Source Han Serif HW"
+        "Source Han Serif K"
+      ];
       monospace = ["JetBrainsMono Nerd Font" "Noto Color Emoji"];
       emoji = ["Noto Color Emoji"];
     };
