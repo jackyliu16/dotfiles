@@ -53,6 +53,7 @@
   ]) ++ (if enableNixDev then with pkgs; [ 
     # nix-init
     nixpkgs-fmt
+    nixpkgs-review
     # (writeShellScriptBin "nrepl" ''
     #   export PATH=${pkgs.coreutils}/bin:${pkgs.nixUnstable}/bin:$PATH
     #   if [ -z "$1" ]; then
