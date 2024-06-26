@@ -51,10 +51,12 @@
     powerOnBoot = true;
   };
 
+  hardware.opengl.enable = true;
+
   hardware.nvidia = {
     prime = {
       # NOTE: PRIME Sync and Offload Mode cannot be enabled at the same time.
-      # sync.enable = true;
+      sync.enable = true;
       # offload = {
       #   enable = true;
       #   enableOffloadCmd = true;

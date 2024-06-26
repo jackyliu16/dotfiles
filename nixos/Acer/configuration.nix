@@ -151,6 +151,7 @@
     # Key-mapping
     xkb.layout = "cn";
     xkb.variant = "";
+    videoDrivers = [ "nvidia" ];
   };
 
   services.displayManager.sddm.enable = true;
