@@ -76,8 +76,10 @@ in {
 
       gparted # Linux system disk partitioning tool
 
-      pciutils # lspci
-      flameshot
+      pciutils          # lspci, gpu
+      flameshot         # PrtSc
+      libreoffice
+
       # Game
       # (dwarf-fortress-packages.dwarf-fortress-full.override {
       #   dfVersion = "0.47.04";
