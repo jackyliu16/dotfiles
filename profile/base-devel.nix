@@ -18,10 +18,15 @@
     tree        # File Struct
     fzf         # File Name Searcher
     ripgrep     # File Content Searcher         ~ grep
+
     tmux        # Multiterminal Window Manager  
     htop        # Resource Monitor              ~ top
+
     ranger      # File Explorer
+    ncdu        # Disk usage analyzer           ~ spacesniffer
+
     just        # Justfile
+
     xxd         # Read Hex Files
     cloc        # A program that counts lines of source code
     dtc         # Device Tree Compiler
