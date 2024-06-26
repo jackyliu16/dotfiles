@@ -74,11 +74,13 @@ in {
 
       translate-shell
 
-      gparted # Linux system disk partitioning tool
-
       pciutils          # lspci, gpu
       flameshot         # PrtSc
-      libreoffice
+
+      # Graphics
+      gparted           # Linux system disk partitioning tool
+      libreoffice       # Opensource Office
+      mission-center    # Monitor of CPU, Memory, Disk, Network and GPU usage
 
       # Game
       # (dwarf-fortress-packages.dwarf-fortress-full.override {
