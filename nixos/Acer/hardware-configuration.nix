@@ -52,10 +52,9 @@
   };
 
   hardware.nvidia = {
-
     prime = {
       # NOTE: PRIME Sync and Offload Mode cannot be enabled at the same time.
-      sync.enable = true;
+      # sync.enable = true;
       # offload = {
       #   enable = true;
       #   enableOffloadCmd = true;
@@ -97,7 +96,7 @@
     nvidiaSettings = true;
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
   };
 
   specialisation = {
