@@ -81,6 +81,8 @@ in {
       gparted           # Linux system disk partitioning tool
       libreoffice       # Opensource Office
       mission-center    # Monitor of CPU, Memory, Disk, Network and GPU usage
+      github-desktop    # Github Desktop
+      gh                # Github Command Line Tools
 
       # Game
       # (dwarf-fortress-packages.dwarf-fortress-full.override {
