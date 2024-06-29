@@ -51,16 +51,6 @@ in {
   home.packages =
     (with pkgs; [
       # jq        # ?
-      # rnix-lsp  # lsp support of nix
-      # xclip     # using for neovim clipboard
-
-      # Web
-      firefox
-      google-chrome
-      # qq
-
-      # # personal packages
-      # vscode
 
       # Monitor
       glances
@@ -83,6 +73,11 @@ in {
       mission-center    # Monitor of CPU, Memory, Disk, Network and GPU usage
       github-desktop    # Github Desktop
       gh                # Github Command Line Tools
+      rustdesk          # Remote Control
+
+      # Web
+      firefox
+      google-chrome
 
       # Game
       # (dwarf-fortress-packages.dwarf-fortress-full.override {
