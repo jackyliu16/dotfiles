@@ -59,6 +59,7 @@
     # nix-init
     nixpkgs-fmt
     nixpkgs-review
+
     # (writeShellScriptBin "nrepl" ''
     #   export PATH=${pkgs.coreutils}/bin:${pkgs.nixUnstable}/bin:$PATH
     #   if [ -z "$1" ]; then
@@ -67,5 +68,10 @@
     #      nix repl --argstr host "$HOST" --argstr flakePath $(readlink -f $1 | sed 's|/flake.nix||') ${./apps/nrepl.nix}
     #    fi
     # '')
+
+    #-- shash "$url" -> SRI format hash
+    (writeShellScriptBin "shash" ''
+      nix hash to-sri --type sha256 $(nix-prefetch-url ''$1)
+    '')
   ] else [] );
 }
