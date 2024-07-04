@@ -187,7 +187,14 @@
   services.tailscale.enable = true;
 
   sound.enable = true;
+
   hardware.pulseaudio.enable = false;
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+  };
+
   security.rtkit.enable = true;
 
   services.pipewire = {
@@ -204,15 +211,6 @@
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
   };
 
-  environment.systemPackages = with pkgs; [
-    # synology-drive-client
-    # blackbox-terminal
-    # zotero
-    # kermit
-    # vim
-    # texmaker
-    # docker-compose
-  ];
 
   programs.clash-verge = {
     enable = true;
@@ -233,6 +231,19 @@
     clean.extraArgs = "--keep-since 4d --keep 3";
     flake = "/home/jacky/.config/dotfiles/";
   };
+
+  programs.gamemode.enable = true;
+  programs.gamescope.enable = true;
+  environment.systemPackages = with pkgs; [ 
+    manghud 
+    # synology-drive-client
+    # blackbox-terminal
+    # zotero
+    # kermit
+    # vim
+    # texmaker
+    # docker-compose
+  ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "24.05";

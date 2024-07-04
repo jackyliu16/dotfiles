@@ -55,17 +55,10 @@
 
   hardware.nvidia = {
     prime = {
-      # NOTE: PRIME Sync and Offload Mode cannot be enabled at the same time.
-      sync.enable = true;
-      # offload = {
-      #   enable = true;
-      #   enableOffloadCmd = true;
-      # };
-        # export __NV_PRIME_RENDER_OFFLOAD=1
-        # export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
-        # export __GLX_VENDOR_LIBRARY_NAME=nvidia
-        # export __VK_LAYER_NV_optimus=NVIDIA_only
-        # exec "$@"
+      offload = {
+        enable = true;
+        enableOffloadCmd = true;
+      };
       intelBusId = "PCI:0:2:0";
       nvidiaBusId = "PCI:1:0:0";
     };
@@ -103,12 +96,15 @@
 
   specialisation = {
   # NOTE: disables PRIME sync and instead enables offload mode:
-    on-the-go.configuration = {
-      system.nixos.tags = [ "on-the-go" ];
+    nvidia-sync.configuration = {
+      system.nixos.tags = [ "nvidia-sync" ];
       hardware.nvidia = {
-        prime.offload.enable = lib.mkForce true;
-        prime.offload.enableOffloadCmd = lib.mkForce true;
-        prime.sync.enable = lib.mkForce false;
+        # prime.offload.enable = lib.mkForce true;
+        # prime.offload.enableOffloadCmd = lib.mkForce true;
+        # prime.sync.enable = lib.mkForce false;
+        prime.offload.enable = lib.mkForce false;
+        prime.offload.enableOffloadCmd = lib.mkForce false;
+        prime.sync.enable = lib.mkForce true;
       };
     };
   };
