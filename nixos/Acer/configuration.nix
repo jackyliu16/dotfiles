@@ -122,9 +122,15 @@
       # Be sure to change it (using passwd) after rebooting!
       # initialPassword = "correcthorsebatterystaple";
       isNormalUser = true;
-      # openssh.authorizedKeys.keys = [
-      #   # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
-      # ];
+      openssh.authorizedKeys.keys = [
+        # AcerNixOS
+        "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCWT8QnG5T1D1fCqVuBFPU/ot+xW+0oKqZOUqMVgapagXJ5dkUIWw+yZ7+teT6P08ozSTA9UK4Qba82apuknW97MqpgVimhKbQkDXB8oTKJhv3PrScsh9uZPQg8hBLWUgVyE0V3ph5F9kYoK24pco2+wUV0oBlsSLfmxYKt8w3lesuk6IMRmMEl+vFDfyKVpFvFMEmDL0Oha9dl6zzNBUTOmKnIYl/kBGQIeb5ow/Au3dvGZZ5GJc8ut5dnciRRalKv+pNbtPNCjb/wAvFlMeuF4vI4Ef68UyX5aFZrVfHM3gc4IGcVUBP4ZI7SXcHmop/zaFtT6QVvEwk0vtKavIjVU98PXedCSva4OeG/2aCq3Oil0BfC8gdmNeaCnuC+aRnNu+hfbDFkzarIUPX0K2wvCOvLY6YYOeNhF0tFsoqFsZJh8qSwZ/kCGmOzQJz4dYBiyQFuxL4SlhIN93trIdecCKQ9ei56Lo2CJ5NnP1DixQWsO2VnSpzym11c1Rz7vtc= 18922251299@163.com"
+      ];
+      PermitRootLogin = "no";
+      LoginGraceTime  = 0;
+
+      # Use keys only. Remove if you want to SSH using password (not recommended)
+      PasswordAuthentication = true;
       extraGroups = [ "wheel" "networkmanager" "docker"];
     };
   };
