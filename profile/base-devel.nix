@@ -59,6 +59,8 @@
     # nix-init
     nixpkgs-fmt
     nixpkgs-review
+    nix-output-monitor # Processes output of Nix commands to show helpful and pretty information
+    nvd                # Nix/NixOS package version diff tool
 
     # (writeShellScriptBin "nrepl" ''
     #   export PATH=${pkgs.coreutils}/bin:${pkgs.nixUnstable}/bin:$PATH
