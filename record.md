@@ -21,3 +21,8 @@
 
   1. If using plasma6, open settings >> keyboard >> virtual keyboard, select Fcitx5.
 
+## Gamings
+
+- heroic epic 134 error
+  - https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/wiki/Rockstar-Games:-Code-134-Error-(workaround)
+ 
