@@ -52,20 +52,17 @@ in {
     (with pkgs; [
       # jq        # ?
 
-      # Monitor
+      # Command Line Tools
+
+      #-- Monitor
       glances
 
-      # Blog
+      #-- Blog
       zola
       logseq
 
-      qbittorrent
-      wechat-uos
-
       translate-shell
-
       pciutils          # lspci, gpu
-      flameshot         # PrtSc
 
       # Graphics
       gparted           # Linux system disk partitioning tool
@@ -74,10 +71,23 @@ in {
       github-desktop    # Github Desktop
       gh                # Github Command Line Tools
       rustdesk          # Remote Control
+      qbittorrent       # BT download application
+      wechat-uos        # Wechat in UOS (functional limitations)
+      flameshot         # PrtSc
+      vlc               # Video Player
 
-      # Web
+      #-- Web
       firefox
       google-chrome
+
+      # (TEST) Note
+      ollama
+      trilium-desktop
+      notesnook
+
+      # (TEST) Editor
+      zed-editor
+      lapce
 
       # Game
       # (dwarf-fortress-packages.dwarf-fortress-full.override {
