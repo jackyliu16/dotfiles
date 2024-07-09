@@ -75,6 +75,7 @@ in {
       wechat-uos        # Wechat in UOS (functional limitations)
       flameshot         # PrtSc
       vlc               # Video Player
+      # gnome-disk-utility # could use gnome-disk-image-mounter to mount iso 
 
       #-- Web
       firefox
