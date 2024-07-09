@@ -79,7 +79,7 @@
   nix.optimise.dates = [ "05:45" ]; # Optional; allows customizing optimisation schedule
 
   nix.gc = {
-    automatic = true;
+    automatic = false; # NOTE: use nh instead
     options = "--delete-older-than-7d";
     dates = "weekly";
   };
@@ -90,7 +90,7 @@
     # networking.wireless.enable = true;
     extraHosts = builtins.readFile (builtins.toString (pkgs.fetchurl {
       url = "https://raw.hellogithub.com/hosts";
-      sha256 = "sha256-MzaGFVPlEXFMFZH5A418HGCeKULWW8URfgW41ljlS0U=";
+      sha256 = "sha256-w0ah1I6srB3L60wr0I+AV2arjll703rQzbfabVKclZg=";
     }));
   };
 
@@ -127,11 +127,6 @@
         # AcerNixOS
         "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCWT8QnG5T1D1fCqVuBFPU/ot+xW+0oKqZOUqMVgapagXJ5dkUIWw+yZ7+teT6P08ozSTA9UK4Qba82apuknW97MqpgVimhKbQkDXB8oTKJhv3PrScsh9uZPQg8hBLWUgVyE0V3ph5F9kYoK24pco2+wUV0oBlsSLfmxYKt8w3lesuk6IMRmMEl+vFDfyKVpFvFMEmDL0Oha9dl6zzNBUTOmKnIYl/kBGQIeb5ow/Au3dvGZZ5GJc8ut5dnciRRalKv+pNbtPNCjb/wAvFlMeuF4vI4Ef68UyX5aFZrVfHM3gc4IGcVUBP4ZI7SXcHmop/zaFtT6QVvEwk0vtKavIjVU98PXedCSva4OeG/2aCq3Oil0BfC8gdmNeaCnuC+aRnNu+hfbDFkzarIUPX0K2wvCOvLY6YYOeNhF0tFsoqFsZJh8qSwZ/kCGmOzQJz4dYBiyQFuxL4SlhIN93trIdecCKQ9ei56Lo2CJ5NnP1DixQWsO2VnSpzym11c1Rz7vtc= 18922251299@163.com"
       ];
-      PermitRootLogin = "no";
-      LoginGraceTime  = 0;
-
-      # Use keys only. Remove if you want to SSH using password (not recommended)
-      PasswordAuthentication = true;
       extraGroups = [ "wheel" "networkmanager" "docker"];
     };
   };
@@ -147,6 +142,7 @@
       PermitRootLogin = "no";
       # Use keys only. Remove if you want to SSH using password (not recommended)
       PasswordAuthentication = true;
+      LoginGraceTime = 2;
     };
   };
 
@@ -236,7 +232,7 @@
   programs.gamemode.enable = true;
   programs.gamescope.enable = true;
   environment.systemPackages = with pkgs; [ 
-    manghud 
+    mangohud 
     # synology-drive-client
     # blackbox-terminal
     # zotero
