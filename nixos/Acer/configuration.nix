@@ -21,6 +21,7 @@
     ./hardware-configuration.nix
     ./virtualisation.nix
     # ./applications.nix
+    ./kde.nix
     ../fonts.nix
   ];
 
