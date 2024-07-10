@@ -58,6 +58,9 @@ let
     # misc
     b = "broot -ghi";
   };
+
+  # https://github.com/dutchcoders/transfer.sh
+  transfer_script = builtins.readFile ./transfer.sh;
 in {
 
   programs.oh-my-posh = {
@@ -147,6 +150,7 @@ in {
       # }
     ];
     initExtra = ''
+      ${transfer_script}
       # Enable Nix
       # . /home/jacky/.nix-profile/etc/profile.d/nix.sh
       # Enable Mvn
