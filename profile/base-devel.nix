@@ -26,6 +26,7 @@
     ncdu        # Disk usage analyzer           ~ spacesniffer
 
     just        # Justfile
+    cheat       # cheatSheet of CLI command
 
     xxd         # Read Hex Files
     cloc        # A program that counts lines of source code
