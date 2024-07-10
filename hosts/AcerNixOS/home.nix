@@ -91,6 +91,7 @@ in {
       lapce
 
       # Game
+      mkxp-z
       # (dwarf-fortress-packages.dwarf-fortress-full.override {
       #   dfVersion = "0.47.04";
       #   theme = dwarf-fortress-packages.themes.tergel;
