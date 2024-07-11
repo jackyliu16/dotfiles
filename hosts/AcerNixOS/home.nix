@@ -100,6 +100,8 @@ in {
       # })
     ])
     ++ (with pkgs.unstable; [
+      quickemu
+      so
     ]);
 
   # terminal
