@@ -54,9 +54,6 @@ in {
 
       # Command Line Tools
 
-      #-- Monitor
-      glances
-
       #-- Blog
       zola
       logseq
@@ -102,6 +99,9 @@ in {
     ++ (with pkgs.unstable; [
       quickemu
       so
+
+      #-- Monitor
+      glances
     ]);
 
   # terminal
