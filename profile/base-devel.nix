@@ -23,6 +23,7 @@
     htop        # Resource Monitor              ~ top
 
     ranger      # File Explorer
+    yazi        # File Explorer
     ncdu        # Disk usage analyzer           ~ spacesniffer
 
     just        # Justfile
