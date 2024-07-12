@@ -182,6 +182,32 @@
   # enable CUPS to print documents 
   services.printing.enable = true;
   services.tailscale.enable = true;
+  
+  # File Share Between Operating System
+  services.samba = {
+    enable = true;
+    securityType = "user";
+    openFirewall = true;
+    shares = {
+      public = {
+        path = "/data";
+        browseable = "yes";
+        "read only" = "no";
+        "guest ok" = "yes";
+        "create mask" = "0644";
+        "directory mask" = "0755";
+        "force user" = "jacky";
+      };
+    };
+  };
+
+  services.samba-wsdd = {
+    enable = true;
+    openFirewall = true;
+  };
+
+  networking.firewall.enable = true;
+  networking.firewall.allowPing = true;
 
   sound.enable = true;
 
