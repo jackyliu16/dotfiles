@@ -76,7 +76,7 @@
   };
 
   nix.gc = {
-    automatic = true;
+    automatic = false; # NOTE: use nh instead
     options = "--delete-older-than-7d";
     dates = "weekly";
   };
@@ -128,6 +128,13 @@
     vim wget curl
   ];
 
-    programs.nix-ld.enable = true;
-    programs.nix-ld.package = pkgs.unstable.nix-ld-rs;
+  programs.nix-ld.enable = true;
+  programs.nix-ld.package = pkgs.unstable.nix-ld-rs;
+
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 4d --keep 3";
+    flake = "/home/nixos/.config/dotfiles/";
+  };
 }
