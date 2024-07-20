@@ -47,11 +47,51 @@ in {
     };
     userEmail = "18922251299@163.com";
     userName = "jackyliu16";
-    extraConfig = if enableClashProxy then {
-      "http"."https://github.com".proxy = "http://127.0.0.1:7897";
-      "https"."https://github.com".proxy = "http://127.0.0.1:7897";
-    } else { };
+
+    extraConfig = { # https://github.com/kalekseev/dotfiles/blob/59d930c9de043b0ae73e48e0ee1a2874212eb855/flake.nix#L271
+      core.editor = "nvim";
+      github.user = "jackyliu16";
+      color.ui = "auto";
+      color.status = {
+        added = "green";
+        changed = "yellow";
+        untracked = "cyan";
+      };
+      push.default = "current";
+      push.autoSetupRemote = true;
+      pull.ff = "only";
+      grep = {
+        extendRegexp = true;
+        lineNumber = true;
+      };
+      merge = {
+        tool = "vimdiff";
+        conflictstyle = "zdiff3";
+      };
+      mergetool = {
+        prompt = false;
+        keepBackup = false;
+        vimdiff.cmd = "nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'";
+        p4merge.cmd = "p4merge $BASE $LOCAL $REMOTE $MERGED";
+      };
+      init.defaultBranch = "master";
+      diff.algorithm = "histogram";
+      pager.difftool = true;
+      rerere.enabled = true;
+      branch.sort = "-committerdate";
+      rebase = {
+        autosquash = true;
+        # autostash = true;
+      };
+    };
+    # lfs.enable = true;
+    # lfs.skipSmudge = true;
   };
+
+  # extraConfig = if enableClashProxy then {
+  #   "http"."https://github.com".proxy = "http://127.0.0.1:7897";
+  #   "https"."https://github.com".proxy = "http://127.0.0.1:7897";
+  # } else { };
   home.packages = with pkgs; [
     wget curl
     cron # Run Script in Scheduled
