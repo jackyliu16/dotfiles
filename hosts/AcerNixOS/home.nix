@@ -79,7 +79,8 @@ in {
       google-chrome
 
       # (TEST) Note
-      ollama
+      ollama            # Local ChatGPT
+      oterm
       trilium-desktop
       notesnook
 
