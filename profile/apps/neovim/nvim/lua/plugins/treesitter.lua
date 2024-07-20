@@ -58,6 +58,15 @@ return {
         requires_generate_from_grammar = false, -- if folder contains pre-generated src/parser.c
       },
     }
+    parser_config.just = {
+      install_info = {
+        url = "https://github.com/IndianBoy42/tree-sitter-just", -- local path or git repo
+        files = { "src/parser.c", "src/scanner.c" },
+        branch = "main",
+        -- use_makefile = true -- this may be necessary on MacOS (try if you see compiler errors)
+      },
+      maintainers = { "@IndianBoy42" },
+    }
     -- use scheme parser for filetypes: scm
     vim.treesitter.language.register("scheme", "scm")
   end,
