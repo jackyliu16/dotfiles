@@ -31,8 +31,8 @@ in {
     # TODO: haven't check yet
     oss="sudo nixos-rebuild switch --flake ${repo_path}#${domain}";
     osb="sudo nixos-rebuild boot --flake ${repo_path}#${domain}";
-    nhos="nh os switch /home/${user}/.config/dotfiles/";
-    nhhs="nh home switch /home/${user}/.config/dotfiles/";
+    nhos="nh os switch ${repo_path} -c '${user}@${domain}' ";
+    nhhs="nh home switch ${repo_path}";
     send="curl -F 'c=@-' 'https://fars.ee/'";
   };
   programs.git = {
