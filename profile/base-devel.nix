@@ -25,6 +25,7 @@
     ranger      # File Explorer
     yazi        # File Explorer
     ncdu        # Disk usage analyzer           ~ spacesniffer
+    duf         # Mount point usage analyzer
 
     just        # Justfile
     cheat       # cheatSheet of CLI command
