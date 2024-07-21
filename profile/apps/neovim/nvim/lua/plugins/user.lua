@@ -3,6 +3,10 @@
 
 ---@type LazySpec
 return {
+  {
+    "NoahTheDuke/vim-just",
+    ft = { "just" },
+  },
 
   -- == Examples of Adding Plugins ==
 
