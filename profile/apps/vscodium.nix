@@ -1,61 +1,98 @@
 # Ref:
 # 1. https://github.com/wineee/nixos-config/blob/master/pkgs/vscodium.nix
 # 2. https://github.dev/poscat0x04/nixos-configuration
-{ pkgs, ... }:
-let
-  extensions = (with pkgs.vscode-extensions; [
-    # Add nixpkgs's vscode-extensions
-    matklad.rust-analyzer
-    vadimcn.vscode-lldb
-    ms-python.python
-    redhat.vscode-yaml
-    vscodevim.vim
-    # bbenoist.Nix
-    # justusadam.language-haskell
-    # dhall.dhall-lang
-    # dhall.vscode-dhall-lsp-server
-    # haskell.haskell
-    # banacorn.agda-mode
-    serayuzgur.crates
-    # jscearcy.rust-doc-viewer
-    # arcticicestudio.nord-visual-studio-code
-    # pKief.material-icon-theme
-    # dbaeumer.vscode-eslint
-    timonwong.shellcheck
-    # wayou.vscode-todo-highlight
-    # maximedenes.vscoq
-    # james-yu.latex-workshop
-    # GitHub.vscode-pull-request-github
-    # # mr-konn.generic-input-method
-    # christian-kohler.path-intellisense
-    # aaronduino.nix-lsp
-    # ms-vscode.hexeditor
-    # be5invis.toml
-    # # jroesch.lean
-    # # huytd.nord-light
-    # akamud.vscode-theme-onelight
-    # # berberman.vscode-cabal-fmt
-    # Gruntfuggly.todo-tree
-    # # # LDIF
-    # # jtavin.ldif
-    # # # c stuff
-    # # ms-vscode.cmake-tools
-    # # twxs.cmake
-    # # cschlosser.doxdocgen
-    # # llvm-vs-code-extensions.vscode-clangd
-  ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-    # {
-    #   name = "remote-ssh-edit";
-    #   publisher = "ms-vscode-remote";
-    #   version = "0.47.2";
-    #   sha256 = "1hp6gjh4xp2m1xlm1jsdzxw9d8frkiidhph6nvl24d0h8z34w49g";
-    # }
-  ];
-  vscodium-with-extensions = pkgs.vscode-with-extensions.override {
-    vscode = pkgs.vscodium;
-    vscodeExtensions = extensions;
+# 3. https://github.com/linuxmobile/kaku/blob/580d755a9f858677c0ef5c070aac3c3fa8f194e5/home/editors/vscode/default.nix#L7
+{ inputs, pkgs, ... }:
+
+let 
+  vscode-marketplace = inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace;
+in {
+  programs.vscode = {
+    enable = true;
+    enableExtensionUpdateCheck = true;
+    enableUpdateCheck = false;
+    mutableExtensionsDir = true;
+    extensions = 
+      (with pkgs.vscode-extensions; [
+
+      ])
+      ++ (with vscode-marketplace; [
+        # Themes
+        astro-build.astro-vscode
+        catppuccin.catppuccin-vsc-icons
+        mvllow.rose-pine
+        re1san.tsuki
+        jscearcy.rust-doc-viewer
+
+        # Languages
+        bbenoist.nix                # nix
+        jnoortheen.nix-ide
+        mkhl.direnv
+        kamadorueda.alejandra         # formatter
+        rust-lang.rust-analyzer     # Rust
+        serayuzgur.crates
+        # be5invis.toml               # Toml
+        tamasfe.even-better-toml
+        redhat.vscode-yaml          # Yaml
+        ms-python.python            # Python 
+        bradlc.vscode-tailwindcss   # CSS
+        esbenp.prettier-vscode        # formatter of HTML relate
+        formulahendry.auto-close-tag  # Add close </>
+        james-yu.latex-workshop     # LaTex
+        mr-konn.generic-input-method  # Unicode Symbol input
+
+        # Common 
+        christian-kohler.path-intellisense
+        usernamehw.errorlens
+        naumovs.color-highlight
+        ms-vscode.hexeditor
+        gruntfuggly.todo-tree
+        fill-labs.dependi             # comprehensive dependency management extension(Rs, Go, JS, Py)
+      ])
+      ;
+    userSettings = {
+      "workbench.iconTheme" = "catppuccin-mocha";
+      "workbench.colorTheme" = "Tsuki";
+      "editor.fontFamily" = "GeistMono Nerd Font, Catppuccin Mocha, 'monospace', monospace";
+      "editor.fontSize" = 14;
+      "editor.fontLigatures" = true;
+      "files.trimTrailingWhitespace" = true;
+      "terminal.integrated.fontFamily" = "GeistMono Nerd Font";
+      "window.titleBarStyle" = "custom";
+      "terminal.integrated.defaultProfile.linux" = "zsh";
+      "terminal.integrated.cursorBlinking" = true;
+      "terminal.integrated.enableVisualBell" = false;
+      "editor.formatOnPaste" = true;
+      "editor.formatOnSave" = true;
+      "editor.formatOnType" = false;
+      "editor.minimap.enabled" = false;
+      "editor.minimap.renderCharacters" = false;
+      "editor.overviewRulerBorder" = false;
+      "editor.renderLineHighlight" = "all";
+      "editor.inlineSuggest.enabled" = true;
+      "editor.smoothScrolling" = true;
+      "editor.suggestSelection" = "first";
+      "editor.guides.indentation" = true;
+      "editor.guides.bracketPairs" = true;
+      "editor.bracketPairColorization.enabled" = true;
+      "window.restoreWindows" = "all";
+      "window.menuBarVisibility" = "toggle";
+      "workbench.panel.defaultLocation" = "right";
+      "workbench.list.smoothScrolling" = true;
+      "security.workspace.trust.enabled" = false;
+      "explorer.confirmDelete" = false;
+      "breadcrumbs.enabled" = true;
+      "telemetry.telemetryLevel" = "off";
+      "workbench.startupEditor" = "newUntitledFile";
+      "editor.cursorBlinking" = "expand";
+      "security.workspace.trust.untrustedFiles" = "open";
+      "security.workspace.trust.banner" = "never";
+      "security.workspace.trust.startupPrompt" = "never";
+      "workbench.sideBar.location" = "right";
+      "editor.tabSize" = 2;
+      "editor.wordWrap" = "on";
+      "workbench.editor.tabActionLocation" = "left";
+      "window.dialogStyle" = "native";
+    };
   };
-in
-vscodium-with-extensions
-
-
+}
