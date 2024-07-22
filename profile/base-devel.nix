@@ -27,7 +27,6 @@
     ncdu        # Disk usage analyzer           ~ spacesniffer
     duf         # Mount point usage analyzer
 
-    just        # Justfile
     cheat       # cheatSheet of CLI command
 
     xxd         # Read Hex Files
@@ -59,6 +58,8 @@
 
     # Coding
     gnumake
+  ]) ++ (with pkgs.unstable; [
+    just        # Justfile
   ]) ++ (if enableNixDev then with pkgs; [ 
     # nix-init
     nixpkgs-fmt
