@@ -31,6 +31,7 @@
     cheat       # cheatSheet of CLI command
 
     xxd         # Read Hex Files
+    lnav        # The Logfile Navigator
     cloc        # A program that counts lines of source code
     dtc         # Device Tree Compiler
     unzip       # zip
