@@ -3,6 +3,6 @@ return {
   -- lazy-loading on events
   event = { "InsertLeave", "TextChanged" },
   opts = function(_, opts)
-    opts.prompt_style = "stdout" -- notify or stdout
+    opts.prompt_style = "notify" -- notify or stdout
   end,
 }
