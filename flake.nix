@@ -69,7 +69,6 @@
         "aarch64-darwin"
         "x86_64-darwin"
       ];
-      username = "jacky";
     in
     rec {
       # Your custom packages
@@ -192,4 +191,23 @@
         };
       };
     };
+  nixConfig = { # REF: https://nixos-and-flakes.thiscute.world/nix-store/add-binary-cache-servers
+    substituters = [
+      # cache mirror located in China
+      # status: https://mirror.sjtu.edu.cn/
+      "https://mirror.sjtu.edu.cn/nix-channels/store"
+      # status: https://mirrors.ustc.edu.cn/status/
+      # "https://mirrors.ustc.edu.cn/nix-channels/store"
+
+      "https://cache.nixos.org"
+
+      # nix community's cache server
+      "https://nix-community.cachix.org"
+      "https://zola.cachix.org"
+    ];
+    extra-trusted-public-keys = [ # cache server public key
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      "zola.cachix.org-1:NuHGH5vaZb05JjJIzx+rARDRys05gfoeJqIUSrS0VM4="
+    ];
+  };
 }
