@@ -101,6 +101,7 @@ in {
       quickemu
       so
 
+      heroic        # Game Store
       #-- Monitor
       glances
     ]);
