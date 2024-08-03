@@ -114,6 +114,12 @@
     #   icon = "color";
     #   screen = "1080p";
     # };
+    extraModprobeConfig = ''
+      # fix speaker 
+      # https://github.com/torvalds/linux/blob/830b3c68c1fb1e9176028d02ef86f3cf76aa2476/sound/pci/hda/patch_realtek.c#L1622C36-L1622C42
+      # https://bbs.archlinuxcn.org/viewtopic.php?id=13238
+      options snd_hda_intel index=1 model=3stack
+    '';
   };
 
   users.users = {
