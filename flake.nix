@@ -47,6 +47,7 @@
       flake = false;
     };
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+    nix-gaming.url = "github:fufexan/nix-gaming";
   };
 
   outputs = { self
@@ -204,10 +205,12 @@
       # nix community's cache server
       "https://nix-community.cachix.org"
       "https://zola.cachix.org"
+      "https://nix-gaming.cachix.org"
     ];
     extra-trusted-public-keys = [ # cache server public key
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "zola.cachix.org-1:NuHGH5vaZb05JjJIzx+rARDRys05gfoeJqIUSrS0VM4="
+      "nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="
     ];
   };
 }
