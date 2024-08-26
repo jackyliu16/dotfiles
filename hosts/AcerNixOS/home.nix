@@ -104,6 +104,8 @@ in {
       heroic        # Game Store
       #-- Monitor
       glances
+
+      veracrypt
     ]) ++ (with inputs.nix-gaming.packages.${pkgs.system}; [
       wine-ge
     ]);
