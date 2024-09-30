@@ -19,6 +19,8 @@ in {
   imports = [
     (import ../../profile/comm.nix {inherit inputs outputs user domain enableClashProxy;})
     (import ../../profile/base-devel.nix {inherit inputs outputs pkgs enableNixDev;})
+
+    outputs.homeManagerModules.jetbrains
   ];
 
   # TODO not sure if working
@@ -130,6 +132,11 @@ in {
       export XDG_DATA_HOME="$HOME/.local/share"
     '';
     nix-index.enable = true;
+  };
+
+  programs.jetbrains = {
+    enable = true;
+    packages = with pkgs.jetbrains; [ idea-ultimate ];
   };
 
   nixpkgs.config.permittedInsecurePackages = [
