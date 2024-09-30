@@ -45,9 +45,7 @@ in {
       }; 
   };
   
-  config = lib.mkIf cfg.enable {
-    # cfg.enable = 
-    #   cfg.packages != [];
+  config = lib.mkIf (cfg.enable && cfg.packages != []) {
     home.packages = map (pkg: generateOverridePackage pkg) cfg.packages;
   };
 
