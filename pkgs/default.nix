@@ -7,4 +7,5 @@
   #   sha256 = "sha256-qI+ws7JnPCqYZJQFbGmTo9ICu6CFSCFSLxslXB5mcos=";
   # };
   mkxp-z = pkgs.callPackage ./mkxp-z.nix { };
+  ja-netfilter = pkgs.callPackage ./ja-netfilter.nix { };
 }
