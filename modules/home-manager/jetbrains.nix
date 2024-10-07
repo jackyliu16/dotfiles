@@ -11,12 +11,17 @@ let
 
   cfg = config.programs.jetbrains;
     
-  jetbra = pkgs.fetchFromGitHub {
-    owner = "LostAttractor";
-    repo = "jetbra";
-    rev = "94585581c360862eab1843bf7edd8082fdf22542";
-    sha256 = "sha256-9jeiF9QS4MCogIowu43l7Bqf7dhs40+7KKZML/k1oWo=";
+  jetbra = pkgs.fetchurl {
+    url = "https://ipfs.io/ipfs/bafybeih65no5dklpqfe346wyeiak6wzemv5d7z2ya7nssdgwdz4xrmdu6i/files/jetbra-8f6785eac5e6e7e8b20e6174dd28bb19d8da7550.zip";
+    hash = "sha256-1dVD7oZDJk9Q8fMEYtqqgKT5oH4RwLyItIrgiTeG6GU=";
   };
+
+  # pkgs.fetchFromGitHub {
+  #   owner = "LostAttractor";
+  #   repo = "jetbra";
+  #   rev = "94585581c360862eab1843bf7edd8082fdf22542";
+  #   sha256 = "sha256-9jeiF9QS4MCogIowu43l7Bqf7dhs40+7KKZML/k1oWo=";
+  # };
 
   generateOverridePackage = 
     pkgName: pkgName.overrideAttrs { 
