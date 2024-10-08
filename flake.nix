@@ -41,6 +41,10 @@
     # everything match nicely? Try nix-colors!
     # nix-colors.url = "github:misterio77/nix-colors";
 
+    # Provide some packages and modules, Currently use jetbrains
+    birdos.url = "github:spikespaz/dotfiles/master";
+    birdos.inputs.nixpkgs.follows = "nixpkgs";
+
     # AstroNvim is an aesthetic and feature-rich neovim config.
     astronvim-template = { # https://docs.astronvim.com/configuration/v4_migration/
       url = "github:AstroNvim/template/main";
