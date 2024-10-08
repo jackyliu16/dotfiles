@@ -20,7 +20,7 @@ in {
     (import ../../profile/comm.nix {inherit inputs outputs user domain enableClashProxy;})
     (import ../../profile/base-devel.nix {inherit inputs outputs pkgs enableNixDev;})
 
-    outputs.homeManagerModules.jetbrains
+    # outputs.homeManagerModules.jetbrains
   ];
 
   # TODO not sure if working
@@ -47,6 +47,9 @@ in {
       allowUnfree = true;
       # Workaround for https://github.com/nix-community/home-manager/issues/2942
       allowUnfreePredicate = _: true;
+      permittedInsecurePackages = [
+        "openssl-1.1.1w"
+      ];
     };
   };
 
@@ -133,14 +136,4 @@ in {
     '';
     nix-index.enable = true;
   };
-
-  programs.jetbrains = {
-    enable = true;
-    packages = with pkgs.jetbrains; [ idea-ultimate ];
-  };
-
-  nixpkgs.config.permittedInsecurePackages = [
-    "openssl-1.1.1w"
-  ];
-
 }
