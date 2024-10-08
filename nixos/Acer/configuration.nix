@@ -33,6 +33,9 @@
       outputs.overlays.modifications
       outputs.overlays.unstable-packages
 
+      inputs.birdos.overlays.default
+      inputs.birdos.overlays.allowUnfree
+      inputs.birdos.overlays.oraclejdk
       # You can also add overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default
 
@@ -47,6 +50,9 @@
     config = {
       # Disable if you don't want unfree packages
       allowUnfree = true;
+      allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+        "oraclejdk" 
+      ];
     };
   };
 

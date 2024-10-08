@@ -34,6 +34,9 @@ in {
 
       # You can also add overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default
+      inputs.birdos.overlays.default
+      inputs.birdos.overlays.allowUnfree
+      inputs.birdos.overlays.oraclejdk
 
       # Or define it inline, for example:
       # (final: prev: {
@@ -46,9 +49,12 @@ in {
     config = { # Disable if you don't want unfree packages
       allowUnfree = true;
       # Workaround for https://github.com/nix-community/home-manager/issues/2942
-      allowUnfreePredicate = _: true;
+      # allowUnfreePredicate = _: true;
       permittedInsecurePackages = [
         "openssl-1.1.1w"
+      ];
+      allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+        "oraclejdk"
       ];
     };
   };
@@ -113,6 +119,8 @@ in {
       veracrypt
     ]) ++ (with inputs.nix-gaming.packages.${pkgs.system}; [
       wine-ge
+    ]) ++ (with inputs.birdos.packages.${pkgs.system}; [
+      ja-netfilter
     ]);
 
   # terminal
