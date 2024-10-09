@@ -279,6 +279,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-idea-20240101": {
+      "locked": {
+        "lastModified": 1717196966,
+        "narHash": "sha256-yZKhxVIKd2lsbOqYd5iDoUIwsRZFqE87smE2Vzf6Ck0=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "57610d2f8f0937f39dbd72251e9614b1561942d8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "57610d2f8f0937f39dbd72251e9614b1561942d8",
+        "type": "github"
+      }
+    },
     "nixpkgs-lib": {
       "locked": {
         "lastModified": 1719876945,
@@ -397,6 +413,7 @@
         "nix-vscode-extensions": "nix-vscode-extensions",
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs_4",
+        "nixpkgs-idea-20240101": "nixpkgs-idea-20240101",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nur": "nur",
         "rust-overlay": "rust-overlay"

@@ -20,4 +20,10 @@
       config.allowUnfree = true;
     };
   };
+  idea-packages = final: _prev: {
+    ideaPackages = import inputs.nixpkgs-idea-20240101 {
+      system = final.system;
+      config.allowUnfree = true;
+    };
+  };
 }
