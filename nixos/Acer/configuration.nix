@@ -100,6 +100,7 @@
   
   boot = {
     loader.systemd-boot.enable = true;
+    loader.systemd-boot.memtest86.enable = true;
     loader.efi.canTouchEfiVariables = true;
     # loader.systemd-boot.enable = false;
     # loader.grub = {
