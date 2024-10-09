@@ -49,12 +49,15 @@ in {
       allowUnfreePredicate = _: true;
     };
   };
-
   home.packages =
     (with pkgs; [
       # jq        # ?
 
       # Command Line Tools
+
+      # Tester
+      dmidecode         # Mem test
+      memtest86plus
 
       #-- Blog
       zola
