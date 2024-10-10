@@ -58,9 +58,10 @@ in {
 
       # Command Line Tools
 
-      # Tester
+      #-- Tester
       dmidecode         # Mem test
-      memtest86plus
+      memtester
+      # memtest86plus   # seems to be determined by specific systemd-boot options, not here
 
       #-- Blog
       zola
