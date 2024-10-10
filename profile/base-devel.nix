@@ -22,6 +22,7 @@
 
     tmux        # Multiterminal Window Manager  
     htop        # Resource Monitor              ~ top
+    btop nmon 
 
     ranger      # File Explorer
     yazi        # File Explorer
