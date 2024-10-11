@@ -81,6 +81,7 @@ in {
       wechat-uos        # Wechat in UOS (functional limitations)
       flameshot         # PrtSc
       vlc               # Video Player
+      veracrypt
       # gnome-disk-utility # could use gnome-disk-image-mounter to mount iso 
 
       #-- Web
@@ -114,7 +115,7 @@ in {
       #-- Monitor
       glances
 
-      veracrypt
+      code-cursor
     ]) ++ (with inputs.nix-gaming.packages.${pkgs.system}; [
       wine-ge
     ]);
