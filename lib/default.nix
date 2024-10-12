@@ -1,6 +1,7 @@
 {lib, ...}: {
   nixosSystem = import ./nixosSystem.nix;
   attrs = import ./attrs.nix {inherit lib;};
+  option-helper = import ./option-helper.nix { inherit lib; };
   scanPaths = path:
     builtins.map
     (f: (path + "/${f}"))
