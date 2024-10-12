@@ -115,7 +115,7 @@ in {
       #-- Monitor
       glances
 
-      code-cursor
+      code-cursor     # Editor base on VSC
     ]) ++ (with inputs.nix-gaming.packages.${pkgs.system}; [
       wine-ge
     ]);
