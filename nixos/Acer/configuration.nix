@@ -164,17 +164,14 @@
     videoDrivers = [ "nvidia" ];
   };
 
-  # services.displayManager.sddm.enable = true;
-  # services.desktopManager.plasma6.enable = true;
-
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.cinnamon.enable = true;
-  services.cinnamon.apps.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
   services.xserver = {
     # Enable cinnamon
-    # displayManager.cinnamon.enable = true;
-    # desktopManager.lightdm.enable = true;
+    # displayManager.lightdm.enable = true;
+    # desktopManager.cinnamon.enable = true;
+    # services.cinnamon.apps.enable = true;
 
     # Enable plasma5 Desktop Environment 
     # displayManager.sddm.enable = true;
