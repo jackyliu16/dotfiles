@@ -117,6 +117,10 @@ in {
 
       code-cursor     # Editor base on VSC
       vscode
+
+      # Sync
+      megasync
+      synology-drive-client
     ]) ++ (with inputs.nix-gaming.packages.${pkgs.system}; [
       wine-ge
     ]);

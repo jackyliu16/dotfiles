@@ -272,7 +272,6 @@
   programs.gamescope.enable = true;
   environment.systemPackages = with pkgs; [ 
     mangohud 
-    # synology-drive-client
     # blackbox-terminal
     # zotero
     # kermit
