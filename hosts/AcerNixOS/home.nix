@@ -95,7 +95,6 @@ in {
       notesnook
 
       # (TEST) Editor
-      zed-editor
       lapce
 
       # Game
