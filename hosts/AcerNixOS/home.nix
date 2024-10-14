@@ -59,46 +59,25 @@ in {
       # Command Line Tools
 
       #-- Tester
-      dmidecode         # Mem test
-      memtester
+      # dmidecode         # Mem test
+      # memtester
       # memtest86plus   # seems to be determined by specific systemd-boot options, not here
-
-      #-- Blog
-      zola
-      logseq
 
       translate-shell
       pciutils          # lspci, gpu
-
-      # Graphics
-      gparted           # Linux system disk partitioning tool
-      libreoffice       # Opensource Office
-      mission-center    # Monitor of CPU, Memory, Disk, Network and GPU usage
-      github-desktop    # Github Desktop
-      gh                # Github Command Line Tools
-      rustdesk          # Remote Control
-      qbittorrent       # BT download application
-      wechat-uos        # Wechat in UOS (functional limitations)
-      flameshot         # PrtSc
-      vlc               # Video Player
-      veracrypt
-      # gnome-disk-utility # could use gnome-disk-image-mounter to mount iso 
 
       #-- Web
       firefox
       google-chrome
 
       # (TEST) Note
-      ollama            # Local ChatGPT
-      oterm
-      trilium-desktop
-      notesnook
-
-      # (TEST) Editor
-      lapce
+      # ollama            # Local ChatGPT
+      # oterm
+      # trilium-desktop
+      # notesnook
 
       # Game
-      mkxp-z
+      # mkxp-z
       # (dwarf-fortress-packages.dwarf-fortress-full.override {
       #   dfVersion = "0.47.04";
       #   theme = dwarf-fortress-packages.themes.tergel;
@@ -107,17 +86,35 @@ in {
       # })
     ])
     ++ (with pkgs.unstable; [
-      quickemu
-      so
+      # Command Line Tools
+      quickemu          # Easy qemu to run win, macOS, linux other disros
+      so                # FIXME seems there is some bugs case incapable to use search 
+      # zola          # Blog generate
 
-      heroic        # Game Store
+
+      # Graphics
+      logseq            # Note taking 
+      qbittorrent       # BT download application
+      wechat-uos        # Wechat in UOS (functional limitations)
+      vlc               # Video Player
+      gparted           # Linux system disk partitioning tool
+      libreoffice       # Opensource Office
+      # github-desktop    # Github Desktop
+      gh                # Github Command Line Tools
+      # rustdesk          # Remote Control
+      flameshot         # PrtSc
+      veracrypt         # Disk sector encryption
+
       #-- Monitor
       glances
+      mission-center    # Monitor of CPU, Memory, Disk, Network and GPU usage
 
+      #-- Editor
       code-cursor     # Editor base on VSC
       vscode
+      lapce
 
-      # Sync
+      #-- Sync
       megasync
       synology-drive-client
     ]) ++ (with inputs.nix-gaming.packages.${pkgs.system}; [
