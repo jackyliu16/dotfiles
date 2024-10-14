@@ -94,7 +94,7 @@ in {
 
       # Graphics
       logseq            # Note taking 
-      qbittorrent       # BT download application
+      # qbittorrent       # BT download application
       wechat-uos        # Wechat in UOS (functional limitations)
       vlc               # Video Player
       gparted           # Linux system disk partitioning tool
