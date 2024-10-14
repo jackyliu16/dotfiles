@@ -90,7 +90,7 @@
     # networking.wireless.enable = true;
     extraHosts = builtins.readFile (builtins.toString (pkgs.fetchurl {
       url = "https://raw.hellogithub.com/hosts";
-      hash = "sha256-GRGzCjN0v759POQxfPRn9+AEYidLmWCdvqDb05UhX+g=";
+      hash = "sha256-m8tES72lOVGIPS+uThL2sFM7s9uei+ugxMirQbeXih8=";
     }));
   };
 

@@ -14,7 +14,7 @@ in {
     XDG_BIN_HOME    = "\${HOME}/.local/bin";
     XDG_DATA_HOME   = "\${HOME}/.local/share";
   };
-  home.stateVersion = "22.11";
+  home.stateVersion = "24.05";
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
