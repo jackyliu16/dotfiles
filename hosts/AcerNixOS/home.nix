@@ -60,7 +60,8 @@ in {
 
       #-- Tester
       # dmidecode         # Mem test
-      # memtester
+      stress
+      memtester
       # memtest86plus   # seems to be determined by specific systemd-boot options, not here
 
       translate-shell
