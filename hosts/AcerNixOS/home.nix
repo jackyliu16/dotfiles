@@ -1,3 +1,4 @@
+# THis file contains personal configuration of whole system
 {
   inputs,
   outputs,

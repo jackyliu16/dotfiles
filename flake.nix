@@ -1,5 +1,6 @@
+# This file contains basically inputs and outputs flakes of whole project
 {
-  description = "Your new nix config";
+  description = "Jackyliu16's Simple flake about it's configuration";
 
   inputs = {
     # Nixpkgs
