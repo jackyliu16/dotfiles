@@ -1,9 +1,10 @@
-{ user 
+flakeArgs@{pkgs, inputs, outputs, ... }:
+{ config
+, pkgs
+, user 
 , domain
 , enableClashProxy ? false
-, inputs
-, outputs
-}: { config, pkgs, ... }: let
+, ... }: let
   repo_path = "$HOME/.config/dotfiles";
 in {
   home.username = "${user}";

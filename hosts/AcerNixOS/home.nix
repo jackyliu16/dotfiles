@@ -1,10 +1,8 @@
 # THis file contains personal configuration of whole system
-{
+flakeArgs@{
+  pkgs,
   inputs,
   outputs,
-  config,
-  pkgs ? import <nixpkgs> {},
-  lib,
   ...
 }: let
   # shell color: diff typr of file will have diff color
@@ -18,10 +16,10 @@ in {
   # paths it should manage.
 
   imports = [
-    (import ../../profile/comm.nix {inherit inputs outputs user domain enableClashProxy;})
-    (import ../../profile/base-devel.nix {inherit inputs outputs pkgs enableNixDev;})
+    (import ../../profile/comm.nix (flakeArgs // {inherit user domain enableClashProxy;}))
+    # (import ../../profile/base-devel.nix {inherit inputs outputs pkgs enableNixDev;})
 
-    outputs.homeManagerModules.jetbrains
+    # outputs.homeManagerModules.jetbrains
   ];
 
   # TODO not sure if working
@@ -145,10 +143,10 @@ in {
     nix-index.enable = true;
   };
 
-  programs.jetbrains = {
-    enable = true;
-    packages = with pkgs.nixpkgs-idea-20240101.jetbrains; [ # Only support this version
-      idea-ultimate
-    ];
-  };
+  # programs.jetbrains = {
+  #   enable = true;
+  #   packages = with pkgs.nixpkgs-idea-20240101.jetbrains; [ # Only support this version
+  #     idea-ultimate
+  #   ];
+  # };
 }
