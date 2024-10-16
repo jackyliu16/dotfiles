@@ -5,19 +5,15 @@ flakeArgs@{
   outputs,
   ...
 }: let
-  # shell color: diff typr of file will have diff color
-  # b = pkgs.callPackage ./src/b {};
   user = "jacky";
   domain = "ANixOS";
   enableNixDev = true;
   enableClashProxy = false; # leading to strange errors.
 in {
-  # Home Manager needs a bit of information about you and the
-  # paths it should manage.
 
   imports = [
     (import ../../profile/comm.nix (flakeArgs // {inherit user domain enableClashProxy;}))
-    # (import ../../profile/base-devel.nix {inherit inputs outputs pkgs enableNixDev;})
+    (import ../../profile/base-devel.nix (flakeArgs // {inherit enableNixDev;}))
 
     # outputs.homeManagerModules.jetbrains
   ];
