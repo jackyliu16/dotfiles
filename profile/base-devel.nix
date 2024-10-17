@@ -1,5 +1,4 @@
 flakeArgs@{ pkgs
-, inputs
 , enableNixDev ? false
 , ... }: {
   imports = [
