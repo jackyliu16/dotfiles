@@ -55,8 +55,8 @@ in {
 
       #-- Tester
       # dmidecode         # Mem test
-      stress
-      memtester
+      stress            # stress resource
+      memtester         # alloc mem space
       # memtest86plus   # seems to be determined by specific systemd-boot options, not here
 
       translate-shell
