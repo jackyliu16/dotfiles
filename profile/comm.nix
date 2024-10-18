@@ -1,4 +1,4 @@
-flakeArgs@{ pkgs, inputs, outputs, ... }:
+flakeArgs@{ pkgs, lib, inputs, outputs, ... }:
 { user
 , domain
 , enableClashProxy
@@ -17,7 +17,7 @@ in {
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  imports = [ ];
+  imports = lib.optionals enableClashProxy [ ./proxy.nix ];
 
   # NOTE: enable fonts catch
   fonts.fontconfig.enable = true;
