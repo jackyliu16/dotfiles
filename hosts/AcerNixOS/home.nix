@@ -8,11 +8,10 @@ flakeArgs@{
   user = "jacky";
   domain = "ANixOS";
   enableNixDev = true;
-  enableClashProxy = false; # leading to strange errors.
 in {
 
   imports = [
-    (import ../../profile/comm.nix flakeArgs { inherit user domain enableClashProxy; })
+    (import ../../profile/comm.nix flakeArgs { inherit user domain; })
     (import ../../profile/base-devel.nix flakeArgs { inherit enableNixDev; })
 
     # outputs.homeManagerModules.jetbrains

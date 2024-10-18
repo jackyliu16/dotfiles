@@ -1,7 +1,6 @@
 flakeArgs@{ pkgs, lib, inputs, outputs, ... }:
 { user
 , domain
-, enableClashProxy
 , ... }: let
   repo_path = "$HOME/.config/dotfiles";
 in {
@@ -17,7 +16,7 @@ in {
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  imports = lib.optionals enableClashProxy [ ./proxy.nix ];
+  imports = [ ];
 
   # NOTE: enable fonts catch
   fonts.fontconfig.enable = true;

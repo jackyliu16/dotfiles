@@ -5,4 +5,5 @@
   # my-module = import ./my-module.nix;
   kvmfr = ./kvmfr.nix;
   libvirtd = ./libvirt.nix;
+  clash-proxy = ./clash-proxy.nix;
 }

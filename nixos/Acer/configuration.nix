@@ -23,6 +23,8 @@
     # ./applications.nix
     ./kde.nix
     ../fonts.nix
+
+    outputs.nixosModules.clash-proxy
   ];
 
   nixpkgs = {
@@ -240,6 +242,11 @@
     # media-session.enable = true;
   };
 
+  services.clash-proxy = {
+    enable = true;
+    proxy-addr = "https://127.0.0.1:7897";
+  };
+
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
@@ -247,13 +254,6 @@
     package = pkgs.unstable.steam;
   };
 
-
-  programs.clash-verge = {
-    enable = true;
-    tunMode = true;
-    autoStart = true;
-    package = pkgs.unstable.clash-verge-rev;
-  }; 
   # https://nix.dev/guides/faq#how-to-run-non-nix-executables
   # programs.nix-ld.enable = true;
   # programs.nix-ld.libraries = with pkgs; [
