@@ -7,7 +7,7 @@ flakeArgs@{ pkgs, inputs, outputs, ... }:
 in {
   home.username = "${user}";
   home.homeDirectory = "/home/${user}";
-  home.sessionVariables = {
+  home.sessionVariables =  {
     XDG_CACHE_HOME  = "\${HOME}/.cache";
     XDG_CONFIG_HOME = "\${HOME}/.config";
     XDG_BIN_HOME    = "\${HOME}/.local/bin";

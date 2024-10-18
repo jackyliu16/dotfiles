@@ -12,8 +12,8 @@ flakeArgs@{
 in {
 
   imports = [
-    (import ../../profile/comm.nix (flakeArgs // {inherit user domain enableClashProxy;}))
-    (import ../../profile/base-devel.nix (flakeArgs // {inherit enableNixDev;}))
+    (import ../../profile/comm.nix flakeArgs { inherit user domain enableClashProxy; })
+    # (import ../../profile/base-devel.nix (flakeArgs // {inherit enableNixDev;}))
 
     # outputs.homeManagerModules.jetbrains
   ];

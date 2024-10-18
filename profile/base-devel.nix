@@ -1,6 +1,5 @@
-flakeArgs@{ pkgs
-, enableNixDev ? false
-, ... }: {
+flakeArgs@{ pkgs, inputs, outputs }:
+{ config, enableNixDev, ... }: {
   imports = [
     # ./apps/vim.nix
     (import ./apps/neovim/default.nix flakeArgs)
