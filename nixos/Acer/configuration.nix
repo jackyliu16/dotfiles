@@ -244,7 +244,7 @@
 
   services.clash-proxy = {
     enable = true;
-    proxy-addr = "https://127.0.0.1:7897";
+    proxy-addr = "http://127.0.0.1:7897";
   };
 
   programs.steam = {

@@ -7,7 +7,7 @@ in {
 
     proxy-addr = mkOption {
       type = types.str;
-      default = "https://127.0.0.1:7897";
+      default = "http://127.0.0.1:7897";
       description = "Address displayed by network proxy software";
     };
   };
