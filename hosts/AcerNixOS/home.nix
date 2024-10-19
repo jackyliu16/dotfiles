@@ -48,6 +48,7 @@ in {
   };
   home.packages =
     (with pkgs; [
+      ovital
       # jq        # ?
 
       # Command Line Tools
