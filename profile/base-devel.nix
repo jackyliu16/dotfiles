@@ -20,7 +20,7 @@ flakeArgs@{ pkgs, inputs, outputs, ... }:
 
     tmux        # Multiterminal Window Manager  
     htop        # Resource Monitor              ~ top
-    btop nmon s-tui
+    btop gotop nmon s-tui
 
 
     ranger      # File Explorer
