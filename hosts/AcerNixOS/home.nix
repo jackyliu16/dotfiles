@@ -101,6 +101,7 @@ in {
       # rustdesk          # Remote Control
       flameshot         # PrtSc
       veracrypt         # Disk sector encryption
+      qmapshack         # Consumer grade GIS software
 
       #-- Monitor
       glances
