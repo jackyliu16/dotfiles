@@ -86,6 +86,7 @@ in {
       so                # FIXME seems there is some bugs case incapable to use search 
       # zola          # Blog generate
 
+      docker-client
 
       # Graphics
       # logseq            # FIXME Note taking 
