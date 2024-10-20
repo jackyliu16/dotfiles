@@ -65,7 +65,6 @@ stdenv.mkDerivation (finalAttrs: rec {
     stdenv.cc.cc.lib
 
     nss
-    cups
     gdal
     nspr
     alsa-lib
@@ -87,6 +86,8 @@ stdenv.mkDerivation (finalAttrs: rec {
     libXtst
     libXcursor
     libXdamage
+  ]) ++ (lib.optionals stdenv.hostPlatform.isDarwin [
+    cups
   ]);
 
   dontConfigure = true;
