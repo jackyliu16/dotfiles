@@ -13,7 +13,10 @@
 , nspr
 , nss
 , cups
+, gdal
 , xorg
+, wayland
+, wayland-scanner
 , ... }: 
 
 # let
@@ -44,11 +47,14 @@ stdenv.mkDerivation (finalAttrs: rec {
   strictDeps = true;
 
   qtWrapperArgs = [ ''--prefix PATH : $out/opt/plugins'' ];
+  QT_DEBUG_PLUGINS = 1;
 
   nativeBuildInputs = [
     dpkg
     makeWrapper
     autoPatchelfHook
+    wayland-scanner
+    libsForQt5.qtwayland
   ] ++ (with libsForQt5.qt5; [
     wrapQtAppsHook
     qtwayland
@@ -60,14 +66,17 @@ stdenv.mkDerivation (finalAttrs: rec {
 
     nss
     cups
+    gdal
     nspr
     alsa-lib
     libGLU
+    wayland
     libpressureaudio
 
     # python312Packages.kaleido
   ] ++ (with libsForQt5; [
     qtbase
+    quazip
     qt5.qtwayland
     qt5.qtx11extras
   ]) ++ (with gst_all_1; [
@@ -93,7 +102,7 @@ stdenv.mkDerivation (finalAttrs: rec {
     mkdir -p $out/opt
     cp -r opt/com.ovital.map/* $out/opt/
     mkdir -p $out/bin
-    cp opt/com.ovital.map/launcher $out/bin/ovital
+    ln -s $out/opt/launcher $out/bin/ovital
 
     runHook postInstall
   '';
