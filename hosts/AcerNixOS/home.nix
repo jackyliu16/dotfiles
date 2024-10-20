@@ -88,6 +88,7 @@ in {
       # zola          # Blog generate
 
       docker-client
+      docker-compose
 
       # Graphics
       # logseq            # FIXME Note taking 
