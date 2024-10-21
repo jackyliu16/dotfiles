@@ -20,7 +20,7 @@
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
     ./virtualisation.nix
-    # ./applications.nix
+    ./applications.nix
     ./kde.nix
     ../fonts.nix
 
@@ -49,6 +49,9 @@
     config = {
       # Disable if you don't want unfree packages
       allowUnfree = true;
+      permittedInsecurePackages = [
+        "electron-27.3.11" # use by logseq define in application.nix
+      ];
     };
   };
 
