@@ -54,7 +54,6 @@ stdenv.mkDerivation (finalAttrs: rec {
     dpkg
     makeWrapper
     autoPatchelfHook
-    wayland-scanner
     libsForQt5.qtwayland
   ] ++ (with libsForQt5.qt5; [
     wrapQtAppsHook
@@ -67,20 +66,15 @@ stdenv.mkDerivation (finalAttrs: rec {
 
     cups
     nss           # libnss3
-    gdal
     nspr          # libnspr4
     alsa-lib
     libGLU
     freetype      # libfreetype
-    wayland
     libpressureaudio
 
     # python312Packages.kaleido
   ] ++ (with libsForQt5; [
     qtbase
-    quazip
-    qt5.qtwayland
-    qt5.qtx11extras
   ]) ++ (with gst_all_1; [
     gst-plugins-base
     gst-plugins-bad
@@ -93,12 +87,10 @@ stdenv.mkDerivation (finalAttrs: rec {
     libXdamage
     libXrender    # libxrender1
   ]);
-  # Depends: libsm6
 
 
   dontConfigure = true;
   dontBuild = true;
-  # dontWrapQtApps = true;
 
   installPhase = ''
     runHook preInstall
@@ -109,7 +101,7 @@ stdenv.mkDerivation (finalAttrs: rec {
     mkdir -p $out/opt
     cp -r opt/com.ovital.map/* $out/opt/
     mkdir -p $out/bin
-    ln -s $out/opt/launcher $out/bin/ovital
+    ln -s $out/opt/OMapQT $out/bin/ovital
 
     runHook postInstall
   '';
