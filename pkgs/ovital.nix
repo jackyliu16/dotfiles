@@ -9,6 +9,7 @@
 , alsa-lib
 , libGLU
 , libpressureaudio
+, freetype
 , gst_all_1
 , nspr
 , nss
@@ -64,11 +65,13 @@ stdenv.mkDerivation (finalAttrs: rec {
   buildInputs = [
     stdenv.cc.cc.lib
 
-    nss
+    cups
+    nss           # libnss3
     gdal
-    nspr
+    nspr          # libnspr4
     alsa-lib
     libGLU
+    freetype      # libfreetype
     wayland
     libpressureaudio
 
@@ -82,13 +85,16 @@ stdenv.mkDerivation (finalAttrs: rec {
     gst-plugins-base
     gst-plugins-bad
   ]) ++ (with xorg; [
-    libxcb
+    libSM         # libsm6
+    libxcb        # libx11-xcb1, libxcb1
+    libX11        # libx11-6
     libXtst
     libXcursor
     libXdamage
-  ]) ++ (lib.optionals stdenv.hostPlatform.isDarwin [
-    cups
+    libXrender    # libxrender1
   ]);
+  # Depends: libsm6
+
 
   dontConfigure = true;
   dontBuild = true;
@@ -113,7 +119,7 @@ stdenv.mkDerivation (finalAttrs: rec {
     #   --prefix LD_LIBRARAY_PATH : ${lib.makeLibraryPath runLibDeps} \
     #   --prefix PATH : ${lib.makeBinPath runLibDeps} 
   meta = {
-    description = "Professional geo-planning software ovital";
+    description = "Ovital Map for Linux Version";
     homepage = "https://www.ovital.com/";
     license = lib.licenses.unfree;
     platform = [ "aarch64-linux" "x86_64-linux" ];
