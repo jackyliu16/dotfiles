@@ -121,6 +121,7 @@
       fcitx5-table-extra
       # colorscheme
       fcitx5-nord
+      fcitx5-rose-pine
     ];
   };
 }
