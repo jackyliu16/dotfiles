@@ -25,4 +25,8 @@
 
 - heroic epic 134 error
   - https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/wiki/Rockstar-Games:-Code-134-Error-(workaround)
+
+## Navi CLI Cheat-Sheets
+
+should download [Cheat-Sheets](https://github.com/jackyliu16/cheat-sheet) and set the location at .local/share/navi/cheat to replace original auto-generated cheat folder to Sync configuration.
  
