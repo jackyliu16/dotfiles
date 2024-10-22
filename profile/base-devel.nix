@@ -2,12 +2,13 @@ flakeArgs@{ pkgs, inputs, outputs, ... }:
 { enableNixDev, ... }: {
   imports = [
     # ./apps/vim.nix
-    (import ./apps/neovim/default.nix flakeArgs)
-    (import ./apps/neovim/packages.nix flakeArgs)
     # (import ./apps/vscodium.nix { inherit inputs pkgs ; })
+    ./services/redshift.nix                           # Control Monitor Temperature
 
     # terminal application
-    ./apps/navi.nix
+    (import ./apps/neovim/default.nix flakeArgs)
+    (import ./apps/neovim/packages.nix flakeArgs)
+    ./apps/navi.nix                                   # Command-Line Memos
     ./apps/helix.nix
     ./apps/shells.nix
     ./apps/zellij.nix
