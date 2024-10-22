@@ -5,6 +5,9 @@ flakeArgs@{ pkgs, inputs, outputs, ... }:
     (import ./apps/neovim/default.nix flakeArgs)
     (import ./apps/neovim/packages.nix flakeArgs)
     # (import ./apps/vscodium.nix { inherit inputs pkgs ; })
+
+    # terminal application
+    ./apps/navi.nix
     ./apps/helix.nix
     ./apps/shells.nix
     ./apps/zellij.nix
