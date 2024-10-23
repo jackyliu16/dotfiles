@@ -103,6 +103,7 @@ in {
       flameshot         # PrtSc
       veracrypt         # Disk sector encryption
       qmapshack         # Consumer grade GIS software
+      listen1           # Music Player
 
       #-- Monitor
       glances
