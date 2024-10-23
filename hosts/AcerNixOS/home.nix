@@ -104,6 +104,7 @@ in {
       veracrypt         # Disk sector encryption
       qmapshack         # Consumer grade GIS software
       listen1           # Music Player
+      eudic             # Translate
 
       #-- Monitor
       glances
