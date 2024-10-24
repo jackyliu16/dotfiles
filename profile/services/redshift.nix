@@ -9,5 +9,10 @@
       day = 5500;
       night = 3700;
     };
+
+    settings.redshift = {
+      brightness-day = 1.0;
+      brightness-night = 0.6;
+    };
   };
 }
