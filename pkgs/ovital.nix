@@ -14,17 +14,19 @@
 , nspr
 , nss
 , cups
-, gdal
 , xorg
-, wayland
-, wayland-scanner
+
+, pulseaudio
+, qlcplus
+, flac
+, libvorbis
+, libopus
+, libogg
+, libmpg123
+, lame
+, iconv
 , ... }: 
 
-# let
-#   runLibDeps = [
-#     curl
-#   ];
-# in
 stdenv.mkDerivation (finalAttrs: rec {
   pname = "ovital";
   version = "2.7.0";
@@ -55,6 +57,16 @@ stdenv.mkDerivation (finalAttrs: rec {
     makeWrapper
     autoPatchelfHook
     libsForQt5.qtwayland
+
+    pulseaudio
+    qlcplus
+    flac
+    libvorbis
+    libopus
+    libogg
+    libmpg123
+    lame
+    iconv
   ] ++ (with libsForQt5.qt5; [
     wrapQtAppsHook
     qtwayland
@@ -71,6 +83,17 @@ stdenv.mkDerivation (finalAttrs: rec {
     libGLU
     freetype      # libfreetype
     libpressureaudio
+
+    # base on compare
+    pulseaudio
+    qlcplus
+    flac
+    libvorbis
+    libopus
+    libogg
+    libmpg123
+    lame
+    iconv
 
     # python312Packages.kaleido
   ] ++ (with libsForQt5; [
@@ -102,14 +125,13 @@ stdenv.mkDerivation (finalAttrs: rec {
     cp -r opt/com.ovital.map/* $out/opt/
     mkdir -p $out/bin
     ln -s $out/opt/OMapQT $out/bin/ovital
+    wrapProgram $out/bin/ovital \
+      --prefix LD_LIBRARAY_PATH : ${lib.makeLibraryPath buildInputs} \
+      --prefix PATH : ${lib.makeBinPath buildInputs} 
 
     runHook postInstall
   '';
 
-    #
-    # wrapProgram $out/bin/ovital \
-    #   --prefix LD_LIBRARAY_PATH : ${lib.makeLibraryPath runLibDeps} \
-    #   --prefix PATH : ${lib.makeBinPath runLibDeps} 
   meta = {
     description = "Ovital Map for Linux Version";
     homepage = "https://www.ovital.com/";
