@@ -95,7 +95,7 @@
     # networking.wireless.enable = true;
     extraHosts = builtins.readFile (builtins.toString (pkgs.fetchurl {
       url = "https://raw.hellogithub.com/hosts";
-      hash = "sha256-Ke8kRZZsz5XEGISqVrT0U3Hk1Luf5NPDyvzr96v0U54=";
+      hash = "sha256-mGblOipqEUOlXxoqKBgKggaG1FqZcoWjpxpBKmNSKrA=";
     }));
   };
 
@@ -310,5 +310,5 @@
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "24.05";
 
-  # services.flatpak.enable = true;
+  services.flatpak.enable = true;
 }
