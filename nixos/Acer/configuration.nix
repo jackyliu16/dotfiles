@@ -95,7 +95,7 @@
     # networking.wireless.enable = true;
     extraHosts = builtins.readFile (builtins.toString (pkgs.fetchurl {
       url = "https://raw.hellogithub.com/hosts";
-      hash = "sha256-ILWr8iWe2fSJZFuDJyzNTfed1GcZ326B9yuVfZ0MCw8=";
+      hash = "sha256-Ke8kRZZsz5XEGISqVrT0U3Hk1Luf5NPDyvzr96v0U54=";
     }));
   };
 
@@ -169,31 +169,55 @@
     videoDrivers = [ "nvidia" ];
   };
 
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  services = {
+    # GNOME
+    # desktopManager.gnome.enable = true;
+    # displayManager.gdm.enable = true;
 
-  services.xserver = {
-    # Enable cinnamon
-    # displayManager.lightdm.enable = true;
-    # desktopManager.cinnamon.enable = true;
-    # services.cinnamon.apps.enable = true;
+    # Enable plasma6 Desktop Environment 
+    displayManager.sddm.enable = true; 
+    desktopManager.plasma6.enable = true;
 
     # Enable plasma5 Desktop Environment 
     # displayManager.sddm.enable = true;
     # desktopManager.plasma5.enable = true;
 
-    # XFCE 
-    # desktopManager.xfce.enable = true;
-    # desktopManager.xterm.enable = false;
-    # displayManager.defaultSession = "xfce";
+    # Enable cinnamon
+    # displayManager.lightdm.enable = true;
+    # desktopManager.cinnamon.enable = true;
+    # services.cinnamon.apps.enable = true;
 
-    # GNOME
-    # desktopManager.gnome.enable = true;
-    # displayManager.gdm.enable = true;
+    # Mate(bad)
+    # desktopManager.mate.enable = true;
+    # displayManager.lightdm.enable = true;
+
+    # XFCE(little bad)
+    # desktopManager.xfce.enable = true;
+    # displayManager.lightdm.enable = true;
+
+    # Budgie(playable) 
+    # desktopManager.budgie.enable = true;
+    # displayManager.lightdm.enable = true;
 
     # Deepin
     # displayManager.lightdm.enable = true;
     # desktopManager.deepin.enable = true;
+
+    # Pantheon 
+    # desktopManager.pantheon.enable = true;
+    # displayManager.lightdm.enable = true;
+
+    # CDE 
+    # desktopManager.cde.enable = true;
+    # displayManager.lightdm.enable = true;
+
+    # LXQT 
+    # desktopManager.lxqt.enable = true;
+    # displayManager.lightdm.enable = true;
+
+    # Lumina 
+    # desktopManager.lumina.enable = true;
+    # displayManager.lightdm.enable = true;
   };
 
   # enable CUPS to print documents 
