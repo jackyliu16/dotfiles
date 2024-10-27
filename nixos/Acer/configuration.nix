@@ -160,15 +160,6 @@
 
   time.timeZone = "Asia/Shanghai";
 
-  services.xserver = {
-    # X11 windowing services
-    enable = true;
-    # Key-mapping
-    xkb.layout = "cn";
-    xkb.variant = "";
-    videoDrivers = [ "nvidia" ];
-  };
-
   services = {
     # GNOME
     # desktopManager.gnome.enable = true;
@@ -177,6 +168,35 @@
     # Enable plasma6 Desktop Environment 
     displayManager.sddm.enable = true; 
     desktopManager.plasma6.enable = true;
+
+    xserver = {
+      # X11 windowing services
+      enable = true;
+      # Key-mapping
+      xkb.layout = "cn";
+      xkb.variant = "";
+      videoDrivers = [ "nvidia" ];
+
+      # Deepin
+      # displayManager.lightdm.enable = true;
+      # desktopManager.deepin.enable = true;
+
+      # Pantheon(密钥管理似乎有问题)
+      # desktopManager.pantheon.enable = true;
+      # displayManager.lightdm.enable = true;
+
+      # CDE(unlogin able)
+      # desktopManager.cde.enable = true;
+      # displayManager.lightdm.enable = true;
+
+      # LXQT 
+      # desktopManager.lxqt.enable = true;
+      # displayManager.lightdm.enable = true;
+
+      # Lumina(network issue) 
+      # desktopManager.lumina.enable = true;
+      # displayManager.lightdm.enable = true;
+    };
 
     # Enable plasma5 Desktop Environment 
     # displayManager.sddm.enable = true;
@@ -197,26 +217,6 @@
 
     # Budgie(playable) 
     # desktopManager.budgie.enable = true;
-    # displayManager.lightdm.enable = true;
-
-    # Deepin
-    # displayManager.lightdm.enable = true;
-    # desktopManager.deepin.enable = true;
-
-    # Pantheon 
-    # desktopManager.pantheon.enable = true;
-    # displayManager.lightdm.enable = true;
-
-    # CDE 
-    # desktopManager.cde.enable = true;
-    # displayManager.lightdm.enable = true;
-
-    # LXQT 
-    # desktopManager.lxqt.enable = true;
-    # displayManager.lightdm.enable = true;
-
-    # Lumina 
-    # desktopManager.lumina.enable = true;
     # displayManager.lightdm.enable = true;
   };
 
@@ -310,5 +310,5 @@
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "24.05";
 
-  services.flatpak.enable = true;
+  # services.flatpak.enable = true;
 }
