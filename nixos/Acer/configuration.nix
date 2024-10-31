@@ -20,7 +20,10 @@
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
     ./virtualisation.nix
+
     ./applications.nix
+    ./games.nix
+
     ./kde.nix
     ../fonts.nix
 
@@ -272,13 +275,6 @@
   services.clash-proxy = {
     enable = true;
     proxy-addr = "http://127.0.0.1:7897";
-  };
-
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-    package = pkgs.unstable.steam;
   };
 
   # https://nix.dev/guides/faq#how-to-run-non-nix-executables
