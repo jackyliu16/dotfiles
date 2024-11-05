@@ -99,7 +99,7 @@ in {
       libreoffice       # Opensource Office
       # github-desktop    # Github Desktop
       gh                # Github Command Line Tools
-      rustdesk          # Remote Control
+      # rustdesk          # Remote Control
       flameshot         # PrtSc
       veracrypt         # Disk sector encryption
       qmapshack         # Consumer grade GIS software
@@ -118,8 +118,8 @@ in {
       #-- Sync
       megasync
       synology-drive-client
-    ]) ++ (with inputs.nix-gaming.packages.${pkgs.system}; [
-      wine-ge
+    # ]) ++ (with inputs.nix-gaming.packages.${pkgs.system}; [
+    #   wine-ge
     ]);
 
   # terminal
