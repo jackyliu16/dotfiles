@@ -14,7 +14,7 @@ in {
     (import ../../profile/comm.nix flakeArgs { inherit user domain; })
     (import ../../profile/base-devel.nix flakeArgs { inherit enableNixDev; })
 
-    # outputs.homeManagerModules.jetbrains
+    outputs.homeManagerModules.jetbrains
   ];
 
   # TODO not sure if working
@@ -112,6 +112,7 @@ in {
 
       #-- Editor
       code-cursor     # Editor base on VSC
+      jetbrains.rust-rover
       vscode
       lapce
 
@@ -144,10 +145,10 @@ in {
     nix-index.enable = true;
   };
 
-  # programs.jetbrains = {
-  #   enable = true;
-  #   packages = with pkgs.nixpkgs-idea-20240101.jetbrains; [ # Only support this version
-  #     idea-ultimate
-  #   ];
-  # };
+  programs.jetbrains = {
+    enable = true;
+    packages = with pkgs.nixpkgs-idea-20240101.jetbrains; [ # Only support this version
+      idea-ultimate
+    ];
+  };
 }
