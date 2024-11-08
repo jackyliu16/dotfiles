@@ -9,4 +9,5 @@
   mkxp-z = pkgs.callPackage ./mkxp-z.nix { };
   ja-netfilter = pkgs.callPackage ./ja-netfilter.nix { };
   ovital = pkgs.callPackage ./ovital.nix { };
+  qtscrcpy = pkgs.callPackage ./qtscrcpy.nix { };
 }

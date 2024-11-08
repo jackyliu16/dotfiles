@@ -66,6 +66,9 @@ in {
       firefox
       google-chrome
 
+      # Personal 
+      qtscrcpy
+
       # (TEST) Note
       # ollama            # Local ChatGPT
       # oterm
