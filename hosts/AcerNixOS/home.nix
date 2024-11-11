@@ -88,6 +88,7 @@ in {
       # Command Line Tools
       quickemu          # Easy qemu to run win, macOS, linux other disros
       so                # FIXME seems there is some bugs case incapable to use search 
+      cargo-generate    # Create Apps with template
       # zola          # Blog generate
 
       docker-client
