@@ -13,6 +13,7 @@ in {
   imports = [
     (import ../../profile/comm.nix flakeArgs { inherit user domain; })
     (import ../../profile/base-devel.nix flakeArgs { inherit enableNixDev; })
+    ./rime.nix
 
     outputs.homeManagerModules.jetbrains
   ];
@@ -155,4 +156,10 @@ in {
       idea-ultimate
     ];
   };
+
+  # xdg.dataFile."fcitx5/rime" = {
+  #   source = "${pkgs.rime-ice-pkgs}/share/rime-data";
+  #   recursive = true;
+  # };
+
 }
