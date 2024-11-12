@@ -26,6 +26,7 @@
 
     ./kde.nix
     ../fonts.nix
+    ../inputMethod.nix
 
     outputs.nixosModules.clash-proxy
   ];
