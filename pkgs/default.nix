@@ -11,4 +11,5 @@
   ovital = pkgs.callPackage ./ovital.nix { };
   qtscrcpy = pkgs.callPackage ./qtscrcpy.nix { };
   rime-ice = pkgs.callPackage ./rime-ice.nix { };
+  rime-frost = pkgs.callPackage ./rime-frost.nix { };
 }

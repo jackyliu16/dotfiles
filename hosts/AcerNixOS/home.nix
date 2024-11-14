@@ -158,7 +158,8 @@ in {
 
   xdg.dataFile = {
     "fcitx5/rime" = {
-      source = "${pkgs.rime-ice}/share/rime-data";
+      # source = "${pkgs.rime-ice}/share/rime-data";
+      source = "${pkgs.rime-frost}/share/rime-data";
       recursive = true;
     };
   };
