@@ -8,10 +8,10 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   version = "0.0.4";
 
   src = fetchFromGitHub {
-    owner = "zendo";
+    owner = "gaboolic";
     repo = "rime-frost";
     rev = "${finalAttrs.version}";
-    hash = "sha256-r7EEPvmVDWNQbwUwkZght3o7ieGgGg95N+Z48WVbST4=";
+    hash = "sha256-+BhPKQupXT+kTiYEYMkBldmI0oZpoB/5G1cCpdF34w4=";
   };
 
   installPhase = ''
