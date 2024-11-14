@@ -162,6 +162,21 @@ in {
       source = "${pkgs.rime-frost}/share/rime-data";
       recursive = true;
     };
+    "fcitx5/rime/default.custom.yaml" = {
+      text = pkgs.lib.generators.toYAML { } {
+        patch = {
+          "menu/page_size" = 5;
+          "engine/translators/+" = [ 
+            "lua_translator@*calculator_translator" # 计算器
+          ];           
+          "engine/filters/+" = [
+            "lua_filter@cn_en_spacer"
+            "lua_filter@date_translator"
+            "lua_filter@*calculator_filter" # 把计算器的答案放在最前边
+          ];
+        };
+      };
+    };
   };
 
   i18n.inputMethod = {
