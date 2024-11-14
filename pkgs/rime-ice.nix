@@ -21,6 +21,7 @@ stdenvNoCC.mkDerivation (_: {
     cp -r opencc   "$out/share/rime-data/opencc"
     cp -r lua      "$out/share/rime-data/lua"
 
+    sed 's/# - cn_dicts\/41448  # 大字表（按需启用）/- cn_dicts\/41448  # 大字表/g' default.yaml > default.yaml
     install -Dm644 *.{schema,dict}.yaml -t "$out/share/rime-data/"
     install -Dm644 *.lua                -t "$out/share/rime-data/"
     install -Dm644 custom_phrase.txt    -t "$out/share/rime-data/"
