@@ -168,6 +168,12 @@ in {
     fcitx5 = {
       addons = with pkgs; [
         fcitx5-rime
+        fcitx5-gtk
+        fcitx5-chinese-addons
+
+        # ColorScheme
+        fcitx5-nord
+        fcitx5-rose-pine
       ];
     };
   };
