@@ -17,9 +17,10 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   installPhase = ''
     mkdir -p "$out/share/rime-data"
     cp -r cn_dicts      "$out/share/rime-data/cn_dicts"
+    cp -r cn_dicts_cell "$out/share/rime-data/cn_dicts_cell"
     cp -r en_dicts      "$out/share/rime-data/en_dicts"
     cp -r opencc        "$out/share/rime-data/opencc"
-    cp -r others        "$out/share/rime-data/opencc"
+    cp -r others        "$out/share/rime-data/others"
     cp -r lua           "$out/share/rime-data/lua"
 
     install -Dm644 *.{schema,dict}.yaml -t "$out/share/rime-data/"
