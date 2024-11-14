@@ -1,0 +1,5 @@
+# Rime table
+# coding: utf-8
+
+；	;
+

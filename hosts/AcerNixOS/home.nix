@@ -15,6 +15,7 @@ in {
     (import ../../profile/base-devel.nix flakeArgs { inherit enableNixDev; })
 
     outputs.homeManagerModules.jetbrains
+    outputs.homeManagerModules.rime
   ];
 
   # TODO not sure if working
@@ -155,4 +156,5 @@ in {
       idea-ultimate
     ];
   };
+  my.rime.enable = true;
 }

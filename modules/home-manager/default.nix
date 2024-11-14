@@ -3,4 +3,5 @@
 {
   # List your module files here
   jetbrains = import ./jetbrains.nix;
+  rime = import ./rime; 
 }
