@@ -26,7 +26,6 @@
 
     ./kde.nix
     ../fonts.nix
-    ../inputMethod.nix
 
     outputs.nixosModules.clash-proxy
   ];
@@ -100,7 +99,7 @@
     # networking.wireless.enable = true;
     extraHosts = builtins.readFile (builtins.toString (pkgs.fetchurl {
       url = "https://raw.hellogithub.com/hosts";
-      hash = "sha256-kEUPDosZRMVQUS6qE1mX5ZgL06YVEaYqSyzdJRE28tg=";
+      hash = "sha256-Bkl+C39hbDkiKHHM2ysul00DEAy3BtGVFDm97rxTH/I=";
     }));
   };
 

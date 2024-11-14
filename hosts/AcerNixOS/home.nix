@@ -155,4 +155,20 @@ in {
       idea-ultimate
     ];
   };
+
+  xdg.dataFile = {
+    "fcitx5/rime" = {
+      source = "${pkgs.rime-ice}/share/rime-data";
+      recursive = true;
+    };
+  };
+
+  i18n.inputMethod = {
+    enabled = "fcitx5";
+    fcitx5 = {
+      addons = with pkgs; [
+        fcitx5-rime
+      ];
+    };
+  };
 }

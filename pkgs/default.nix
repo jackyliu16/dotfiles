@@ -10,4 +10,5 @@
   ja-netfilter = pkgs.callPackage ./ja-netfilter.nix { };
   ovital = pkgs.callPackage ./ovital.nix { };
   qtscrcpy = pkgs.callPackage ./qtscrcpy.nix { };
+  rime-ice = pkgs.callPackage ./rime-ice.nix { };
 }
