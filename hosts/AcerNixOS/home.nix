@@ -178,24 +178,4 @@ in {
       };
     };
   };
-
-  home.sessionVariables = { # waylandFronted = true; 
-    GTK_IM_MODULE = "fcitx"; 
-    QT_IM_MODULE  = "fcitx"; 
-  };
-
-  i18n.inputMethod = {
-    enabled = "fcitx5";
-    fcitx5 = {
-      addons = with pkgs; [
-        fcitx5-rime
-        fcitx5-gtk
-        fcitx5-chinese-addons
-
-        # ColorScheme
-        fcitx5-nord
-        fcitx5-rose-pine
-      ];
-    };
-  };
 }
