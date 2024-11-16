@@ -49,7 +49,7 @@
     ))
 
     #-- rust
-    rust-analyzer
+    unstable.rust-analyzer
     cargo # rust package manager
     rustfmt
 

@@ -55,7 +55,7 @@ flakeArgs@{ pkgs, inputs, outputs, ... }:
     # Helix Request
     # clang
     # libclang
-    rust-analyzer
+    unstable.rust-analyzer
     nil
     gopls
     taplo
