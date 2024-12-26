@@ -97,6 +97,7 @@ in {
       # Graphics
       # logseq            # FIXME Note taking 
       # qbittorrent       # BT download application
+      scrcpy            # Projection mobile phone
       wpsoffice
       wechat-uos        # Wechat in UOS (functional limitations)
       vlc               # Video Player
@@ -104,7 +105,7 @@ in {
       libreoffice       # Opensource Office
       # github-desktop    # Github Desktop
       gh                # Github Command Line Tools
-      # rustdesk          # Remote Control
+      rustdesk          # Remote Control
       flameshot         # PrtSc
       veracrypt         # Disk sector encryption
       qmapshack         # Consumer grade GIS software
