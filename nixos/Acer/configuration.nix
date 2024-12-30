@@ -23,6 +23,7 @@
 
     ./applications.nix
     ./games.nix
+    ./nbfc.nix
 
     ./kde.nix
     ../fonts.nix
@@ -100,7 +101,7 @@
     # networking.wireless.enable = true;
     extraHosts = builtins.readFile (builtins.toString (pkgs.fetchurl {
       url = "https://raw.hellogithub.com/hosts";
-      hash = "sha256-OjaMih/nlDLc5fxLwXarm9txdU7gpNGnTNCoeaEZ/MU=";
+      hash = "sha256-qgrbu0HkbGUxun4NHBcguhaxtbD+0dtXZJ5n072tB/Q=";
     }));
   };
 
@@ -307,6 +308,9 @@
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "24.05";
+
+  programs.coolercontrol.enable = true;
+  programs.coolercontrol.nvidiaSupport = true;
 
   services.flatpak.enable = true;
 }

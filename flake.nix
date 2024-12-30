@@ -50,6 +50,11 @@
     };
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     # nix-gaming.url = "github:fufexan/nix-gaming";
+
+    nbfc-linux = { # Fans Control
+      url = "github:nbfc-linux/nbfc-linux";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self
