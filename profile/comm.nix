@@ -79,7 +79,6 @@ in {
       branch.sort = "-committerdate";
       rebase = {
         autosquash = true;
-        # autostash = true;
       };
     };
     # lfs.enable = true;
