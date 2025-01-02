@@ -142,9 +142,7 @@
       # initialPassword = "correcthorsebatterystaple";
       isNormalUser = true;
       openssh.authorizedKeys.keys = [
-        # AcerNixOS
-        "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCWT8QnG5T1D1fCqVuBFPU/ot+xW+0oKqZOUqMVgapagXJ5dkUIWw+yZ7+teT6P08ozSTA9UK4Qba82apuknW97MqpgVimhKbQkDXB8oTKJhv3PrScsh9uZPQg8hBLWUgVyE0V3ph5F9kYoK24pco2+wUV0oBlsSLfmxYKt8w3lesuk6IMRmMEl+vFDfyKVpFvFMEmDL0Oha9dl6zzNBUTOmKnIYl/kBGQIeb5ow/Au3dvGZZ5GJc8ut5dnciRRalKv+pNbtPNCjb/wAvFlMeuF4vI4Ef68UyX5aFZrVfHM3gc4IGcVUBP4ZI7SXcHmop/zaFtT6QVvEwk0vtKavIjVU98PXedCSva4OeG/2aCq3Oil0BfC8gdmNeaCnuC+aRnNu+hfbDFkzarIUPX0K2wvCOvLY6YYOeNhF0tFsoqFsZJh8qSwZ/kCGmOzQJz4dYBiyQFuxL4SlhIN93trIdecCKQ9ei56Lo2CJ5NnP1DixQWsO2VnSpzym11c1Rz7vtc= 18922251299@163.com"
-        "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCuIAgDRqj2T5bNEVwokKmYcnpedcwvZTnzrLgRCeDk0huhuno4SAhbsRqqdEThBxyqa6A1JP3Xw4IbODWDIX8ZvpR8fjoUCFxOwDRa0yE1U+QTgDVMhtwHcaJtGG9XHrr/J6eArpaFQWYqRw0iB50KioHB+wpTkdqIvAY0KqZcYV0Fixk+ZoOuQWPR35DMb+0AG3L78aw3osTJ/Fj8IuwIYQzLH6JTnd+3mnXtD6tv4yeUvPWbZ/R64XKXd71OiXEN0eF5mAqPgsmLUYNjnB5BSa5VwxohM/XhWY0B7ulRh8C/z4CelZPoNejjhcRbaK2HZOGmeVl96W8V4vTwXTrgt5CiuJVacUsZc2Sl6yM0LG7D+VvxDbOas/JETy4A9rQyopsiNJnZfCArjEMaFsRlu17/HiT9P1vKHBnjFZ53hsQUX3gSAoHmckBTE9xmJccDgkJ28ICjHYLhw+rIfuYAnGF2W9GaBbL7H0IWcp0+c769+as3mI7omCEasQJmb0U= 18922251299@163.com"
+        "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCmoa8ZWn22hhY9OB8miiGjyjg8n57/Acrc5PlTjqJZSxQCDN5/9NXxnpkZCTVI9ly/G2bKVXt3E+NAOxHW3EHRulRIEHevHIY6wkDZhZwIS2rgue+sijPxqkr7FIBooHSlMQE38PMHW17GzbzDrebVoOhu1OxEqU4dOyy7mw7sFdh9IMI4qWHtn9HhAZo6hgz1XKeO8syitbMmsgdoPgSm2QruDVbS3cdgP3pqKSDwJmeq+CPJEgLvMvqDLHOgJ4xdr6/heDLapOkoKlxaPmLB9gx3u6XTmPd0to7Lg+PiiPSytMekBM8iUJlmb6M0egU/tzsTkt9YCGHQzNzLGjc+fQyzXIF4D3y07O7kp5jl9nBO96L/k0lLARByOxpHDEfCxZiLLLov2VNY2jCGWiQo+tK0q77/yj2kSzroOR6tXdem0ir1Cf0iytD4/VIk7AdbQ64AJE4PHIyj5RnNtnGpsAvHwBJ7z178g6y4tPkQIjqMDlY1MRZmCKd3l2nlBg8= 18922251299@163.com"
       ];
       extraGroups = [ "wheel" "networkmanager" "docker"];
     };
@@ -161,7 +159,7 @@
       PermitRootLogin = "no";
       # Use keys only. Remove if you want to SSH using password (not recommended)
       PasswordAuthentication = true;
-      LoginGraceTime = 2;
+      LoginGraceTime = 10;
     };
   };
 
