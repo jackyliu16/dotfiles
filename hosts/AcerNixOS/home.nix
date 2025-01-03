@@ -102,7 +102,6 @@ in {
       wechat-uos        # Wechat in UOS (functional limitations)
       vlc               # Video Player
       gparted           # Linux system disk partitioning tool
-      libreoffice       # Opensource Office
       # github-desktop    # Github Desktop
       gh                # Github Command Line Tools
       rustdesk          # Remote Control
