@@ -21,7 +21,8 @@ in {
   nixpkgs = {
     # You can add overlays here
     overlays = [
-      # Add overlays your own flake exports (from overlays and pkgs dir):
+      inputs.nur.overlay
+
       outputs.overlays.additions
       outputs.overlays.modifications
       outputs.overlays.unstable-packages
@@ -48,6 +49,8 @@ in {
   };
   home.packages =
     (with pkgs; [
+      nur.repos.novel2430.wemeet-bin-bwrap
+
       ovital
       # jq        # ?
 
