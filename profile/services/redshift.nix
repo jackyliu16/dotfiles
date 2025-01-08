@@ -1,6 +1,6 @@
 { pkgs, lib, ... }: {
   services.redshift = {
-    enable = true;
+    enable = false;
 
     latitude = 23.1291;
     longitude = 113.2644;
