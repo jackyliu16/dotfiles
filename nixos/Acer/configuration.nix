@@ -81,7 +81,13 @@
     experimental-features = "nix-command flakes";
     # Deduplicate and optimize nix store
     # auto-optimise-store = true;
-    substituters = [ "https://mirror.sjtu.edu.cn/nix-channels/store" ];
+    substituters = [ 
+      "https://mirror.sjtu.edu.cn/nix-channels/store" 
+      "https://cuda-maintainers.cachix.org"
+    ];
+    trusted-public-keys = [
+      "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
+    ];
     trusted-substituters = [ "https://mirror.sjtu.edu.cn/nix-channels/store" ];
     trusted-users = [ "jacky" ];
   };
