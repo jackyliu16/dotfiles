@@ -21,6 +21,7 @@
     ./hardware-configuration.nix
     ./virtualisation.nix
 
+    ../pkgs
     ./applications.nix
     ./games.nix
     ./nbfc.nix
@@ -107,7 +108,7 @@
     # networking.wireless.enable = true;
     extraHosts = builtins.readFile (builtins.toString (pkgs.fetchurl {
       url = "https://raw.hellogithub.com/hosts";
-      hash = "sha256-eY1b9Y17UqyoxcOne2aJmdMoDRT1O458TwC56rT78S4=";
+      hash = "sha256-Ww4UpuNxlvysLPAdzZpCNDgKYH7RHakaaeVMo5KwqfE=";
     }));
   };
 

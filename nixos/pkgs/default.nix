@@ -1,5 +1,6 @@
 {
   imports = [
-    ./virtualbox.nix
+    # ./virtualbox.nix
+    ./masterpdfeditor.nix
   ];
 }
