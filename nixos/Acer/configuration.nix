@@ -317,6 +317,7 @@
 
   programs.coolercontrol.enable = true;
   programs.coolercontrol.nvidiaSupport = true;
+  programs.appimage.enable = true;
 
   services.flatpak.enable = true;
 }
