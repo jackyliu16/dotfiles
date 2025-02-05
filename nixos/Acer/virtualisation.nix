@@ -18,5 +18,11 @@
     };
     # USB redirection in virtual machine
     # spiceUSBRedirection.enable = true;
+    waydroid.enable = true;    
   };
+
+  # for waydroid
+  environment.systemPackages = with pkgs; [
+    nur.repos.ataraxiasjel.waydroid-script
+  ];
 }
