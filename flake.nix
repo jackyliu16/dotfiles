@@ -211,8 +211,8 @@
       "https://cache.nixos.org"
 
       # nix community's cache server
-      "https://nix-community.cachix.org"
-      "https://zola.cachix.org"
+      # "https://nix-community.cachix.org"
+      # "https://zola.cachix.org"
       # "https://nix-gaming.cachix.org"
     ];
     extra-trusted-public-keys = [ # cache server public key
