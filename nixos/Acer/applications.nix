@@ -21,13 +21,15 @@
 	# 	kimpanel
 	# ]);
 
-  # environment.systemPackages = (with pkgs.gnome; [
-	#   gnome-terminal
+  environment.systemPackages = (with pkgs.gnome; [
+	  gnome-terminal
 	# ]) ++ (with pkgs.libsForQt5; [
 	# 	neochat
-	# ]) ++ (with pkgs; [
+	]) ++ (with pkgs; [
 	#   pot # A cross-platform translation software 
-  #   listen1
+    listen1
+    rustdesk-flutter
+		logseq 					  # Note taking	
   #   rustdesk # RDP
 
   #   qq # Messaging app
@@ -41,9 +43,5 @@
   #   rustdesk
 
   #   wpsoffice
-	# ]);
-
-	environment.systemPackages = with pkgs; [
-		logseq 					# Note taking	
-	];
+	]);
 }
